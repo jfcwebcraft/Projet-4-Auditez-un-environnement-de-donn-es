@@ -1,0 +1,2019 @@
+Tirez un maximum de ce cours
+
+
+Bonjour et bienvenue dans ce cours sur Power BI !
+
+Rencontrez votre professeur
+Mame-Mor Fall
+Photo de Mame-Mor Fall
+Expert Power BI
+Mame est Data Analyst. Il aide le top management en entreprise à exploiter les données et les solutions digitales pour faire du reporting stratégique, des études de marché, et réaliser des tableaux de bord qui aident à la prise de décision. C'est un pro de Power BI !
+
+Suivez son cas fil rouge
+Pour vous guider à chaque étape, nous avons repris le déroulement classique d’un projet de création de dashboard.
+
+Mame s’est mis dans la peau d’un freelance dont la mission est d'étudier les besoins d’un client fictif (Jeanne, cheffe de projet au Crédit Breton), afin de réaliser un tableau de bord d’aide à la prise de décision pour l’accord de prêts immobiliers.
+
+
+
+Dans ce cours, vous allez donc suivre de A à Z ce cas pratique, de la prise en compte des besoins du client à la livraison du produit final. Vous découvrirez tous les documents de travail de Jeanne et Mame, et pourrez même écouter leurs conversations téléphoniques pour avoir une vision du terrain la plus réaliste possible !
+
+Ainsi, vous découvrirez :
+
+Les différentes étapes de la mission de Mame pour ce réseau d’agences bancaires, et comment il les intègre dans la réalisation d'un tableau de bord visuel et dynamique.
+
+Les moyens d’appliquer toutes ses bonnes pratiques à vos projets.
+
+Apprenez en pratiquant
+Dans chaque chapitre, vous retrouverez en général :
+
+une vidéo d’introduction qui fait la synthèse des principales informations à retenir ;
+
+du texte qui permet d’aller plus loin : il récapitule ce qui est dit dans la vidéo mais surtout, il apporte des explications complémentaires et des exemples concrets, il présente des outils spécifiques et liste des ressources externes à consulter, ou encore des fichiers à télécharger.
+
+Régulièrement, vous trouverez aussi :
+
+des scènes fictives qui reprennent les échanges types que l’on peut avoir avec un client sur un projet de création de dashboard ;
+
+des vidéos de démonstration qui permettent de suivre étape par étape la réalisation d’un point important du cours directement sur l’ordinateur de Mame ;
+
+des exercices optionnels dans les sections “À vous de jouer”.
+
+À la fin de chaque partie du cours, vous trouverez :
+
+un quiz pour vous permettre de valider ce que vous avez appris. 
+
+Notez que la version de Power BI utilisée dans le texte et les vidéos est peut-être différente de la vôtre.
+
+Alors avant de démarrer, voici quelques conseils pour optimiser votre apprentissage :
+
+Regardez les vidéos à chaque début de chapitre pour comprendre pourquoi les concepts abordés sont importants.
+
+Lisez le texte en dessous et suivez les vidéos de démonstration pour savoir comment vous pouvez passer de la théorie à la pratique.
+
+Profitez de chaque occasion de tester vos acquis, notamment aux sections “À vous de jouer”, en faisant une pause dans le cours pour vous entraîner de votre côté. N’hésitez pas également à reproduire pas à pas ce que vous voyez dans les vidéos de mise en pratique.
+
+Vous êtes prêt ? Allez, c’est parti !
+
+Identifiez les opportunités d’utiliser Power BI
+
+Identifiez des cas concrets pour utiliser Power BI
+Que vous soyez :
+
+contrôleur de gestion ;
+
+gestionnaire de planification ;
+
+chef de projet ;
+
+RH ;
+
+ou encore consultant…
+
+… une chose est sûre : la manipulation des données numériques a de plus en plus d’importance dans notre quotidien.
+
+Cela s’explique en partie par :
+
+l’attention accrue des dirigeants aux coûts de production dans un contexte de resserrement des marges ;
+
+la multiplication des obligations de reporting vis-à-vis des salariés, de l’administration ou des investisseurs ;
+
+le rythme des transformations des entreprises qui s’accélère et pour lesquelles, disposer d’informations fiables sur l’organisation est essentiel.
+
+Ainsi, de nombreux rôles du type "Chargé de reporting" ou "Data Analyst" se développent dans les entreprises, au sein des départements métiers (services Client, Opérations, RH…).
+
+Cependant, force est de constater que peu de formations préparent aux problématiques que l'on peut rencontrer au quotidien, et qui sont généralement un casse-tête sur Excel…
+
+Découvrons ensemble les quatre problématiques que j'ai le plus rencontrées dans ma pratique professionnelle.
+
+Problématique n° 1 : réconcilier les données
+“Jean-Luc, est-ce que tu peux me sortir une extraction de toutes les femmes de la direction Logistique qui ont eu une évaluation de performance très bonne ou exceptionnelle, mais qui n’ont eu que 1 % d’augmentation sur les 5 dernières années ? C’est urgent pour répondre à une question d’un élu du personnel qui nous accuse de discrimination envers les femmes. Il dit avoir plusieurs noms de salariées lésées." 
+
+Si ce type de demande du vendredi soir à 17 h vous rappelle des souvenirs de sueurs froides, vous êtes au bon endroit !
+
+Cette “simple” demande (tout à fait légitime) imposerait à la plupart des RH un travail monstre pour réconcilier plusieurs bases de données qui ne se parlent pas nécessairement (évaluation de la performance, rémunération, organisation). De plus, la plupart des RH n’utilisent pas, en général, d’autres outils qu’Excel pour faire de l’analyse.
+
+Bref, votre vendredi soir est fichu… 😱
+
+Excel permet effectivement de faire de l'analyse, mais seulement si le modèle de données est simple et structuré ! Dans le cas évoqué ci-dessus, un outil comme Power BI serait beaucoup plus adapté pour répondre au problème, car il permet de construire des modèles de données complexes.
+
+Problématique n° 2 : travailler à l’échelle
+"Jean-Hakim, on réfléchit à faire une promotion sur nos viennoiseries dans tous les espaces boulangerie de nos hypermarchés pour booster le volume des ventes : 5 achetées, 1 offerte, pas mal, hein ? Mais on hésite sur le seuil à fixer pour la promotion. Tu peux nous donner le nombre de viennoiseries achetées en moyenne par personne sur le mois écoulé en France ? Je ne veux pas te mettre de pression, mais si tu pouvais sortir ces chiffres d’ici ce soir, ce serait parfait."
+
+Lorsqu’on travaille dans un grand groupe, les bases de données à consulter peuvent contenir des centaines de milliers de lignes, voire des millions ! Là aussi, difficile de s’en sortir avec Excel…
+
+Problématique n° 3 : nettoyer les données
+"Jeanne-Marie, pour la énième fois je t’ai demandé la liste des fournisseurs auxquels on commande plus de 100 000 euros de produits par mois, pour renégocier les contrats et baisser nos coûts d’achats. Peux-tu m’expliquer pourquoi je constate encore des erreurs dans le fichier que tu m’as fourni ? Tu ne sais pas te servir de ton ordinateur ?"
+
+Lorsque les données sont manipulées par des collaborateurs et plusieurs services (Achats, Logistique, Réclamation…), il arrive fréquemment que l’on retrouve dans les bases de données des erreurs sur :
+
+les noms (accents oubliés, homonymes) ;
+
+les adresses ;
+
+les références produit ;
+
+le point de contact dans l’entreprise ;
+
+et parfois même, certaines données sont manquantes… 
+
+Dans ces cas-là, on perd un temps fou à nettoyer les données, et il est difficile de ne pas se tromper quand on doit faire des regroupements.
+
+Problématique n° 4 : maîtriser le périmètre des données (alias "Le classique")
+“Jeanne-Aya de la finance me dit que tes chiffres RH sur l’effectif dans l’entreprise sont faux, ils ne trouvent pas la même chose au contrôle de gestion.”
+
+Si j’avais touché 1 € à chaque fois que j’ai entendu cette phrase…. 😅
+
+Plusieurs facteurs peuvent en être la cause. Par exemple, la finance ne compte peut-être pas les collaborateurs en congé sabbatique (qui ne sont donc plus rémunérés par l’entreprise).
+
+Beaucoup de temps peut être perdu dans ce type d'échanges, lorsqu’on ne maîtrise pas bien ses données !
+
+Voyons alors comment le concept de Business Intelligence s’est développé pour répondre à ces problématiques !
+
+Découvrez ce qui se cache derrière le terme de Business Intelligence
+La Business Intelligence (souvent abrégée en "BI") est un domaine d'expertise qui consiste à utiliser des données afin d’améliorer les prises de décision au sein des organisations. De nombreux outils, comme Power BI, permettent d'en faire.
+
+Concrètement, cela peut servir par exemple à :
+
+analyser les comportements des clients pour construire de nouvelles offres ;
+
+identifier les facteurs clés influençant les délais de production d’une pièce en atelier, pour mieux les maîtriser ;
+
+calculer le risque de démission des meilleurs employés selon la politique salariale ;
+
+mesurer l’impact de projets sur la performance économique de l'entreprise.
+
+Mais attendez, on n'a quand même pas attendu l'arrivée de la Business Intelligence pour réfléchir à ces questions en entreprise, si ?
+
+Eh non, vous avez raison !
+
+Le recueil de données pour analyser la performance de l’entreprise se pratiquait d'ailleurs déjà dans l’Antiquité en Grèce ou en Égypte, et la tenue de livres de comptes a été théorisée par Luca Pacioli en 1493…
+
+Le concept "moderne" de Business Intelligence, lui, est beaucoup plus récent…
+
+Retraçons un peu l'histoire de la Business Intelligence :
+
+Années 1950
+Les bases de données sont largement organisées sous forme de hiérarchie.
+
+Exemple : L’Europe est un continent avec X pays. Dans chaque pays, il y a Y banques, avec Z clients…
+
+Cela ne permettait pas de modéliser des relations complexes…
+
+Exemple : "J’ai des amis, qui ont des amis, qui peuvent être amis entre eux ou avec moi."
+
+La hiérarchie ne fonctionne pas dans ce cas.
+
+Années 1970
+IBM crée le système R qui permet de gérer et d’interroger de larges bases de données grâce au langage SQL. Les bases de données relationnelles sont nées. Les données sont organisées par domaine fonctionnel. Des modélisations riches et complexes sont désormais permises, mais les requêtes sont plutôt lentes.
+
+Années 1990
+Une révolution arrive avec le traitement analytique en ligne (OnLine Analytical Processing – OLAP) qui permet de réaliser à la volée des requêtes complexes.
+
+Exemple : "Affiche-moi la somme du chiffre d’affaires réalisé avec les 5 plus gros clients de la banque."
+
+Facile à énoncer mais difficile à calculer, car il faut classer les clients d’abord, puis sommer...
+
+Grâce à cela, les managers disposent enfin d’outils d’aide à la décision rapides et très simples à utiliser.
+
+Aujourd’hui
+Le SQL est supplanté par les bases de données NoSQL qui permettent de requêter rapidement des bases de données gigantesques, ce qu’on appelle communément le Big Data.
+
+En bref, ce qui change aujourd’hui avec la Business intelligence, c’est que :
+
+La transformation des entreprises s’accélère (réorganisation pour gagner en efficacité, réduction des délais de lancement de nouveaux produits, etc.).
+
+La capacité de stockage des données numériques est immense.
+
+La puissance de calcul disponible pour exploiter toutes ces données est très rapide et représente un faible coût.
+
+Les outils sont désormais accessibles à un public plus grand (self-service BI).
+
+Ce qui fait que la BI peut être utilisée à tous les niveaux de l’entreprise : du comité exécutif (tableau de bord stratégique) aux utilisateurs métiers (suivi d’activité).
+
+De plus, l’information est de moins en moins stockée dans des serveurs sur les sites d’implantation de l’entreprise. Elle est désormais dans le cloud, chez des hébergeurs comme Microsoft Azure, Amazon Web Services ou Google Cloud Platform, qui incluent même dans leurs offres des services de BI et de « Machine Learning » (apprentissage statistique automatisé).
+
+Tout cela est passionnant, mais attention : les outils de Business Intelligence ont leurs propres limites… Ils restent des outils !
+
+L’analyse relève toujours du jugement humain et du bon sens, issus de l’expérience.
+
+Image du site XKCD, conclusion surréaliste d'un analyste en business intelligence qui explique à une jeune mariée que si on extrapole la courbe de nombre de maris (0 l'an passé, 1 cette année), elle devrait avoir de nombreux maris dans quelques anné
+Image du site XKCD – Conversation entre un analyste BI et une jeune mariée
+Découvrez Microsoft Power BI
+Dans ce cours, nous allons réaliser un tableau de bord avec l’outil Power BI.
+
+Logo de Microsoft Power BI
+Logo de Microsoft Power BI
+Comme la plupart des outils de Business Intelligence, Power BI permet de :
+
+Consolider les différentes sources, nettoyer, transformer et agréger les données.
+
+Définir les indicateurs clés (KPI) utiles à l’entreprise.
+
+Mettre en forme des analyses via des tableaux de bord visuels.
+
+Partager de l’information aux différents groupes d’utilisateurs.
+
+Power BI se décline en deux composants clés : Power BI Desktop et Power BI Service (Power BI Online, en anglais).
+
+Power BI Desktop permet de préparer, modéliser, visualiser les données. Power BI Service permet de partager des données.
+Étapes d'utilisation de Power BI Desktop et de Power BI Service
+Power BI Desktop est une application gratuite qui s’installe sur l’ordinateur (PC uniquement), et qui permet de créer des tableaux de bord visuels et dynamiques.
+
+Power BI Service/Online est une fonctionnalité payante qui sert essentiellement à collaborer avec vos collègues, et partager votre dashboard à des utilisateurs en mode lecture. 
+
+En résumé
+La Business Intelligence, c’est l’utilisation des données pour améliorer les prises de décision au sein des organisations.
+
+Microsoft Power BI est à privilégier à Excel quand vous devez réconcilier différents fichiers de données à mettre en forme.
+
+Microsoft Power BI est principalement composé d’un logiciel de bureau (Power BI Desktop) et d’un espace cloud (Power BI Service).
+
+Dans le chapitre suivant, nous allons voir comment collecter les données utiles pour créer votre dashboard !
+
+Collectez les données utiles pour votre dashboard
+
+Découvrez les principales sources de données en entreprise
+Les entreprises de taille intermédiaire et au-delà sont dotées de bases de données où sont stockées toutes les informations utiles à l’entreprise sur ses clients, ses transactions et ses opérations.
+
+Ces entreprises disposent même souvent de bases de données dédiées à l’analyse : les entrepôts de données, qui offrent des capacités de requêtes rapides, et dans lesquels les données de différentes applications sont regroupées par domaine fonctionnel pour faciliter la Business Intelligence.
+
+Si vous travaillez pour votre commerçant de quartier, disons votre fleuriste, et qu’il ne dispose pas de données numériques, il sera plus difficile de faire de la Business Intelligence. 😄
+
+Tour d’horizon des principales sources de données :
+
+ Catégories
+
+Source de données
+
+Exemples de types de données
+
+Ressources humaines
+
+Les SIRH (systèmes d’information de gestion des ressources humaines). Exemples :
+
+SAP SuccessFactors
+
+Workday (en grande entreprise)
+
+données personnelles des salariés (voire des sous-traitants)
+
+emplois et compétences
+
+organigramme
+
+gestion des temps et plannings
+
+rémunération
+
+notes de frais
+
+Finance
+
+Un ERP (Entreprise Resource Planning). Exemples :
+
+SAP
+
+Oracle (en grande entreprise)
+
+des progiciels spécialisés
+
+centre de profits/coûts
+
+historique des dépenses/revenus par poste comptable…
+
+Client
+
+Un CRM (Logiciel de gestion client). Exemple : 
+
+Salesforce
+
+Coordonnées des clients :
+
+noms
+
+adresses de contact
+
+adresse de facturation…
+
+ 
+
+Historique de la relation commerciale :
+
+volume d'affaires
+
+commandes…
+
+Données opérationnelles 
+
+Base de données opérationnelles.
+
+Plusieurs progiciels de niche par secteur d’activité, ou dans des solutions logicielles développées par l’entreprise elle-même.
+
+données d’inventaire, comme le nombre de sièges disponibles à la vente sur un trajet aérien pour Air France
+
+données opérationnelles, comme le suivi de l’état de production des véhicules dans une usine PSA en France
+
+Il est important de savoir qu’une multitude de données extérieures à l’entreprise vous seront probablement utiles dans vos projets, et la bonne nouvelle c’est qu’elles sont souvent facilement accessibles.
+
+Exemple :
+
+Si vous travaillez en finance dans une entreprise internationale, la valeur du taux de change des transactions financières entre plusieurs devises vous sera nécessaire pour calculer un résultat financier dans une seule devise (euro, dollar…). Vous pouvez obtenir ces données sur Internet :
+
+en les téléchargeant (par exemple sur le site de Yahoo Finance) et en les important manuellement, ou via un site interne à l’entreprise comme SharePoint ;
+
+en interrogeant automatiquement des flux de données sur le Web.
+
+D’autres données externes utiles peuvent être trouvées sur le site de l’Insee ou sur le portail des données publiques.
+
+Intégrer toutes ces données est possible à travers Microsoft Power BI.
+
+Créez de nouvelles données
+Comment je fais si je ne dispose pas de données pour ma problématique ? 
+
+Prenons un exemple :
+
+Votre entreprise est en crise… À cause d'une pression incessante et de mauvaises conditions de travail, vos meilleurs talents démissionnent en masse et d'autres sont en burn-out. On vous nomme chef de projet RH en charge de la qualité de vie au travail (QVT). Votre mission est d'améliorer les conditions et l’environnement de travail, ainsi que l’équilibre "vie pro/vie perso".
+
+Comment collecter les données utiles pour faire le bilan de la situation actuelle, et mesurer l’efficacité d'un plan d’action ?
+
+Dans les systèmes d’information, vous ne trouverez pas de données sur la perception qu’ont les salariés des conditions de travail…
+
+Mais heureusement, vous pouvez créer vos propres données en mettant en place une enquête, par exemple. Vous pouvez envoyer un questionnaire tous les trimestres grâce à Microsoft Forms si vous disposez d’une licence via Office 365.
+
+Soyez créatif, toutes les informations peuvent être collectées, de façon directe ou indirecte, et transformées en données numériques pour vos besoins d’analyse/reporting.
+
+Attention toutefois aux règles de sécurité applicables lorsque vous récupérez des données personnelles. Nous verrons cela dans le prochain chapitre.
+
+Un seul conseil pour ces situations, anticipez vos axes d’analyse !
+
+En effet, si vous créez un questionnaire, vos possibilités d’analyse ne seront pas les mêmes pour :
+
+une note sur une échelle de 1 à 10 sans commentaire, par exemple ;
+
+une question ouverte avec un texte à remplir, totalement libre ;
+
+ou encore une question à choix multiples avec des réponses préétablies… 
+
+Prenez le temps de réfléchir :
+
+À l’information que vous souhaitez collecter.
+
+Au format nécessaire pour procéder à son exploitation.
+
+Cela vous fera gagner du temps dans vos analyses.
+
+À vous de jouer !
+A vous de jouer
+À vous de jouer
+Vous êtes consultant en mission pour le centre d’appel de “Téléphonie Performance”. Cette entreprise fait de la prospection commerciale par téléphone, en appelant des particuliers directement sur leur mobile pour leur proposer des offres, comme changer de contrat d'électricité, ou changer d’assurance automobile… Vous savez, ces fameux appels que vous recevez régulièrement avec des numéros que vous ne connaissez pas ! 😄
+
+Votre client (le centre d’appel) fait actuellement face à de sérieux problèmes de manque de ressources, dus à un absentéisme important dans les équipes. On vous a confié la mission d’en comprendre la cause pour proposer un plan d’action.
+
+Dans cette situation, quelle pourrait être selon vous la source de données utiles à utiliser pour comprendre l'absentéisme important des employés, et pourquoi ?
+
+Données RH.
+
+Données financières.
+
+Données clients.
+
+Données d’inventaire.
+
+Données opérationnelles.
+
+Prenez quelques minutes pour réfléchir avant de regarder la réponse ci-dessous !
+
+Vous êtes prêt ? OK.
+
+Eh bien... en réalité c’était une question piège (😈 Héhéhé rire diabolique).
+
+Il n’y a pas une seule bonne réponse à cette question, mais des réponses plus probables que d’autres qu’il faudra valider sur le terrain !
+
+Réponse 1 : Données RH
+On peut facilement imaginer que pour analyser le problème d’absentéisme vous ayez besoin… des données d’absentéisme !! C’est-à-dire l’historique des absences des collaborateurs du centre d’appel afin d’effectuer des statistiques, par exemple pour identifier des périodes de l’année plus soumises que d’autres à ces effets.
+
+Réponse 5 : Données opérationnelles
+Il est fort probable que des données opérationnelles soient également utiles :
+
+les plannings d’activité ;
+
+et le volume d’appels à réaliser par jour par agent...
+
+… sont de bons indicateurs de la charge de travail des agents.
+
+Il est possible qu’une augmentation de cette charge ait dégradé les conditions de travail et qu’elle soit la cause de l’absentéisme important.
+
+Mais alors, quid des autres données ?
+
+Prenons l’exemple des données financières…
+
+Dans notre cas, il est peu probable que les données financières (chiffre d'affaires, dépenses de fonctionnement…) soient directement corrélées à l’absentéisme des opérateurs.
+
+Cependant, imaginez un cas où le centre d’appel utilise de la main d’œuvre intérimaire, et que celui-ci ait baissé le volume de cette main d’œuvre sur les derniers mois. À travers les dépenses de fonctionnement, vous pourriez peut-être observer une corrélation entre ces effets.
+
+Imaginez encore que… votre enquête terrain vous amène à constater que les secteurs où des primes sont allouées pour chaque contrat vendu font face à un absentéisme diminué de moitié… enseignement intéressant pour le plan d’action, n'est-ce pas !
+
+Pour résumer, rappelez-vous que la Business Intelligence et les données ne vous fournissent que des axes d’analyse.
+
+Votre réflexion doit toujours s’appuyer :
+
+Sur une compréhension de la réalité du terrain.
+
+Et sur du bon sens !!
+
+En résumé
+Dans les entreprises de taille moyenne et plus, les données sont disponibles dans des bases de données.
+
+Il est possible d’utiliser des données externes sur le Web pour vos besoins d’analyse.
+
+Lorsqu’aucune donnée n’existe, collectez de nouvelles données vous-même, par exemple via des sondages.
+
+Il faut croiser les données de plusieurs sources différentes afin d’offrir des axes d’analyse nouveaux !
+
+Dans le chapitre suivant, nous allons voir tout ce que vous pouvez faire pour protéger les données sensibles de votre entreprise et de vos utilisateurs.
+
+Protégez les données sensibles de votre entreprise
+
+Prenez conscience des risques associés à la perte de données
+Le 12 juillet 2015, les salariés de l’entreprise Ashley Madison, un site de rencontre en ligne pour personnes mariées dont le slogan est « la vie est trop courte, vivez l’expérience d’un adultère » :waw:, découvrent une surprise en arrivant au bureau et en allumant leur ordinateur. La musique "Thunderstruck" du groupe AC/DC retentit à fond dans leurs hauts-parleurs, tandis que leur écran affiche un message leur ordonnant de fermer le site web de l’entreprise d’ici 30 jours, sous peine d’une divulgation massive des données de leurs clients et de leurs salariés.
+
+Ils sont victimes d’une cyberattaque d’un groupe de hackers qui leur reprochent leur immoralité et leurs mensonges sur la prétendue protection totale des données de leurs clients. 30 jours après, l’entreprise n’a pas fermé son site web et mène l’enquête sur les données supposément dérobées, avec l’aide de la police et de consultants en cybersécurité.
+
+Le 18 août 2015, les hackers passent donc à l’action. Au fil des jours, 20 Go de données confidentielles sont diffusées. Parmi celles-ci, des données des salariés (identité, documents internes, e-mails des dirigeants qui montrent des activités illégales de fraude fiscale et de piratage des concurrents…) et des clients (photos compromettantes, montants dépensés sur la plateforme, préférences sexuelles et même numéros de carte bleue que l’entreprise n’avait pas le droit de stocker dans ses bases de données !).
+
+Finalement, les hackers ont déclaré que la sécurité des mots de passe avait été un point faible qu’ils avaient exploité. En effet, l’audit de sécurité réalisé par des consultants a révélé que pour un nombre significatif de salariés et d’utilisateurs, le mot de passe était tout simplement “123456”… Résultat des courses : plus de 30 millions de dollars à rembourser par l’entreprise aux utilisateurs dont les données ont été volées, certains ayant subi des conséquences très malheureuses comme le piratage de leur carte bleue, la découverte de leurs activités extraconjugales, et du chantage car leurs données étaient accessibles à tous sur Internet.
+
+Aujourd’hui encore, 88 % des pertes de données sont liées à des mauvaises pratiques de salariés des entreprises ciblées par les cyberattaques. Ces mauvaises pratiques exposent les entreprises à des risques d’image, de perte de clients/revenus, et de sanctions financières.
+
+Il est donc essentiel de suivre un certain nombre de bonnes pratiques lorsque vous manipulez des données !
+
+Comprenez les règles à suivre lorsque vous détenez des données sensibles
+Si, pour votre projet, vous comptez utiliser des données sensibles comme des données :
+
+personnelles sur les clients et/ou les salariés ;
+
+financières (notamment pour les sociétés cotées en bourse) ;
+
+et/ou confidentielles sur le fonctionnement de l’entreprise,
+
+prenez le temps d'observer ces bonnes pratiques :
+
+Sécurisation
+
+Utiliser des mots de passe sécurisés.
+
+Mettre en place une gouvernance autour de la gestion des données.
+
+Revoir fréquemment les accès et habilitations aux données.
+
+Auditer les prestataires et partenaires ayant accès à vos données, sur leurs systèmes de conformité.
+
+Chiffrer les données sensibles afin de limiter leur accès.
+
+Anonymiser.
+
+Conservation
+
+Ne pas conserver les données personnelles au-delà des limites légales (entre 2 et 5 ans en fonction des données, selon le Règlement général pour la protection des données : le RGPD).
+
+De façon générale, supprimer les données dont vous n’avez plus besoin.
+
+Information
+
+Informer les utilisateurs sur leurs droits de consultation et de modification des données, ainsi que sur les traitements réalisés sur leurs données (opérations, destinataires, durée de conservation, etc.).
+
+Informer également les relais à la protection des données dans votre entreprise.
+
+La Commission nationale Informatique et Libertés (CNIL) tient à disposition des conseils précieux sur les bonnes pratiques à tenir.
+
+Identifiez les personnes à contacter dans votre environnement
+Il est indispensable de connaître quelques interlocuteurs clés de la gestion des données en entreprise :
+
+Le responsable de la sécurité des systèmes d'information (RSSI) : c’est le gardien de la sécurisation des données de l’entreprise. Il est souvent rattaché à la direction générale.
+
+Le Chief Data Officer (CDO) : il a pour responsabilité la gouvernance et la qualité du traitement des données de l’entreprise. Il conseille les directions métiers sur le stockage, le traitement et la sécurisation de leurs données pour les valoriser. 
+
+Le Data Protection Officer (DPO) : mis en place par le Règlement général sur la protection des données (RGPD), il a un rôle juridique, et participe à la cartographie des données internes, à la sensibilisation aux bonnes pratiques, et aux audits sur la gestion des données.
+
+Imaginons que vous travailliez comme Data Analyst dans une entreprise de location de voitures. Vous avez demandé à votre collègue Jean-Rodrigo du service commercial de vous envoyer la liste des clients les plus importants de l’entreprise, afin que vous puissiez analyser s’ils seraient susceptibles d’opter pour le nouveau service de l’entreprise : un abonnement mensuel avec location illimitée de voitures (trop bien !).
+
+Comme c’est un fichier volumineux qui ne passe pas en pièce jointe de mail, il vous propose de vous l’envoyer en utilisant un service gratuit de transfert de fichiers par Internet.
+
+À quels risques êtes-vous exposé en cas de vol des données clients lors de cette opération ? 😱
+
+Réponse A :  Se faire enguirlander par le RSSI de votre entreprise.
+
+Réponse B : La perte des clients les plus importants de l’entreprise, et un impact négatif durable sur la marque de l’entreprise.
+
+Réponse C : Une amende de 4 % du chiffre d’affaires, ou 20 millions d’euros.
+
+Vous l’aurez compris, les bonnes réponses sont les réponses A,B.... et C !
+
+Soyez très attentif au suivi des bonnes pratiques de gestion des données en votre possession dans le cadre de vos projets.
+
+En résumé
+88 % des pertes de données sont liées à des mauvaises pratiques de salariés des entreprises ciblées par les cyberattaques.
+
+Informer les utilisateurs du traitement fait de leurs données, sécuriser les données, et supprimer les données dont on n'a plus besoin, font partie des pratiques à respecter.
+
+Informer votre CDO et le DPO de l’utilisation que vous faites des données dans vos projets est essentiel.
+
+Le vol de données personnelles expose votre entreprise à une amende de 20 millions d’euros.
+
+Dans le chapitre suivant, vous allez découvrir le cas pratique que vous suivrez jusqu'à la fin du cours, il vous aidera à avancer étape par étape !
+
+Organisez votre projet de dashboard
+
+Dans ce cours, je suis dans la peau d’un consultant freelance contacté par un nouveau client, un réseau d’agences bancaires historique, spécialisé en banque de détail : le Crédit Breton.
+
+Logo du Crédit Breton
+Logo du Crédit Breton
+Les collaborateurs du Crédit Breton constatent que :
+
+La qualité des dossiers de prêts immobiliers accordés diverge au sein du réseau.
+
+Les délais de prise de décision sur l’accord ou le rejet des prêts sont beaucoup trop longs.
+
+Mon interlocutrice, récemment nommée cheffe de projet, s’appelle Jeanne ; elle souhaite me proposer une mission, mais ne sait pas comment démarrer.
+
+Découvrez le cadrage de mon projet avec Jeanne
+Jeanne m’appelle pour me parler de son projet…
+
+Prêtez attention aux questions que je lui pose afin de cerner ses besoins.
+
+Voici notre conversation, prenez des notes pour essayer d'analyser sa demande ! 😉
+
+
+Comme vous l'aurez peut-être remarqué, le discours de Jeanne est parfois confus ou hésitant. C'est normal, et c'est le cas dans la grande majorité des projets de ce type.
+
+Votre rôle est d'éclaircir la situation et de comprendre ce qui est attendu en posant des questions. Cela permet également à votre interlocuteur d'y voir plus clair.
+
+En bref, l’objectif de Jeanne est double :
+
+Réduire les délais de prise de décision sur l’accord des prêts.
+
+Améliorer la qualité des dossiers de prêt validés.
+
+Elle décrit plusieurs acteurs sur la chaîne de décision des prêts :
+
+les conseillers bancaires en agence qui n’ont pas d’outils pour prendre des décisions à l’heure actuelle, et se basent sur leur expérience ;
+
+le directeur d’agence qui peut confirmer ou infirmer une décision de l’un de ses conseillers ;
+
+la cellule centrale d’étude des prêts immobiliers, qui a le dernier mot mais croule sous les demandes.
+
+Jeanne évoque que la cause racine du délai de prise de décision est la multiplicité des données à étudier pour accorder ou refuser un prêt immobilier :
+
+la situation professionnelle des emprunteurs (catégorie socioprofessionnelle, statut d’emploi, régularité des revenus, et montants) ;
+
+la situation familiale des emprunteurs (leur âge, le nombre de personnes à charge) ;
+
+le montant de l’apport personnel ;
+
+le niveau d’endettement (de sorte à ne pas excéder 33 % des revenus) ;
+
+la capacité d’épargne des emprunteurs (le reste à vivre).
+
+Toutes ces données sont dans des bases de données « qui ne se parlent pas », et tout le travail est fait dans la tête des conseillers bancaires, et à la main par la cellule centrale.
+
+Après ce premier échange téléphonique, j'ai validé avec Jeanne que le développement d’un dashboard pourrait être une solution intéressante. Celui-ci permettrait aux conseillers bancaires de consulter un « score de crédit immobilier » de leurs clients, et ainsi de savoir en quelques clics si le prêt immobilier est envisageable. Cela permettrait de gagner un temps précieux dans l’évaluation des dossiers, et de ne transmettre que des dossiers de qualité à la cellule centrale d’étude des prêts.
+
+Pourquoi est-ce un cas d’application des outils de Business Intelligence ?
+
+La problématique soulevée par Jeanne fait écho à celles évoquées précédemment.
+
+Rappelez-vous :
+
+Réconcilier des données : Pour résoudre l’enjeu du Crédit Breton, il va me falloir réconcilier toutes les informations du processus de décision évoquées par Jeanne (situation professionnelle, situation familiale, montant de l’apport…) dans un tableau de bord pour calculer un score de prêt immobilier ; c’est la force principale des outils de Business Intelligence.
+
+Travailler à l’échelle : On imagine qu’un réseau bancaire comme le Crédit Breton gère plus d’un million de clients (les vingt premières banques de détail en France gèrent entre 1 et plus de 30 millions de clients chacune). Il nous faudra travailler avec un volume de données conséquent pour fournir un score de prêt immobilier à chacun. 
+
+Nettoyer des données : Jeanne évoque des enjeux de nettoyage de données à automatiser pour faire le lien entre les tables distinctes.
+
+Ces 3 conditions réunies font de notre problématique un excellent cas d’application pour utiliser Microsoft Power BI.
+
+Méfiez-vous des solutions toutes faites
+Attention, ne vous jetez pas à l’eau sans vous être préparé, au risque de vous noyer !
+
+Il y a des pièges dans lesquels on tombe rapidement, il s'agit d'y faire attention, et d'éviter de passer par les pratiques suivantes :
+
+Ajouter un nouvel outil en marge des usages actuels de l’entreprise.
+
+Ne pas avertir le client assez tôt des risques liés à la mauvaise qualité ou à la mauvaise gestion des données.
+
+Travailler « en chambre » sur l’analyse du besoin des utilisateurs finaux.
+
+Livrer votre tableau de bord au client en ayant coché toutes les cases de la spécification technique, mais sans personne capable de l’utiliser et de le maintenir.
+
+Appliquez les bonnes pratiques pour cadrer votre projet
+Avant de se lancer dans un projet de développement du dashboard, voici quelques bonnes pratiques incontournables que j’utilise. Elles sont applicables quelle que soit la méthode projet utilisée (PMI, SCRUM, Design Thinking).
+
+Bonne pratique n° 1 : Rencontrer les utilisateurs finaux
+Prenez le temps d’aller auprès des utilisateurs finaux pour comprendre :
+
+La façon dont ils travaillent au quotidien.
+
+Comment votre projet peut servir leur besoin.
+
+Ainsi, on est sûr de partir du bon pied !
+
+Bonne pratique n° 2 : Réunir les parties prenantes
+Organisez un atelier de cadrage avec les représentants de chacun des groupes d‘utilisateurs et votre client, pour cadrer les travaux avant de les démarrer.
+
+Lors de cet atelier, vous pourrez partager la synthèse des entretiens avec les utilisateurs finaux, et les éléments du cadrage initial du client.
+
+L’objectif est de s’assurer que l’ensemble du groupe est aligné sur :
+
+le périmètre du projet ;
+
+les critères de succès ;
+
+l’organisation du projet ;
+
+et le planning.
+
+Bonne pratique n° 3 : Réaliser des User Stories
+Pendant l’atelier de cadrage, demandez à chaque membre du groupe de faire des « User Stories ». Il s’agit des besoins fonctionnels exprimés sous la forme d'un cas d'usage pour les futurs utilisateurs.
+
+Voici la User Story que j’ai réalisée dans le cadre de mon projet de prêt bancaire avec Jeanne :
+
+Cette User Story est complétée selon le modèle précédent : En tant que Directeur d’agence bancaire, je veux visualiser l’ensemble des demandes de prêts immobiliers en attente dans mon agence afin de piloter le planning d'activité de mon équipe
+User Story pour Jeanne
+Le recueil des besoins fonctionnels sous cette forme permet d’indiquer clairement le bénéficiaire des fonctionnalités et la valeur métier recherchée.
+
+On évite également l’expression d’une solution en lieu et place du besoin.
+
+Exemple : Je veux un histogramme avec le nombre de prêts en attente par semaine de retard.
+
+Il y a plusieurs façons de répondre à un même besoin, et nous souhaitons garder le champ libre à ce stade. Aussi, il est impossible de :
+
+raccrocher le besoin au groupe d’utilisateurs lorsqu’il est formulé ainsi ;
+
+prioriser le développement de cette fonction par rapport à une autre qui apporte peut-être davantage de valeur.
+
+Avant de passer à l’étape suivante, il faut prioriser car vous aurez souvent des dizaines de User Stories à développer :
+
+Quelles User Stories apportent le plus de valeur ?
+
+Lesquelles pensez-vous pouvoir développer avant le prochain point d’étape ?
+
+Bonne pratique n° 4 : Aider le groupe à se projeter via des illustrations
+Profitez de l’atelier de cadrage pour montrer des illustrations de dashboards similaires.
+
+Le plus dur pour vos futurs utilisateurs dans la phase de cadrage est de projeter ce qu’ils feront avec votre dashboard, alors qu’ils n’en ont jamais vu !
+
+De nombreux exemples de dashboards peuvent être retrouvés directement sur la plateforme de Microsoft.
+
+Bonne pratique n° 5 : Prototyper la solution avec un wireframe
+Dans cette dernière étape de l’atelier de cadrage, que j’affectionne particulièrement, on propose au groupe de dessiner avec votre aide les éléments du tableau de bord idéal, avec un feutre et un papier format A1 ou A0.
+
+Suite à l’atelier de cadrage réalisé avec le Crédit Breton, nous avons listé les User Stories qui correspondent aux besoins identifiés :
+
+Conseiller bancaire 
+
+(CB)
+
+User Story 1 : En tant que CB, je veux pouvoir visualiser les demandes de prêts non traitées sur mon agence, pour prioriser mon activité.
+
+User Story 2 : En tant que CB, je veux visualiser toutes les caractéristiques du client (situation familiale, professionnelle, apport…), pour me faire mon avis sur le potentiel de l’emprunteur.
+
+User Story 3 : En tant que CB, je veux disposer d’une aide à la décision rapide, pour savoir si je dois accepter ou refuser la demande de prêt immobilier.
+
+Directeur d’agence 
+
+(DA)
+
+User Story 4 : En tant que DA, je veux pouvoir être alerté des opérations immobilières de plus de 250 000 €, pour analyser les dossiers.
+
+User Story 5 : En tant que DA, je veux voir l’historique des opérations immobilières reçues et acceptées par mon agence, pour suivre si l’activité réalisée est conforme au prévisionnel.
+
+User Story 6 : En tant que DA, je veux pouvoir analyser la composition de mon portefeuille de prêts par catégorie socioprofessionnelle, pour suivre si notre positionnement est le bon.
+
+Cellule centrale d’accord des prêts 
+
+(CC)
+
+User Story 7 : En tant que CC, je veux la performance du réseau (montant moyen des opérations, taux de demandes de prêts acceptés), pour suivre si l’activité est conforme au prévisionnel.
+
+User Story 8 : En tant que CC, je veux suivre l’historique des opérations immobilières reçues, pour piloter l’activité au quotidien vis-à-vis des agences.
+
+User Story 9 : En tant que CC, je veux voir la performance des agences (taux de demandes de prêts acceptées, nombre de dossiers), pour intervenir auprès des agences qui sont sous-performantes en quantité et en qualité des dossiers.
+
+Cela nous a permis de dessiner ensuite une représentation basique du futur tableau de bord (wireframe).
+
+Un wireframe est une représentation visuelle simple qui permet de comprendre en un coup d'œil l'arborescence et la disposition des éléments d'un projet numérique.
+
+C'est quelque chose que l'on fait au début d'un projet nécessitant la conception d'une interface graphique et digitale. Cela permet de vérifier que tout le monde est aligné sur la direction qui va être prise.
+
+Le wireframe montre les 3 pages auxquelles on peut accéder depuis la page d'accueil : la page des indicateurs globaux, la page de la performance des agence et la page des indicateurs et recherche. On y voit la répartition des user stories.
+Wireframe du tableau de bord
+Dans le cadre du projet pour le Crédit Breton, nous aurons une page d'accueil qui contient les consignes d'utilisation, et à partir de laquelle on pourra consulter 3 pages :
+
+La page des indicateurs globaux.
+
+La page de performance des agences.
+
+La page des indicateurs et de recherches.
+
+Ces pages seront créées pour répondre aux besoins. Comme vous pouvez le voir, elles prennent en compte les différentes User Stories.
+
+Bonne pratique n° 6 : Fixer des points d’étapes réguliers
+Évitez l’effet tunnel !
+
+Cela vous permettra de :
+
+valider étape par étape la réalisation du dashboard ;
+
+ne pas perdre des semaines de développement en vous apercevant trop tard qu’une hypothèse de départ était erronée.
+
+En résumé
+Prenez le temps d’aller auprès des utilisateurs finaux pour comprendre et collecter leur besoin.
+
+Documentez les fonctionnalités attendues en utilisant les User Stories.
+
+Organisez un atelier de cadrage pour aligner vos commanditaires sur le périmètre du projet et les critères de succès.
+
+Montrez des illustrations de dashboards pour permettre à vos commanditaires de se projeter sur le résultat final.
+
+C'est la fin de cette première partie, je vous propose un quiz avant de passer à la suite !
+
+Avez-vous une suggestion pour nous ?
+
+Réalisez votre premier rapport en quelques minutes
+
+
+Pour mon projet avec le Crédit Breton, Jeanne m'a partagé un échantillon des données pour le projet, ainsi qu’un glossaire des données.
+
+Avec cet échantillon, nous allons découvrir les principales fonctionnalités de Microsoft Power BI en créant un premier dashboard.
+
+Dans certains de vos projets, votre client vous demandera de vous connecter directement aux sources des données pour qu’elles se mettent à jour automatiquement (nous ne verrons pas cette partie dans ce cours).
+
+Dans ce chapitre, nous allons réaliser notre première visualisation en quelques minutes, en utilisant l’historique des demandes de prêt reçues par la banque (User Stories 5 et 8) :
+
+User Story 5 : En tant que directeur d'agence, je veux voir l’historique des opérations immobilières reçues et acceptées par mon agence, pour suivre si l’activité réalisée est conforme au prévisionnel.
+
+User Story 8 : En tant que cellule centrale, je veux suivre l’historique des opérations immobilières reçues, pour piloter l’activité au quotidien vis-à-vis des agences.
+
+La seule différence entre les deux étant que la cellule centrale a accès aux données de toutes les agences, tandis que les directeurs d’agence n’ont accès qu’à leur agence.
+
+Téléchargez Power BI et importez des données
+Première étape à réaliser pour développer notre dashboard : télécharger Power BI Desktop depuis le site de Microsoft. Laissez-vous guider en suivant les instructions, et vous devriez être prêt à démarrer en quelques minutes.
+
+Microsoft Power BI est mis à jour chaque mois avec de nouvelles fonctionnalités demandées par la communauté des utilisateurs. Prenez le temps de suivre ces mises à jour de temps en temps, et de mettre à jour votre logiciel.
+
+Une fois le logiciel installé, je vous invite à créer un répertoire local sur votre ordinateur. Par exemple, dans “Mes documents”, créez un dossier “Crédit Breton”, et placez-y les données du projet fournies par Jeanne.
+
+Sur la page d’accueil de Power BI, sélectionnez l’icône « Obtenir les données », puis choisissez Excel.
+
+Vous pourrez ensuite sélectionner les données transmises par Jeanne que vous avez téléchargées sur votre ordinateur, et faire votre premier tableau de bord, comme moi dans cette vidéo :
+
+
+Vous pouvez accéder à tout moment à vos données brutes dans l’onglet “Données”, à gauche de votre fenêtre Power BI. Dans cet onglet, vous pouvez trier et filtrer vos données pour y rechercher une valeur particulière.
+
+Sélectionnez une visualisation pour faire parler vos données
+Pour créer une visualisation dans Power BI, rien de plus simple : il vous suffit d’en choisir une à droite de votre écran dans la zone “Visualisation”, et de cliquer dessus.
+
+Pour notre exemple, nous allons utiliser le graphique en secteurs, aussi appelé camembert.
+
+Pour cela, après avoir sélectionné le type de graphique que je souhaite, je vais glisser, en maintenant le clic de la souris :
+
+“Montant opération” de la zone Champs vers le champ de données “Valeurs" ;
+
+“Date de demande” de la zone Champs vers le champ de données “Légende”.
+
+
+Bravo ! Vous avez réalisé votre premier rapport de données !
+
+Alors, ce n’était pas si difficile ! 😄
+
+Comme vous l’avez vu dans la vidéo, nous pouvons même filtrer ces données grâce à la zone Filtres, pour explorer nos données à un niveau de granularité plus fin. Cela nous permettra par exemple de visualiser les demandes par trimestre, par mois ou par jour.
+
+En résumé
+Importer des données dans Power BI est très simple, et de nombreux formats sont supportés.
+
+Prévisualisez vos données avant de les importer, et n’hésitez pas à passer par le Power Query Editor pour vérifier ou appliquer quelques transformations à vos données.
+
+Visualisez vos données sous forme de table dans l’onglet Données, à gauche de l’écran.
+
+Ajoutez vos visualisations à la zone de dessin en cliquant dessus, puis glissez vos données dans votre visualisation à partir de la zone des champs de données.
+
+Dans le chapitre suivant, nous allons voir comment créer une visualisation qui a de l'impact !
+
+Suivez les étapes clés pour une visualisation impactante
+
+Posez-vous les bonnes questions
+Vous avez importé les données de Jeanne. Super !
+
+Mais maintenant, si on prend quelques minutes pour observer les données rapidement et la première visualisation que l'on a réalisée, certaines questions peuvent émerger…
+
+La table des situations familiales des emprunteurs fournie par Jeanne contient des données personnelles, c'est normal ?
+
+Non, en effet ! Il nous faut supprimer ces colonnes dans le classeur car nous n’en avons pas besoin.
+
+J'en parlerai à Jeanne et je lui rappellerai de prévenir le délégué à la protection des données du Crédit Breton.
+
+Par ailleurs, dans le chapitre précédent nous avons choisi un graphique en secteurs pour visualiser les montants des opérations immobilières reçues par le Crédit Breton.
+
+Mais le choix du graphique en camembert est-il judicieux ? 
+
+Pas vraiment…
+
+Avec un graphique en secteurs, nous avons pu visualiser la distribution des prêts par leurs montants.
+
+Mais avec une autre visualisation, comme un histogramme empilé, par exemple, nous aurions pu visualiser sur un même graphique :
+
+la distribution des demandes de prêts par année
+
+ET 
+
+la répartition de ces montants entre les prêts accordés et les prêt refusés.
+
+Vous ne savez pas comment changer de visualisation ? Eh bien faisons-le ensemble !
+
+Sélectionnez votre graphique et cliquez sur la visualisation d’histogramme dans la zone des visualisations. Votre graphique en secteurs est remplacé instantanément par un histogramme empilé. 
+
+Ajoutez maintenant la dimension Accord dans le champ de données “Légende”.  Vous verrez que dans votre graphique, vous avez désormais les montants des opérations immobilières reçues par le Crédit Breton par année ET les montants accordés ou refusés.
+
+Cela permet d’offrir à vos utilisateurs plus d’informations utiles, et leur évite d’aller rechercher l’information des demandes de prêt refusées dans un autre graphique.
+
+
+Lorsque vous travaillez sur la conception de visualisations pour un tableau de bord, posez-vous toujours les questions suivantes :
+
+Quoi ?
+
+Pourquoi ?
+
+Comment ?
+
+Quoi : Quelles sont les données que votre utilisateur souhaite visualiser ?
+
+En fonction de celles-ci, vous ne vous choisirez pas le même type de visualisation.
+
+Pourquoi : Pourquoi votre utilisateur souhaite visualiser ces données ?
+
+Cette question a une incidence forte sur le choix de la visualisation et l'interaction que vous devez mettre en place. Souhaite-il identifier une tendance ? des corrélations entre des variables ? rechercher une valeur particulière ?
+
+Comment : Enfin, demandez-vous comment présenter les données à votre utilisateur.
+
+Souhaite-t-il les afficher triées ? filtrées ?
+
+Souhaite-t-il afficher tous les points de données, ou les agréger dans des groupes de valeurs ?
+
+Pour aller plus loin, je vous conseille la lecture de l’excellent livre Visualization Analysis & Design de Tamara Munzner.
+
+Repérez les pièges d’une mauvaise représentation des données
+Nous sommes constamment exposés à des données présentées de manière visuelle lorsque nous consommons de l’information : journal télévisé, presse papier, réseaux sociaux… Et pourtant, il n’est pas rare que celles-ci nous induisent à faire de mauvaises interprétations (intentionnellement ou non).
+
+Le site web WTF visualizations recense de nombreux exemples d'erreurs induites par une visualisation trompeuse. Parmi ceux que j'ai pu trouver, je vous ai sélectionné des cas typiques de mauvaises visualisations :
+
+Graphique en secteurs (camembert)
+Dans cet exemple, nous avons l’impression que les résultats de ce sondage au Nebraska sont pour la légalisation de la marijuana. Or, les chiffres nous indiquent le contraire...
+
+Graphique en secteurs trompeur
+Graphique en secteurs trompeur
+Bonnes pratiques :
+
+Veillez toujours à ce que les proportions soient respectées.
+
+Utilisez des légendes claires.
+
+Affichez les non-réponses pour ne pas laisser supposer que votre échantillon est complet.
+
+Graphique en courbes
+Dans l'exemple ci-dessous, le parti conservateur norvégien nous montre que les émissions de CO² ont diminué depuis son arrivée au pouvoir en 2013. Cependant, les années 2014 et 2016 ne sont pas représentées. Lors de ces années, les émissions n’avaient pas baissé...
+
+Graphique en courbes trompeur
+Graphique en courbes trompeur
+Bonnes pratiques :
+
+Utilisez un axe des ordonnées continu, ou affichez clairement le saut de données sur le graphique.
+
+Utilisez une légende !
+
+Histogramme
+Dans cet exemple, le parti indien au pouvoir nous montre qu’après deux fortes hausses du prix du pétrole (+20 % et +75 %), ils ont contenu la dernière hausse à +13 %. Cependant cela reste une hausse ! Le graphique laisse penser que le prix du pétrole a baissé presque de moitié, ce qui n’est pas le cas.
+
+Histogramme trompeur
+Histogramme trompeur
+Bonnes pratiques :
+
+Respectez les proportions sur vos visuels, même si les valeurs sont indiquées.
+
+Une flèche vers le bas sera interprétée par tous comme une baisse, faites attention à l’utilisation de ce type de formes sur vos graphiques.
+
+À vous de jouer !
+ 
+
+Le Crédit Breton souhaite se positionner comme partenaire privilégié des projets immobiliers des cadres et professions intermédiaires. Il souhaite vérifier que sur les dernières années, ce positionnement se vérifie dans les faits par une part grandissante de demandes de prêt reçues de ces catégories professionnelles (User Story 6) :
+
+User Story 6 : En tant que directeur d'agence, je veux pouvoir analyser la composition de mon portefeuille de prêts par catégorie socioprofessionnelle, pour suivre si notre positionnement est le bon.
+
+Répondez aux questions suivantes
+Question 1 : Quelles sont les données utiles pour réaliser cette visualisation parmi celles que vous avez ?
+
+Données des agences.
+
+Données des apports personnels.
+
+Données des demandes de prêt.
+
+Données des situations de famille.
+
+Données des situations professionnelles.
+
+Question 2 : Quel est le graphique le plus adapté pour cette visualisation ?
+
+Graphique en secteurs.
+
+Graphique en nuage de points.
+
+Histogramme.
+
+Graphique en courbes.
+
+Map.
+
+Découvrez le résultat
+Pour la question 1
+Les bonnes réponses sont 3 et 5, car les données dont nous avons besoin sont les dates de demandes de prêt, leurs montants, et la catégorie socioprofessionnelle des clients.
+
+Pour la question 2
+La bonne réponse est la réponse 4, le graphique en courbes est le plus adapté pour visualiser cette évolution.
+
+Pour vous en convaincre, vous pouvez reproduire le graphique ci-dessous et cliquer sur d’autres visualisations, comme le graphique en secteurs ou l’histogramme. Vous verrez qu’ils sont soit illisibles (graphique en secteurs), soit plus difficilement accessibles pour comprendre quel est le montant des demandes de prêt reçues annuellement par catégorie.
+
+Vue du graphique en courbes.
+Vue du graphique en courbes
+Exemple avec un graphique en secteurs :
+
+Idem avec une vue du graphique en secteurs. Le graphique n'est pas très lisible.
+Vue du graphique en secteurs : pas très lisible !
+Exemple avec un histogramme :
+
+Vue de l’histogramme : difficile de faire la part des choses sur les montants d’opérations immobilières reçus par catégorie socioprofessionnelle.
+Vue de l’histogramme : difficile de faire la part des choses !
+En résumé
+Choisissez une visualisation à partir des données que vous avez à votre disposition.
+
+Interrogez-vous ensuite sur le besoin de votre utilisateur final : Souhaite-t-il identifier une tendance ? des corrélations entre des variables ? rechercher une valeur particulière, et pourquoi ?
+
+Enfin, demandez-vous comment présenter les données à votre utilisateur : Souhaite-t-il les avoir triées ? filtrées ? voir tous les points de données ou les agréger dans des groupes de valeurs ?
+
+Sachez repérer les pièges d’une mauvaise visualisation, comme l’absence de légende, des proportions non respectées ou des données manquantes.
+
+Dans le chapitre suivant, nous allons voir quelles options de visualisation sont disponibles avec Power BI, et comment faire des choix adaptés à vos problématiques !
+
+Choisissez la meilleure visualisation pour votre projet
+
+Découvrez les visualisations de base dans Power BI
+Avec Microsoft Power BI, vous avez de nombreuses possibilités de représenter visuellement des données ! 
+
+Vue de la zone de visualisations à droite de la fenêtre Power BI. Elle monte l'ensemble des options disponibles.
+Vue de la zone de visualisations à droite de la fenêtre Power BI
+Voici les options de visualisation que vous utiliserez le plus souvent :
+
+Les graphiques
+Les graphiques sont les visualisations les plus courantes pour visualiser les données. Vous en connaissez probablement un grand nombre ; parmi eux :
+
+Les graphiques en secteurs. Ils montrent la relation des parties des données par rapport à un tout. Par exemple, les montants des demandes de prêt de 2018 par rapport à l’ensemble des demandes de prêt.
+
+Les graphiques en courbes. Ils montrent l’évolution d’une série de valeurs au fil du temps. Par exemple, l’évolution des demandes de prêt par agence, afin de comparer leurs activités commerciales.
+
+Les barres et histogrammes. Ils sont utilisés pour visualiser les valeurs spécifiques dans différentes catégories. Par exemple, les demandes de prêt par agence. Dans Power BI, il existe des versions empilées de ces graphiques. Cela permet d’afficher les prêts accordés et refusés par an, par exemple. Il existe aussi des versions normées à 100 %. Cela peut être utile si vous voulez répondre visuellement à la question "Comment le taux d’acceptation des dossiers de demande de prêt a-t-il évolué entre 2019 et 2020 ?”
+
+Les tableaux et matrices, segments
+Les tableaux et matrices sont à utiliser lorsque vous souhaitez afficher vos données brutes (nombres, texte, catégories…) comme sur un tableur Excel.
+
+Vous pouvez choisir les dimensions à afficher, et même faire des regroupements (e.g. sommes, moyennes) ou des sélections (e.g. afficher les valeurs maximum).
+
+Le tableau permet de comparer les dimensions de différentes tables.
+
+La matrice facilite l’affichage des données de manière claire entre plusieurs dimensions : elle prend en charge une disposition échelonnée comme un tableau croisé dynamique (pour les pros d’Excel 😉). La matrice agrège automatiquement les données, et permet une exploration au niveau de granularité inférieur.
+
+Les segments ne sont pas des visualisations mais des filtres ! Ils permettent de jouer sur les autres visualisations de votre dashboard en sélectionnant une sous-partie des données. Astuce 1 : Vous pouvez sélectionner plusieurs éléments à la fois en gardant la touche CTRL de votre clavier appuyée. Astuce 2 : Par défaut, les éléments de segment de liste sont triés par ordre croissant. Pour inverser l’ordre de tri et utiliser l’ordre décroissant, sélectionnez les points de suspension ( ... ) en haut à droite du segment, et choisissez Tri décroissant.
+
+Les cartes
+Les cartes de Power BI sont en quelque sorte des “vignettes” ; elles sont utilisées pour afficher par exemple la valeur d’un indicateur (la carte simple) ou une sélection de valeurs (la carte à plusieurs lignes).
+
+La carte simple permet par exemple d'afficher “en grand” le nombre de demandes de prêt en attente de traitement, comme un indicateur clé du retard pris par l’activité.
+
+La carte à plusieurs lignes permet d'afficher plus qu’une simple valeur ; on peut imaginer afficher une fiche d’identité client mise en forme par exemple, avec ses nom, prénom, situation familiale.
+
+Les maps
+On traduirait par "cartes" en français, mais à ne pas confondre avec les cartes du paragraphe précédent. 
+
+Les maps sont un excellent moyen d’afficher vos données dès lors qu’il existe une dimension géographique que vous pouvez exploiter : vos données s’affichent sous la forme de bulles sur des localisations.
+
+Vous pouvez jouer sur la taille des bulles, par exemple pour afficher la localisation des agences et leur importance respective par volume de clients.
+
+Elles permettent à vos utilisateurs de se projeter dans leur environnement, et sont très efficaces pour représenter simplement des informations complexes. À utiliser dès que possible, donc !
+
+Découvrez les visualisations avancées de Power BI
+Découvrons maintenant quelques visualisations avancées :
+
+Arborescence hiérarchique
+Le visuel en arborescence hiérarchique permet d’explorer le lien entre une dimension et ses variables explicatives.
+
+Vous pouvez par exemple analyser les demandes de prêt par leurs agences d’origine et leurs clients. C’est un outil utile pour l'analyse des causes racines.
+
+Visuel de questions et réponses
+Le visuel Questions et réponses vous permet de poser des questions sur vos données en langage naturel, et de produire automatiquement une visualisation.
+
+C’est un super outil pour vous et pour vos utilisateurs finaux qui souhaitent produire de nouvelles visualisations, seuls.
+
+Power BI dispose d’un magasin de visualisations en ligne ; vous y trouverez des centaines d’autres visualisations développées par Microsoft et par la communauté. Attention, pour accéder au magasin de visualisation, il vous faut impérativement un compte Microsoft professionnel.
+
+Magasin en ligne de visualisation de Power BI : AppSource
+Magasin en ligne de visualisations de Power BI (“AppSource”)
+La plupart des visualisations sont gratuites, il vous suffit de les télécharger et de les importer dans Power BI comme nous le verrons dans la prochaine vidéo :
+
+
+À vous de jouer !
+
+
+Nous allons maintenant réaliser plusieurs visualisations pour le Crédit Breton avec les données que vous avez :
+
+Visualisation 1 – User Story 5
+Le Crédit Breton souhaite visualiser l’historique des montants d’opérations immobilières reçus. C’est un indicateur de l’activité commerciale du réseau, car plus vous allez chercher des clients, plus vous avez de demandes de prêt. Vous avez déjà réalisé cette visualisation dans le chapitre précédent en utilisant un histogramme.
+
+Visualisation 2 – User Story 6
+La stratégie du Crédit Breton est de concentrer son activité sur des clients à meilleur profil et sur des opérations plus importantes, donc moins de prêts avec un montant de prêt moyen plus élevé. Visualisez donc l’évolution du montant moyen prêté par la banque.
+
+Ajoutez une visualisation de graphique en courbes. Insérez la dimension “date de demande“ au champ Axe, puis Accord au champ Légende, et enfin Montant au champ Valeurs. Filtrez sur les demandes de prêt acceptées uniquement.
+
+Pour calculer la moyenne, sélectionnez l'agrégation correspondante dans le menu contextuel de la variable.
+
+Pour filtrer, utilisez la zone de filtre à droite de votre écran.
+
+Regardez la vidéo suivante pour suivre ces différentes étapes :
+
+
+Visualisation 3 – User Story 7
+Le Crédit Breton souhaite visualiser l'évolution du taux d’acceptation des prêts ; c'est-à-dire répondre à la question “Est-ce que la qualité des dossiers de demande de prêt s’est améliorée sur les dernières années ?"
+
+Visualisez donc les demandes de prêt par année avec un histogramme empilé 100 %, et ajoutez à la visualisation la dimension Accord dans le champ de données “Légende”.
+
+C'est ce que nous allons faire dans la vidéo suivante :
+
+
+Comprenez les avantages et les inconvénients de chaque visualisation
+Une difficulté que vous rencontrerez à travers vos premiers projets est de savoir comment choisir la meilleure visualisation selon vos données et votre contexte.
+
+Plusieurs ressources très utiles sont à votre disposition, comme :
+
+ce chapitre du cours OpenClassrooms sur la réalisation de rapports statistiques impactants ;
+
+ou le site génial “From Data to Viz” sur lequel vous trouverez un arbre de décision pour vous aider. Voyez-le comme un guide et pas comme une loi gravée dans le marbre. Restez toujours attentif à votre contexte client. 
+
+Les graphiques en secteurs
+✅ Simples à utiliser pour représenter un tout comme la somme de ses éléments.
+
+⚠️ Difficiles pour l’œil de comparer la taille des parts de camembert.
+
+⚠️ Au-delà de 4 parts, ils deviennent illisibles.
+
+Les graphiques en courbes
+✅ Très pratiques pour représenter l’évolution d’une variable numérique.
+
+⚠️ Lorsqu’il y a trop de courbes superposées, on risque l’effet "plat de spaghettis".
+
+Les graphiques en barres
+✅ C’est le graphique le plus efficace pour représenter des valeurs numériques par catégorie.
+
+⚠️ Les données sont souvent regroupées, ce qui peut influencer l’interprétation de l’utilisateur final.
+
+⚠️ Si les données ne sont pas triées, ils peuvent être difficiles à lire.
+
+Les "treemaps"
+✅ L'utilisation optimale de l’espace permet de représenter beaucoup de données simultanément.
+
+⚠️ S’il n’y a pas de variance dans vos données, cela a peu d’intérêt.
+
+Les maps
+✅ Elles permettent de projeter l’utilisateur final dans son environnement.
+
+⚠️ Illisibles s’il y a trop de points.
+
+⚠️ Les cartes disposent souvent de couleurs de base (la mer, le continent...), attention donc à la gestion de vos couleurs.
+
+En résumé
+Power BI dispose d’un choix de 34 visualisations, parmi lesquelles de nombreux graphiques (histogrammes, nuages de points, etc.) et maps.
+
+Pour vous aider à choisir la meilleure visualisation, plusieurs ressources sont disponibles, comme le site web From Data to Viz avec son arbre de décision.
+
+Vous pouvez importer simplement de nouvelles visualisations via le catalogue en ligne de visualisations AppSource, ou vous pouvez importer vos visualisations développées sur les langages R et Python.
+
+Dans le chapitre suivant, nous allons voir comment améliorer vos visualisations grâce aux options de formatage !
+
+Améliorez vos visualisations grâce aux options de formatage
+
+Personnalisez votre dashboard avec des éléments visuels
+Notre rendez-vous projet avec notre cliente, Jeanne, se rapproche : il nous faudra lui montrer un produit qui lui donne envie !
+
+Dans ce chapitre, nous allons voir comment personnaliser notre dashboard, en mettant en place plusieurs pages conformément aux User Stories :
+
+une page “Accueil” avec des consignes d’utilisation ;
+
+une page "Demandes de prêts” dédiée aux indicateurs d’analyse ;
+
+une page "Performance agence” dédiée à l’analyse de performance des agences ;
+
+et enfin une page "Indicateurs clients” pour suivre la composition du portefeuille des emprunteurs, et zoomer sur le profil d’un emprunteur (ou potentiel emprunteur) particulier.
+
+Pour créer des pages supplémentaires sur votre rapport Power BI, il vous suffit d’appuyer sur l'icône “+” en dessous de la zone de dessin :
+
+Vue des pages de votre dashboard, en bas de la fenêtre de Power BI. On y voit le bouton pour ajouter des pages. Il est représenté par une icône en forme de plus.
+Vue des pages de votre dashboard, en bas de la fenêtre de Power BI
+Renommez vos pages en cliquant deux fois sur leur titre.
+
+Vous pouvez déplacer vos pages vers la gauche ou vers la droite, par un clic gauche maintenu sur le titre de vos pages.
+
+Personnalisez votre page
+Découvrons maintenant les options de personnalisation de vos pages.
+
+Les champs de personnalisation se situent à droite de votre écran sous la zone des visualisations. Pour y accéder, il vous faut cliquer sur l'icône en forme de rouleau de peinture appelée “format”.
+
+Voici les options de personnalisation disponibles :
+
+Informations sur la page
+Modifier le nom de la page.
+
+Définir un raccourci pour simplifier la recherche via la boîte de questions-réponses (nous verrons cela plus tard).
+
+Taille de page
+Modifier le format de la page (16:9, 4:3…).
+
+Arrière-plan de la page
+Ajouter une couleur de fond d’écran de la page.
+
+Ajouter une image de fond d’écran.
+
+Alignement vertical
+Aligner votre zone de dessin en haut ou au centre de l’écran.
+
+Papier peint
+Ajouter une couleur de papier peint derrière la page.
+
+Personnalisez la zone de filtre
+Vous pouvez également personnaliser la zone de filtre à droite de votre écran.
+
+Ci-dessous les options disponibles :
+
+Volet de filtre
+Ajouter une couleur de fond d’écran à la zone de filtre.
+
+Modifier les polices.
+
+Modifier la couleur et la taille de la bordure.
+
+Cartes de filtre
+Ajouter une couleur d’arrière-plan à vos cartes de filtre : vous pouvez choisir d’appliquer une couleur différente aux filtres actifs, ce qui peut être très utile visuellement.
+
+Modifier les polices.
+
+Modifier la couleur et la taille de la bordure.
+
+Ajoutez d’autres éléments visuels
+En haut de votre écran sur la barre de menu “Insérer”, vous avez accès à des options de forme qui vont nous être utiles pour créer notre page d'accueil, par exemple.
+
+Zone de texte
+
+Une simple zone de texte.
+
+Vous pouvez ajouter un titre, un fond d’écran, modifier les polices et les couleurs.
+
+Formes
+
+Insérez sur votre page des formes simples (rectangle, ovale, ligne, flèche, triangle).
+
+Idem : personnalisation des couleurs, titre, ombre…
+
+Vous pouvez associer des actions de navigation vers une adresse web, ou pour retourner à la page précédente… 
+
+Image
+
+Ajoutez des images à vos pages.
+
+Boutons
+
+Les boutons ajoutent des liens de navigation à vos pages. Nous verrons cela en détail dans le chapitre suivant.
+
+Améliorez la mise en forme
+Vous pouvez bien sûr modifier la mise en forme de vos graphiques. C’est ce que nous allons voir ici. Avant cela, je vais vous demander de réaliser quelques graphiques supplémentaires.
+
+À vous de jouer !
+
+
+Assurez-vous d’avoir importé tous les onglets du classeur Excel fourni par Jeanne (Agences, Apport, Prêts, Situation familiale, Situation professionnelle).
+
+Visualisation 4  – Page d'accueil
+Sur votre page d'accueil, réalisez les opérations suivantes :
+
+Insérez le logo du Crédit Breton en haut à droite de l’écran, et un fond d'écran si vous le souhaitez.
+
+Logo du Crédit Breton
+Logo du Crédit Breton
+Positionnez une zone de texte au centre de votre zone de dessin, et écrivez vos consignes d’utilisation pour vos utilisateurs (par exemple une description des pages de votre rapport, et l’adresse mail du support en cas de questions/problèmes avec le dashboard).
+
+Vue de votre page d'accueil finalisée
+Vue de votre page d'accueil finalisée
+Visualisation  5 – User Story 9 : Le Crédit Breton souhaite visualiser la performance relative des agences par leur volume de clients
+Sur votre page Performance Agence, réalisez les visualisations suivantes :
+
+Ajoutez une visualisation de map simple sur votre page.
+
+Ajoutez-y les localisations des agences dans le champ de données Emplacement.
+
+Dans le champ Légende, ajoutez les numéros d’agence.
+
+Dans le champ Taille, ajoutez la colonne Numéro client de votre table “Prêt”.
+
+Les tailles des bulles qui représentent les agences doivent alors changer, proportionnellement au nombre de leurs clients, grâce à l'agrégation automatique.
+
+Vous noterez que votre variable dans le champ Taille s’appelle désormais “Nombre de numéros de clients”. Power BI dénombre tout seul le nombre de clients par agence pour calculer les tailles des bulles.
+
+
+Visualisation 6 – User Story 9 : Le Crédit Breton souhaite visualiser la quantité de demandes de prêt reçues par agence
+Ajoutez une visualisation de carte à plusieurs lignes.
+
+Dans le champ de données “Champs”, ajoutez les villes des agences.
+
+Ajoutez les numéros des prêts.
+
+Vous verrez que par défaut, les numéros des prêts s'agrègent sous forme de somme des demandes de prêt obtenues par les agences.
+
+
+Visualisation 7  – User Story 9 : Le Crédit Breton souhaite visualiser la performance relative des agences en qualité des dossiers de demandes de prêt reçus
+Insérez une visualisation d’histogramme empilé sur la page. Nous souhaitons ici visualiser le taux d’acceptation des demandes de prêt par agence.
+
+Ajoutez au champ Axe le numéro d’agence, ajoutez au champ Légende votre colonne Accord.
+
+Ajoutez au champ Valeurs le numéro des prêts.
+
+
+Visualisation 8  – User Story 9 : Le Crédit Breton souhaite visualiser le classement annuel des agences entre elles en nombre de dossiers de demandes de prêt reçus
+Ajoutez une visualisation de graphique en ruban sur votre page. Avec celle-ci, nous allons pouvoir visualiser la performance relative des agences sous forme de classement relatif aux demandes de prêt obtenues auprès de clients.
+
+Ajoutez dans le champ Axe la date des demandes de prêt, dans le champ Légende le numéro d’agence, et dans le champ Valeurs, les numéros des prêts.
+
+Attention à sélectionner l'agrégation “nombre” dans le champ Valeurs.
+
+
+Mettez en place des alertes sur vos visualisations
+Les directeurs d’agence souhaitent être alertés de toutes les opérations immobilières supérieures à 250 000 € (User Story 4). Pour cela, nous allons créer une visualisation des demandes de prêts en cours pas encore traitées (User Story 1), et y ajouter une alerte visuelle.
+
+Visualisation 9  – User Stories 1 et 4
+Ajoutez une visualisation de tableau sur la page de demandes de prêt.
+
+Ajoutez à celle-ci dans le champ Valeur les dates de demandes de prêt, et le montant de l'opération.
+
+Voilà, vous êtes prêt !
+
+
+Dans la prochaine vidéo, nous allons voir comment mettre en place une alerte visuelle sur le tableau pour toutes les opérations immobilières supérieures au seuil de 250 000 €.
+
+
+En résumé
+Personnalisez les pages de votre rapport en ajoutant des formes (zone de texte explicative, boutons) pour faciliter l’appropriation par vos utilisateurs…
+
+Avec les options de formatage des pages, vous pouvez ajouter logos, fond d’écran et couleurs, afin de mettre votre rapport à la charte de votre client.
+
+Utilisez le formatage des graphiques pour vous assurer d’avoir des polices lisibles, des titres clairs et explicites.
+
+Grâce au formatage conditionnel, vous pouvez aller encore plus loin en créant des alertes visuelles qui interpellent vos utilisateurs.
+
+Dans le chapitre suivant, nous allons voir les différentes fonctionnalités qui vous permettront de naviguer au sein des pages de votre dashboard !
+
+Naviguez au sein de votre dashboard
+
+
+Exploitez les différents niveaux de granularité
+Microsoft Power BI vous permet d’explorer vos données à différents niveaux de granularité, en utilisant le concept de hiérarchie.
+
+Reprenons notre visualisation numéro 1 des opérations immobilières, mais changeons le champ “Axe” pour y réinsérer notre dimension Date de demandes de prêts sous forme de hiérarchie :
+
+Histogramme des opérations immobilières
+Histogramme des opérations immobilières
+Lorsque vous glissez le champ Date de demande, il se décline par défaut sous forme de hiérarchie de dates (Année, Trimestre, Mois, Jour).
+
+Avec Power BI, vous pouvez visualiser les opérations immobilières par trimestre, par mois ou par jour, en utilisant les options de navigation à travers la hiérarchie des dates qui se situe en haut à droite de la visualisation.
+
+
+Naviguez facilement dans votre rapport Power BI
+Nous avons vu au chapitre précédent, sans entrer dans les détails, que Power BI vous  permet d’utiliser des boutons d’action pour interagir avec votre rapport.
+
+Boutons de navigation
+Boutons de navigation
+Ces boutons ne sont en réalité que des formes, auxquelles vous pouvez attribuer des actions particulières grâce au menu de mise en forme :
+
+Précédent
+
+Revenir à la page que vous avez visualisée précédemment.
+
+Signet
+
+Aller vers une page que vous avez sauvegardée. Les signets peuvent être très utiles dans la navigation, car les filtres actifs et les visuels de votre page sont sauvegardés.
+
+Pour enregistrer au préalable un signet, allez dans le menu “Afficher”, puis “Signets”, et enfin Ajouter. Vous pouvez nommer vos signets pour ne pas vous y perdre.
+
+Extraire
+
+La fonction extraire vous permet d’accéder à une page avec des détails filtrés dans un contexte spécifique. L’extraction doit avoir été créée au préalable. Nous verrons cela en détail dans une prochaine vidéo.
+
+Navigation entre les pages
+
+Naviguer vers une autre page du rapport.
+
+URL web
+
+Ouvrir une page web dans votre navigateur.
+
+Questions et réponses
+
+Ouvrir une fenêtre de questions-réponses, qui vous permet de créer des visualisations en posant vos questions en langage naturel.
+
+Prenez le temps de tester ces boutons dans votre dashboard pour améliorer la facilité d’utilisation.
+
+Explorez les sélections actives grâce aux extractions
+Il vous sera parfois utile d’explorer vos données pour vos analyses.
+
+Prenons un exemple : vous êtes directeur d’une des agences du Crédit Breton, et vous visualisez les demandes de prêt accordées l’année dernière, via le graphique histogramme que nous avons déjà réalisé.
+
+Le graphique en barres montrent les demandes de prêts accordées.
+Les demandes de prêt accordées
+Imaginez maintenant que vous souhaitiez obtenir la liste des clients pour lesquels ces prêts ont été accordés, afin de leur envoyer un message et leur présenter une nouvelle offre, par exemple. Il serait pratique de pouvoir cliquer sur l’histogramme et de choisir “Afficher la liste des clients” afin de l’obtenir.
+
+C’est exactement ce que permettent les extractions interrapports. C’est un outil puissant de Power BI, qui permet d'explorer vos données.
+
+Commençons par activer cette option dans PowerBI Desktop (elle n’est pas activée par défaut) :
+
+Dans Power BI Desktop, sélectionnez Fichier > Options et paramètres > Options.
+
+Dans le volet de navigation gauche de la fenêtre Options, en bas de la section Fichier actuel, sélectionnez Paramètres des rapports.
+
+En bas à droite, sous Extraction interrapport, cochez la case "Autoriser les visuels de ce rapport à utiliser des cibles d’extraction d’autres rapports".
+
+Sélectionnez OK.
+
+Cette capture d'écran montre l'option l'extraction interrapport à cocher dans vos paramètres
+Activez l'extraction interrapport dans vos paramètres
+Regardons maintenant en vidéo comment configurer votre extraction.
+
+
+Faites des points d'avancement avec le client
+Nous avons bien avancé !
+
+Il est temps de faire un point intermédiaire avec notre cliente, Jeanne, pour s’assurer que nous sommes bien partis dans la bonne direction. Profitons-en pour valider tous les éléments qui restent en suspens avant la livraison du produit final :
+
+Ce qu'il faut corriger/améliorer.
+
+Ce qu'il reste à faire.
+
+C'est également l'occasion pour Jeanne de poser les questions qu'elle peut avoir sur la compréhension du prototype.
+
+
+Dans la majorité des projets sur lesquels vous travaillerez, ce type de questions arrivera ! Pensez à prévoir vos éléments de réponses en fonction des questions qui peuvent être soulevées à un stade intermédiaire du projet. Cela permet de :
+
+rassurer le client ;
+
+vous assurer que vous répondez toujours aux attentes du client !
+
+En résumé
+Les boutons sont un moyen simple et efficace de créer des liens de navigation dans votre rapport (vers d’autres pages, vers le Web…).
+
+Lorsque vos données comportent une hiérarchie (par exemple les dates) vous pouvez explorer les différents niveaux de granularité dans vos visuels (par exemple afficher vos graphiques par trimestre ou par mois).
+
+Grâce aux extractions interraport, vous pouvez explorer vos données d’un graphique vers une autre page, afin de réaliser des analyses plus fines sur une sélection de données.
+
+N’oubliez pas d’activer les options d’extraction interrapport pour bénéficier de cette option. Power BI met régulièrement de nouvelles fonctionnalités à votre disposition, il faut les activer manuellement.
+
+C'est la fin de cette deuxième partie du cours, je vous propose un quiz avant de passer à la suite !
+
+Transformez les données à l’aide du Power Query Editor
+
+Identifiez les anomalies
+Bienvenue dans cette troisième partie. Nous approchons du but !
+
+Dernière étape pour notre dashboard : faire calculer le score emprunteur pour le Crédit Breton. Pour cela, nous allons nous intéresser à la table des situations familiales : elle nous informe sur la capacité d’endettement du demandeur de prêt.
+
+Cependant, comme annoncé par Jeanne, cette table contient des anomalies du fait de mauvaises saisies manuelles. En utilisant l’onglet des données sur votre dashboard, on peut s’apercevoir par exemple que Tigrane Lefebvre et Alexis Chevalier ont respectivement 30 et 20 enfants à charge, ce qui est fortement improbable. 🤣
+
+Cette capture d'écran montre que le nombre d'enfants à charge de deux clients correspondent à 20 et 30, ce qui est anormalement élevé et montre qu'il y a certainement eu une erreur de saisie des données.
+Capture d'écran
+On peut s’apercevoir également que les catégories des situations familiales ont des redondances, car nous avons deux valeurs possibles avec “PACS” et “Pacsé” pour une même situation.
+
+Cette capture d'écran montre les différentes catégories des situations familiales, dont celles intitulées PACS et Pacsé.
+Capture d'écran
+Dans la vidéo suivante, nous allons voir comment identifier plus rapidement ces anomalies grâce à un outil de Power BI appelé Power Query Editor.
+
+
+Corrigez les anomalies avant l’importation
+Une fois ces anomalies détectées dans la table des situations familiales, il nous faut les corriger.
+
+Le Power Query Editor dispose de nombreuses fonctionnalités via le menu “Transformer”.
+
+Découvrons ensemble ces fonctionnalités :
+
+Transformations de tableau
+Regrouper par
+
+Réduit la table en groupant les dimensions selon une règle (compter les lignes, ne prendre que le maximum…)
+
+Utiliser la première ligne pour les en-têtes
+
+Transforme la première ligne en en-tête de colonnes
+
+Transposer
+
+Transpose les lignes en colonnes et vice versa
+
+Inverser les lignes
+
+Trie vos lignes dans le sens opposé
+
+Compter les lignes
+
+Transforme votre table en un simple compte du nombre de lignes
+
+Transformations de colonne
+Type de données / Détecter le type
+
+Changer le type de vos données (texte, date, nombre…)
+
+Renommer
+
+Renommer le titre de vos colonnes
+
+Remplacer les valeurs
+
+Remplacer une valeur par une autre dans certaines colonnes
+
+Remplir
+
+Remplir automatiquement les cellules vides par la valeur de cellule non vide qui les précède
+
+Pivoter/Dépivoter les colonnes
+
+Dépivoter votre table (utile pour les tableaux croisés dynamiques), cela permet de transformer les colonnes en paires attribut-valeur, où les colonnes deviennent des lignes (https://docs.microsoft.com/fr-fr/power-query/unpivot-column)
+
+Déplacer les colonnes
+
+Déplacer vos colonnes vers la gauche ou la droite
+
+Convertir en liste
+
+Convertir une colonne de votre table en liste
+
+Transformation de texte
+Fractionner la colonne
+
+Fractionner une colonne en plusieurs selon un délimiteur
+
+Changer le format
+
+Ajouter un préfixe/suffixe aux données ou appliquer des transformations de texte (majuscule/minuscule…)
+
+Fusionner les colonnes
+
+Concaténer plusieurs colonnes en une avec un séparateur
+
+Extraire des caractères
+
+Extrait une partie du texte de chaque ligne de la colonne (nombre de caractères défini…)
+
+Analyser
+
+Extrait le texte de ses balises au format XML ou JSON
+
+Fonctions de nombre
+Statistiques
+
+Appliquer une formule statistique à vos colonnes (calcul de la moyenne…)
+
+Standard
+
+Appliquer une formule mathématique aux lignes de votre colonne (ajouter/soustraire un nombre…)
+
+Scientifique
+
+Appliquer une transformation mathématique aux lignes de votre colonne comme la valeur absolue, ou une puissance...
+
+Trigonométrie
+
+Idem pour la trigonométrie (sinus, cosinus…)
+
+Arrondi
+
+Arrondir vos données au supérieur ou à l’inférieur
+
+Informations
+
+Transformer les lignes de votre colonne en booléen en réponse à une question du type "La valeur est-elle paire ou impaire ?"
+
+Fonctions date et heure
+Date
+
+Appliquer des transformations de date (afficher l’année/le trimestre correspondant…)
+
+Heure
+
+Appliquer des opérations sur les heures de vos dates
+
+Durée
+
+Idem sur les durées
+
+Dans la vidéo suivante, nous allons voir comment utiliser les fonctions de remplacement de valeurs pour corriger nos données.
+
+
+Gagnez du temps grâce au langage M
+Comme nous venons de le voir dans la vidéo, lorsque nous avons appliqué les opérations de correction des anomalies, une nouvelle étape est apparue dans le Power Query Editor à droite : "Valeur remplacée".
+
+Lorsque vous sélectionnez cette étape, vous pouvez apercevoir un langage de code dans la barre de formule :
+
+=Table.ReplaceValue(#"Type modifié","PACS","Pacsé",Replacer.ReplaceText,{"Situation familliale"})
+
+Il s'agit du langage de formule M !
+
+C’est ce qui nous a permis de réaliser nos opérations de transformation des données.
+
+Table.ReplaceValue  est notre fonction de remplacement, elle reçoit comme paramètres :
+
+une table :  #”Type modifié” , c'est le nom de la dernière étape appliquée sur notre table des situations de famille. Cette étape a été créée automatiquement par Power Query, pour attribuer les bons types de données à chacune de nos colonnes ;
+
+l’ancienne valeur “PACS”  et la valeur de remplacement  “Pacsé”  ;
+
+l’opération de remplacement à réaliser : Replacer.ReplaceText  ;
+
+la colonne sur laquelle la fonction doit s’appliquer : “Situation familiale”  .
+
+Vous pouvez utiliser directement la barre de formule du Power Query Editor, et gagner du temps dans la réalisation de vos requêtes.
+
+Connaître quelques formules peut également vous aider à comprendre vos erreurs :
+
+Formules de Date
+
+Formules de Texte
+
+Formules de Nombre
+
+Formules de Table
+
+Date.DayOfWeek
+
+DateTime.LocalNow
+
+Duration.TotalDays
+
+Text.Clean
+
+Text.Proper
+
+Number.Round
+
+Number.Abs
+
+Table.FillUp
+
+Table.CombineColumns
+
+Dans le tableau ci-dessus, j'ai listé certaines des fonctions les plus courantes. Elles ont des noms relativement explicites, mais vous trouverez plus d'informations et la liste exhaustive des fonctions disponibles que je vous invite à découvrir via la documentation de Microsoft.
+
+Pour vérifier que vous suivez, j'en profite pour vous poser une petite question :
+
+Quel résultat donne la formule  Text.Clean("Power#(lf)BI"  ?
+
+Power#BI
+
+PowerlfBI
+
+PowerBI
+
+La bonne réponse est bien sûr la réponse 3.
+
+La fonction  Text.Clean  retourne une chaîne de caractères “nettoyée” de tous les caractères spéciaux. Vous pouvez retrouver la description de cette fonction dans la documentation en ligne de Microsoft.
+
+En résumé
+Dans le Power Query Editor, vous pouvez identifier les anomalies dans vos données grâce au profilage.
+
+Pour corriger les anomalies, le menu “Transformer” dispose de nombreuses fonctions, comme  ReplaceValue  . Ainsi, les opérations de transformation s’appliqueront automatiquement sur vos données.
+
+Le langage M est le langage de formule utilisé par Power BI pour réaliser les transformations sur les requêtes.
+
+Connaître certaines formules du langage M peut vous aider à déboguer vos opérations de préparation de données en cas d’erreur, et à gagner du temps.
+
+Dans le chapitre suivant, nous allons voir comment relier des tables pour réaliser des analyses croisées !
+
+Reliez les tables pour réaliser des analyses croisées
+
+
+Dans le chapitre précédent, nous avons corrigé les données de la table des situations familiales. Nous allons maintenant pouvoir l’utiliser avec nos autres tables pour construire une vision complète du dossier client.
+
+Avant tout, il nous faut comprendre le concept de liaison de tables de données.
+
+Liez vos tables de données
+Dans notre table des demandes de prêt, nous n’avons que les numéros des clients qui sont à l’origine de ces demandes.
+
+Comment faire pour visualiser le nombre de demandes de prêt acceptées par le Crédit Breton pour des clients mariés ?
+
+En l’état actuel des choses, il nous faudrait :
+
+Prendre la liste des identifiants de clients mariés de la table Situation familiale.
+
+Regarder dans la table des demandes de prêt, les demandes acceptées pour ces identifiants.
+
+Un travail fastidieux que nous faisions régulièrement par des bricoles sur Excel…
+
+Avec Power BI, vous pouvez créer des relations entre vos tables de données pour effectuer ces requêtes de façon automatique.
+
+Dans la vidéo suivante, je vous montre avec un exemple concret pourquoi il vous faut lier vos tables pour réaliser ces analyses croisées.
+
+Nous verrons aussi que Power BI crée par défaut des liens entre vos tables, dont nous nous sommes servis jusqu'à présent sans le savoir…
+
+
+Power BI nous a bien aidés jusque là en créant des liens automatiquement, comme celui entre la table des agences et celle des demandes de prêt.
+
+Découvrons maintenant comment créer ces liens nous-mêmes :
+
+
+Pour aller plus loin sur la gestion des cardinalités et des directions de filtrage, je vous invite à lire la documentation de Microsoft.
+
+Découvrez le modèle de données en étoile
+La modélisation des données est un des concepts les plus importants de Power BI, et même de la Business Intelligence en général !
+
+Avec ce que nous venons de voir, vous pouvez créer des modèles complexes, simplement en ajoutant des tables supplémentaires. Et ça, c’est une révolution par rapport aux tableurs usuels auxquels vous êtes habitués !
+
+Si nous avions les données, on pourrait imaginer ajouter à notre modèle :
+
+le moyen par lequel nos clients ont entendu parler de nous, pour identifier le canal de marketing le plus efficace ;
+
+ou encore le conseiller bancaire en charge de la demande de prêt, pour calculer ses performances commerciales… 
+
+Bref, vous voyez l’idée !
+
+Avec la notion de modèle de données, plus besoin de modifier vos tables “faits" ou "d’évènements” (ici les demandes de prêts) ! On ajoute des tables de dimensions et on les relie à la table de faits pour offrir des axes d’analyse supplémentaires. C’est ce qu’on appelle le modèle de données en étoile.
+
+Ce visuel illustre le modèle de données en étoile dans lequel on voit que les tables de dimensions sont reliées à la table des faits.
+Modèle de données en étoile
+Les tables de faits stockent des observations ou des événements qui peuvent être des commandes client, des soldes de stock, des taux de change, des températures, etc. 
+
+Les tables de dimension décrivent les choses que vous modélisez. Les entités peuvent inclure des produits, des personnes, des lieux et des concepts, y compris le temps lui-même.
+
+La conception de schémas en étoile est très importante pour le développement de modèles Power BI, afin d’optimiser les performances.
+
+Tenez compte du fait que chaque visuel de rapport Power BI génère une requête envoyée au modèle Power BI. Ces requêtes sont utilisées pour filtrer, regrouper et totaliser les données du modèle. Un modèle bien conçu fournit des tables pour le filtrage et le regroupement, et des tables pour la totalisation.
+
+Les tables de dimension prennent en charge le filtrage et le regroupement.
+
+Les tables de faits prennent en charge la totalisation.
+
+Avec le modèle de données en étoile, on économise également de l’espace de stockage et on simplifie la maintenance.
+
+Si le nom d’une agence du Crédit Breton change, nous avons une cellule à changer dans la table Agences. Si toutes les données étaient dans une seule table, nous aurions dû changer toutes les demandes de prêt de cette agence pour faire évoluer le nom de l’agence en question.
+
+Combinez les requêtes au lieu de lier les tables de données
+Il peut vous arriver d’avoir besoin de combiner des tables en une seule plutôt que d’utiliser la liaison des tables de données.
+
+Voici deux mises en situation :
+
+Situation 1 : vous disposez de plusieurs tables d’événements
+Imaginons : nous avons une table des demandes de prêt par année (donc 4 depuis 2017). Dans ce cas, il est utile de pouvoir “ajouter par le bas” des évènements à notre table, afin d’avoir une seule liste complète.
+
+Deux requêtes ajoutées l’une à l’autre Source : Experts Power BI.fr
+Deux requêtes ajoutées l’une à l’autre. Source : Experts Power BI.fr
+Situation 2 : il manque des dimensions à votre table d’événements
+Par exemple, dans notre cas nous avons une table "Apport" qui ne comprend que le montant des apports et les numéros des demandes de prêt. Cela comporte plusieurs inconvénients :
+
+Cette table a autant de lignes que notre table de demandes de prêt, car il y a un apport différent par demande de prêt. Séparer ces tables a rendu la maintenance beaucoup moins facile.
+
+Nous devons stocker en double la colonne sur les numéros de demandes de prêt pour faire la jointure. Nous avons donc perdu en espace de stockage.
+
+Nous devons gérer l'interaction entre les deux tables lorsque nous faisons des requêtes sur les apports (filtrages, etc.). Le calcul sera plus lent : nous avons donc perdu en performance.
+
+Nous aurions pu avoir une seule table de demandes de prêt avec une colonne pour les apports.
+
+Dans notre cas, il est alors préférable de fusionner les tables en ajoutant “à droite” une nouvelle colonne à notre table d'événements (demandes de prêts), en ajoutant les apports.
+
+Deux requêtes fusionnées l’une à l’autre Source : Experts Power BI.fr
+Deux requêtes fusionnées l’une à l’autre. Source : experts-powerbi.fr
+Pour réaliser ces opérations, on utilise le menu “Combiner” dans Power Query.
+
+Voyons comment réaliser une fusion des requêtes entre notre table des demandes de prêt et la table des apports :
+
+
+Créez des rôles différents pour gérer la confidentialité des données
+Maintenant que notre modèle de données est complet, nous pouvons également traiter une demande du Crédit Breton qui concerne la confidentialité des données.
+
+Il est impératif que les directeurs d’agence et les conseillers bancaires n’aient pas accès à toutes les données du réseau via le dashboard.
+
+Ils ne doivent être concernés que par les données de leur agence.
+
+Dans la prochaine vidéo, nous allons voir comment créer différents rôles dans Power BI, et gérer ainsi la confidentialité des données.
+
+
+En résumé
+Avec Power BI, vous pouvez créer des relations entre vos tables de données afin de pouvoir réaliser des requêtes croisées.
+
+Le modèle de données en étoile consiste à séparer les tables de faits qui stockent des événements, des tables de dimension qui décrivent les choses que vous modélisez.
+
+La conception de schémas en étoile est très importante pour le développement de modèles Power BI, afin d’optimiser les performances et la maintenance.
+
+Il peut vous arriver d’avoir besoin de combiner des tables en une seule, en utilisant l’ajout de table ou la fusion.
+
+Pour restreindre la visibilité de certaines données à vos utilisateurs, il faut configurer des rôles dans Power BI.
+
+Dans le chapitre suivant, nous allons voir comment créer de nouvelles données à partir des données déjà existantes !
+
+Créez de nouvelles données à partir des données existantes
+
+Utilisez les formules DAX
+Nous avons corrigé les anomalies des tables fournies par Jeanne, et nous avons lié les tables entre elles. Nous sommes maintenant prêts à calculer le score emprunteur.
+
+Pour cela, utilisons le logigramme décisionnel, fourni par Jeanne, qui présente toutes les étapes à prendre en compte pour décider de l’accord ou du refus du prêt immobilier :
+
+Ce logigramme de décision du Crédit Breton montre comment on aboutit sur l'accord d'un prêt immobilier. Pour cela, il faut valider le critère 1 puis 2, ensuite calculer le montant et le remboursement. Et enfin valider le critère 3.
+Logigramme de décision du Crédit Breton sur l'accord des prêts immobiliers
+Dans celui-ci, on observe 3 critères éliminatoires :
+
+Critère 1
+Si l’âge de l’emprunteur ajouté à la durée du prêt demandé est supérieur à 82 ans (l’espérance de vie), le prêt est systématiquement refusé, car il est fortement probable que l’emprunteur ne pourra pas rembourser le prêt.
+
+Il nous faut calculer l’âge des emprunteurs à partir de leur date de naissance, car nous n'avons pas la donnée "âge" telle quelle.
+
+Critère 2
+Si la régularité des revenus est à 3, c’est-à-dire très irrégulière, le prêt est systématiquement refusé.
+
+Critère 3
+Le critère 3 comprend des étapes intermédiaires :
+
+Il nous faut calculer le montant précis que le Crédit Breton devra apporter à l’opération. C’est donc le montant de l’opération immobilière moins le montant de l’apport du client.
+
+Ensuite, la banque calcule le montant mensuel de remboursement du prêt en divisant le montant du prêt par la durée du prêt.
+
+Enfin, le critère 3 consiste à comparer le revenu mensuel moyen de l’emprunteur et ce remboursement mensuel, pour statuer si il ou elle aura la capacité de rembourser le prêt tous les mois. Le calcul précis demande que le montant du remboursement soit inférieur au revenu mensuel divisé par trois, plus le nombre d’enfants à charge.
+
+Commençons par les critères 1 et 2.
+
+Pour calculer l’âge des emprunteurs ou comparer la régularité des revenus, nous avons besoin d’utiliser un nouveau langage de formule appelé le langage DAX.
+
+Qu’est-ce que DAX ?
+
+"DAX est une collection de fonctions, d’opérateurs et de constantes qui peuvent être utilisés dans une formule, ou une expression, pour calculer et retourner une ou plusieurs valeurs. En termes simples, DAX vous aide à créer des informations à partir des données déjà présentes dans votre modèle."
+
+Source : Documentation Microsoft.
+
+Avec le langage de formules DAX, vous avez accès à de nombreuses fonctions pour créer de nouvelles données à partir de celles que vous avez importées.
+
+Par exemple :
+
+Date et heure (obtenir la date du jour, transformer un nombre de jours en heures ou en minutes…).
+
+Intelligence temporelle (sommer des dates et des durées…).
+
+Filtre (filtrer une table ou une colonne selon une condition...).
+
+Logique (tester si une condition est remplie…).
+
+Mathématiques (faire une somme, arrondir un nombre…).
+
+Statistiques (compter un nombre de valeurs, rechercher un maximum, calculer une moyenne…).
+
+Texte (rechercher une valeur, tronquer, mettre en majuscules…).
+
+Ces fonctions sont répertoriées par catégorie dans la documentation de Microsoft. 
+
+Quelques fonctions DAX utiles à connaître :
+
+Fonction mathématique
+
+Fonction d’information
+
+Fonction logique
+
+Fonction de filtre
+
+RAND()
+
+SUM()
+
+LOOKUPVALUE()
+
+ISERROR()
+
+SWITCH()
+
+IF()
+
+CALCULATE()
+
+ALL()
+
+Lorsque vous utiliserez vos fonctions DAX, ayez à l’esprit le contexte de leur application : comment l’ensemble des filtres et sélections actifs influenceront votre fonction.
+
+Certaines fonctions de filtre (ALL, RELATED, FILTER et CALCULATE) vous permettront de “libérer” vos fonctions des sélections actives si vous le souhaitez.
+
+Découvrons en vidéo comment réaliser tout cela, en créant une colonne calculée pour avoir l'âge de nos clients, qui est utilisé dans le critère de décision n° 1.
+
+
+Créez une mesure
+Nous avons vu précédemment comment utiliser le langage de formule DAX pour créer des colonnes.
+
+Maintenant, nous allons créer une mesure pour calculer le montant total du prêt à sortir par le Crédit Breton, afin de développer le troisième critère de décision sur l’accord ou le refus d’une demande de prêt.
+
+Qu’est-ce qu’une mesure ?
+
+"Avec les mesures, vous pouvez définir des calculs simples comme des sommes, des moyennes, des valeurs minimales et maximales ainsi que des décomptes. Les résultats calculés des mesures changent toujours en réponse à votre interaction avec vos rapports, favorisant ainsi l’exploration rapide et dynamique des données appropriées."
+
+Source : Documentation Microsoft
+
+Les mesures sont un objet différent des colonnes que nous avons utilisées précédemment. Avec les colonnes, nous créons de nouvelles données qui s’ajoutent à nos tables de données. Tandis que les mesures sont des calculs qui s’adaptent à notre contexte.
+
+Pourquoi utiliser une mesure plutôt que créer des données pour calculer les montants prêtés par le Crédit Breton ?
+
+Une mesure sera plus flexible à utiliser lorsque l'on voudra :
+
+ajouter notre future mesure à une visualisation qui présente le total des demandes de prêt par année (car la mesure calculera automatiquement l'agrégation des montants prêtés par année) ;
+
+utiliser notre mesure dans un tableau avec la liste des clients (car elle calculera les montants prêtés pour chaque client).
+
+Il existe deux types de mesures dans Power BI :
+
+Les mesures rapides qui se créent en quelques clics et en glissant les champs de données que l’on souhaite utiliser.
+
+Les mesures qui nécessitent de connaître les formules DAX pour écrire les opérations soi-même.
+
+Dans la prochaine vidéo, nous allons créer une mesure du montant prêté par le Crédit Breton, qui nous sera nécessaire pour notre troisième critère de décision.
+
+Pour cela, nous allons utiliser une mesure rapide !
+
+
+Voilà, nous sommes désormais prêts à calculer le score emprunteur !
+
+Ce que nous souhaitons, c'est une indication claire pour les conseillers bancaires.
+
+Pour cela, nous aurons 2 valeurs possibles pour le score :
+
+Conditions
+
+Si l'un des 3 critères n'est pas respecté
+
+Si les 3 critères sont respectés
+
+Valeur du score
+
+"REFUS"
+
+"ACCEPTE"
+
+Pour développer le score, nous allons utiliser une formule qui combine les 3 critères ; c'est ce qu'on appelle une formule imbriquée (nous aurions aussi pu calculer les 3 critères dans des formules séparées, et avoir une dernière formule pour les assembler).
+
+Sous forme d'algorithme, notre formule est la suivante :
+
+Critère 1 : SI Âge du client + Durée du prêt est supérieur ou égal à 82 ans alors affecter "REFUS" à score emprunteur sinon
+
+Critère 2 : SI Régularité des revenus du client est égal à 3 alors affecter "REFUS" à score emprunteur sinon
+
+Critère 3 : SI Revenu mensuel moyen divisé par 3 plus le nombre d'enfants à charge est inférieur à remboursement mensuel du prêt alors affecter "REFUS" à score emprunteur sinon affecter "ACCEPTE" à score emprunteur.
+
+Voici la formule finale utilisée pour le calcul du score emprunteur :
+
+Score_emprunteur = IF(LOOKUPVALUE('Situation famille'[Age_ client],'Situation famille'[ID_Client],'Demandes de pret'[Numéro client])>=82,"REFUS",IF(LOOKUPVALUE('Situation pro'[Régularité des revenus],'Situation pro'[Numéro client],'Demandes de pret'[Numéro client])== "3 : Très irréguliers","REFUS",IF(([Montant_prété]/'Demandes de pret'[Durée])>LOOKUPVALUE('Situation pro'[Revenu mensuel moyen],'Situation pro'[Numéro client],'Demandes de pret'[Numéro client])/(3+LOOKUPVALUE('Situation famille'[Nombre d'enfants à charge],'Situation famille'[ID_Client],'Demandes de pret'[Numéro client])),"REFUS","ACCEPTE")))
+
+Cette formule utilise les fonctions DAX :
+
+IF  pour les boucles SI ;
+
+LOOKUPVALUE  pour rechercher les dimensions du client dans les différentes tables.
+
+Notez que pour calculer le montant du remboursement mensuel, il faut diviser notre mesure du montant prêté par la durée totale du prêt qui est en mois.
+
+
+Champagne 🍾
+
+Vous avez développé le score emprunteur !
+
+Grâce à vous, les conseillers bancaires vont gagner un temps fou ! Ils auront directement, sur leur tableau de bord des demandes de prêt en cours, une recommandation claire pour chaque prêt sur l'acceptation ou le refus.
+
+Pesez les pour et les contre de la création de données
+Tirons quelques leçons de ce que nous venons de voir ensemble.
+
+Les mesures et les colonnes sont deux moyens de créer de nouvelles données à partir de vos données en utilisant le langage de formule DAX, comme nous venons de le voir.
+
+Cependant, l’un et l'autre comportent des avantages et des inconvénients différents, à prendre en compte lors de vos décisions !
+
+Utiliser une mesure
+✅ Pour visualiser une valeur en fonction d'interactions avec votre dashboard.
+
+✅ Simplicité des mesures rapides.
+
+✅ Pas besoin de nouvelles données à stocker.
+
+⚠️ Le calcul qui est fait en temps réel est lent (si celui-ci est complexe et mobilise beaucoup de données).
+
+Utiliser une colonne calculée
+✅ Pour visualiser différentes valeurs indépendamment de la sélection active.
+
+✅ Pour réutiliser les valeurs comme champs dans une visualisation.
+
+⚠️ Le volume des données à stocker peut être important : si vous avez une table de 100 000 lignes, une seule colonne en plus pèse lourd.
+
+En résumé
+Les mesures permettent de créer des données supplémentaires sous la forme d’objets qu’on peut utiliser dans les visualisations.
+
+Les colonnes calculées permettent d’ajouter de nouvelles dimensions aux tables de données, par calcul en utilisant DAX.
+
+Il faut privilégier les mesures lorsque vous souhaitez visualiser une valeur en fonction d’interactions avec le dashboard.
+
+Il faut privilégier une colonne calculée pour réutiliser les valeurs comme étant une étape intermédiaire dans d’autres calculs.
+
+C'est bientôt la fin de ce cours ! Un dernier chapitre pour aller plus loin sur Power BI… Allez c'est parti !
+
+Allez plus loin avec Power BI Service
+
+Dans ce chapitre, nous allons partager le dashboard à Jeanne en utilisant le service en ligne de Microsoft Power BI : Power BI Service.
+
+Power BI Service est appelé Power BI Online en anglais. Vous l'entendrez souvent sous son appellation anglaise. Power BI Service et Power BI Online désignent donc bien la même chose. Attention, pour accéder à ce service, il vous faut impérativement un compte Microsoft professionnel.
+
+Rendez-vous sur votre espace Power BI Service, et inscrivez-vous avec un e-mail et un mot de passe.
+
+Avec les espaces de travail de Power BI Service, vous pouvez :
+
+créer et gérer vos rapports de données ainsi que vos tableaux de bord ;
+
+créer des jeux de données que vous pourrez réutiliser pour différents rapports ou tableaux de bord ;
+
+… mais surtout :
+
+collaborer avec des collègues sur la conception de vos rapports, tableaux de bord ou sur la gestion de vos données (nécessite une licence Power BI Pro).
+
+Mais quelle est la différence entre un rapport et un tableau de bord ?
+
+Le rapport correspond au “dashboard” que nous avons développé tout au long de ce cours. Il permet à l’utilisateur d'interagir avec des visualisations, et d’utiliser des filtres. L’utilisateur peut visualiser les tables de données derrière les visualisations.
+
+Le tableau de bord est un ensemble d’indicateurs/visualisations pour un utilisateur final qui ne pourra pas visualiser les données utilisées ni les filtrer. Il donne un état des lieux de la situation au consommateur des données, mais celui-ci n’a pas vocation à réaliser des analyses dans Power BI.
+
+Dans la prochaine vidéo, nous allons :
+
+Configurer notre espace de travail en ligne.
+
+Y déplacer nos données et notre rapport.
+
+
+Dans Power BI Service, vous avez également la possibilité de modifier votre dashboard. Vous aurez accès à moins de fonctionnalités que dans la version Desktop, mais cela peut être utile pour réaliser des modifications rapides, comme ajouter une visualisation, par exemple.
+
+Regardons cela dans la prochaine vidéo.
+
+
+Partagez votre dashboard
+
+
+Depuis votre espace de travail, vous pouvez :
+
+inviter d’autres membres à collaborer avec vous pour concevoir votre rapport de données ;
+
+partager votre rapport à des utilisateurs en le publiant.
+
+Pour cela, vous avez besoin d’avoir une licence Power BI Pro ou Premium.
+
+Cela nous permet de partager le rapport avec Jeanne avant la réunion de restitution. Ainsi elle aura eu le temps de se familiariser avec le dashboard, ce qui nous permettra d’aller à l’essentiel.
+
+Vous pourrez également associer des utilisateurs, via leurs adresses e-mail, aux rôles de sécurité que nous avons créés (directeur d'agence de Saint-Brieuc, etc.).
+
+Si vous avez une licence Power BI Pro ou Premium, vous trouverez toutes les indications nécessaires au partage.
+
+Nous sommes fin prêts pour notre réunion de présentation avec Jeanne :
+
+
+Si vous souhaitez aller plus loin :
+
+Le site d’apprentissage de Microsoft sur Power BI dispose de ressources de qualité pour compléter votre formation.
+
+La documentation en ligne de Microsoft Power BI doit être votre référence lorsque vous souhaitez utiliser de nouvelles fonctionnalités et formules.
+
+Si vous souhaitez conclure votre apprentissage par la certification "PL-300 : Power BI Data Analyst" de Microsoft, vous pouvez suivre les parcours d’apprentissage proposés par Microsoft. Vous y trouverez tous les compléments nécessaires pour vous préparer !
+
+Microsoft Power BI est un logiciel en constante évolution, avec de nouvelles fonctionnalités régulièrement ajoutées.
+
+Je vous encourage à rejoindre des communautés via des meetups comme le Club Power BI (à Paris). Il en existe certainement une pas loin de chez vous (et vous pouvez vous connecter aux évènements en ligne, même de votre île déserte, donc vous n’avez pas d’excuses 😄).
+
+Logo du Meetup Club Power BI
+Meetup Club Power BI
+Plusieurs chaînes YouTube proposent des contenus de très grande qualité pour vous tenir à jour sur Power BI, et vous présenter des astuces auxquelles vous n’auriez jamais pensé !
+
+La chaîne YouTube de Curbal regorge d’astuces très utiles à connaître et d’exemples très sympas à suivre, comme son dashboard de suivi de la Coupe du monde de football en 2018. 
+
+Le blog de Carl de Souza contient également de nombreux tutoriels pour les fonctions de Power BI, des plus simples aux plus avancées.
+
+En résumé
+Avec Power BI Service, vous avez un espace de travail en ligne pour créer et gérer des rapports, tableaux de bord et jeux de données.
+
+Sur Power BI Service, vous avez accès aux fonctions de partage et de collaboration, ainsi qu'à un nombre réduit de fonctionnalités de Power BI Desktop.
+
+Il faut une licence Power BI Pro ou Premium pour pouvoir collaborer sur la conception d‘un dashboard et le partager.
+
+Allez plus loin en explorant les nombreuses astuces partagées par la communauté, et en passant la certification PL-300 : Power BI Data Analyst de Microsoft.
+
+C'est la fin de ce cours, merci de l'avoir suivi. 😉 J’espère que vous avez pris du plaisir à développer vos compétences sur Power BI !
+
+Je vous souhaite à tous une excellente continuation, mais avant, un dernier quiz !

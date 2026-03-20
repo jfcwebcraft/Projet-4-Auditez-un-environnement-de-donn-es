@@ -1,0 +1,120 @@
+Mission partie 2 - Analysez les logs de la base de données
+Quelques jours plus tard
+Barre
+
+ 
+
+Vous recevez un mail d’Hugo.
+
+ 
+
+De : Hugo
+
+À : Moi
+
+Objet : Étude des logs
+
+Hello,
+
+ 
+
+Merci pour ton support de présentation avec tous les éléments sur la base de données et sur les résultats de tes requêtes SQL. 
+
+ 
+
+Tu as pu confirmer que le chiffre d’affaires est bien de 284 243,88€. Cependant, nous ne comprenons pas pourquoi ce chiffre n’est pas constant. 
+
+ 
+
+Pour que tu puisses continuer à investiguer sur ce sujet, tu trouveras en pièces joints les logs de cette semaine d'août.
+
+ 
+
+Est-ce que tu peux étudier les logs et nous dire si tu trouves quelque chose ? 
+
+ 
+
+N’oublie pas de reporter tes informations dans le support de présentation. 
+
+ 
+
+Merci encore pour ton aide précieuse !
+
+ 
+
+A très vite !
+
+ 
+
+Hugo
+Responsable de l’équipe BI
+
+ 
+
+PS : je pense que le plus simple c’est d’ajouter ce fichier dans ta base de données car il n’y a que des ID dans les logs. 
+
+PJ : Logs.xlsx
+
+Cette mission est entièrement guidée.
+
+ 
+
+Vous pouvez suivre les étapes ci-dessous.
+
+ 
+
+Étapes
+Vous devez intégrer les logs dans votre base de données, comprendre les nouvelles entrées et le format de ces données. 
+
+ 
+
+Prérequis 
+
+Avoir inséré les logs, vérifié les types de données et la qualité de l’information insérée.
+Résultat attendu  
+
+Les logs intégrés.
+Instructions  
+
+Créez la table dans votre base de données (manuellement, avec SQL Power Architects ou directement en SQL dans votre base).
+Insérez les données CSV.
+Vérifiez les types et les données insérées dans la base.
+Recommandations 
+
+Prenez le temps de comprendre les données de logs.
+ 
+
+Prenez le temps de bien analyser les logs en croisant les données.
+
+ 
+
+Prérequis 
+
+Avoir analysé le type de données du fichier logs.
+Avoir compris les fonctions INSERT, UPDATE et DELETE en SQL.
+Résultat attendu  
+
+Votre fichier au format PPT mis à jour et contenant les requêtes SQL utilisées pour comprendre vos logs.
+Recommandations  
+
+N’hésitez pas à faire des requêtes SQL en utilisant les tables qui existent déjà dans la base de données. Ainsi vous allez pouvoir comprendre plus facilement les données.
+Points de vigilance  
+
+Choisissez les jointures judicieusement.
+Prenez le temps de comprendre les données.
+Ressources
+
+Cours/manuel sur Insert Into
+Cours/manuel sur Update
+Cours/manuel sur Delete
+ 
+
+Pour vérifier que vous n’avez rien oublié dans la réalisation de votre exercice, téléchargez et complétez la fiche d’autoévaluation.
+
+ 
+
+Parlez-en avec votre mentor durant votre dernière session de mentorat.
+
+ 
+
+ 

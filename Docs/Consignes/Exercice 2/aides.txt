@@ -1,0 +1,310 @@
+SQL
+Cours et tutoriels sur le langage SQL
+Rechercher
+Aller au contenu
+Accueil
+Cours
+Bases de Données
+Optimisation
+Livres
+Blog
+SQL INSERT INTO
+L’insertion de données dans une table s’effectue à l’aide de la commande INSERT INTO. Cette commande permet au choix d’inclure une seule ligne à la base existante ou plusieurs lignes d’un coup.
+
+Insertion d’une ligne à la fois
+Pour insérer des données dans une base, il y a 2 syntaxes principales :
+
+Insérer une ligne en indiquant les informations pour chaque colonne existante (en respectant l’ordre)
+Insérer une ligne en spécifiant les colonnes que vous souhaiter compléter. Il est possible d’insérer une ligne renseignant seulement une partie des colonnes
+Insérer une ligne en spécifiant toutes les colonnes
+La syntaxe pour remplir une ligne avec cette méthode est la suivante :
+
+INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...)
+Cette syntaxe possède les avantages et inconvénients suivants :
+
+Obliger de remplir toutes les données, tout en respectant l’ordre des colonnes
+Il n’y a pas le nom de colonne, donc les fautes de frappe sont limitées. Par ailleurs, les colonnes peuvent être renommées sans avoir à changer la requête
+L’ordre des colonnes doit resté identique sinon certaines valeurs prennent le risque d’être complétée dans la mauvaise colonne
+Insérer une ligne en spécifiant seulement les colonnes souhaitées
+Cette deuxième solution est très similaire, excepté qu’il faut indiquer le nom des colonnes avant “VALUES”. La syntaxe est la suivante :
+
+INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
+ VALUES ('valeur 1', 'valeur 2', ...)
+A noter : il est possible de ne pas renseigner toutes les colonnes. De plus, l’ordre des colonnes n’est pas important.
+
+Insertion de plusieurs lignes à la fois
+Il est possible d’ajouter plusieurs lignes à un tableau avec une seule requête. Pour ce faire, il convient d’utiliser la syntaxe suivante :
+
+INSERT INTO client (prenom, nom, ville, age)
+ VALUES
+ ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24),
+ ('Aimée', 'Hebert', 'Marigny-le-Châtel', 36),
+ ('Marielle', 'Ribeiro', 'Maillères', 27),
+ ('Hilaire', 'Savary', 'Conie-Molitard', 58);
+A noter : lorsque le champ à remplir est de type VARCHAR ou TEXT il faut indiquer le texte entre guillemet simple. En revanche, lorsque la colonne est un numérique tel que INT ou BIGINT il n’y a pas besoin d’utiliser de guillemet, il suffit juste d’indiquer le nombre.
+
+Un tel exemple sur une table vide va créer le tableau suivant :
+
+id	prenom	nom	ville	age
+1	Rébecca	Armand	Saint-Didier-des-Bois	24
+2	Aimée	Hebert	Marigny-le-Châtel	36
+3	Marielle	Ribeiro	Maillères	27
+4	Hilaire	Savary	Conie-Molitard	58
+Partager
+
+Cours
+SQL SELECT
+SQL DISTINCT
+SQL SQL_NO_CACHE
+SQL WHERE
+SQL AND & OR
+SQL IN
+SQL BETWEEN
+SQL LIKE
+SQL Wildcards
+SQL IS NULL / IS NOT NULL
+SQL GROUP BY
+SQL WITH ROLLUP
+SQL HAVING
+SQL ORDER BY
+SQL AS (alias)
+SQL LIMIT
+SQL CASE
+SQL UNION
+SQL UNION ALL
+SQL INTERSECT
+SQL EXCEPT / MINUS
+SQL INSERT INTO
+SQL ON DUPLICATE KEY UPDATE
+SQL UPDATE
+SQL DELETE
+SQL MERGE
+SQL TRUNCATE TABLE
+SQL CREATE DATABASE
+SQL DROP DATABASE
+SQL CREATE TABLE
+SQL PRIMARY KEY
+SQL AUTO_INCREMENT
+SQL ALTER TABLE
+SQL DROP TABLE
+Jointure SQL
+SQL INNER JOIN
+SQL CROSS JOIN
+SQL LEFT JOIN
+SQL RIGHT JOIN
+SQL FULL JOIN
+SQL SELF JOIN
+SQL NATURAL JOIN
+SQL Sous-requête
+SQL EXISTS
+SQL ALL
+SQL ANY / SOME
+Index SQL
+SQL CREATE INDEX
+SQL EXPLAIN
+SQL OPTIMIZE
+Commentaires en SQL
+Exercices SQL
+Fonctions SQL
+Fonctions d’agrégation
+SQL AVG()
+SQL COUNT()
+SQL MAX()
+SQL MIN()
+SQL SUM()
+Fonctions de chaînes de caractères
+SQL CONCAT()
+SQL LENGTH()
+SQL REPLACE()
+SQL SOUNDEX()
+SQL SUBSTRING()
+SQL LEFT()
+SQL RIGHT()
+SQL REVERSE()
+SQL TRIM()
+SQL LTRIM()
+SQL RTRIM()
+SQL LPAD()
+SQL UPPER()
+SQL LOWER()
+SQL UCASE()
+SQL LCASE()
+SQL LOCATE()
+SQL INSTR()
+Fonctions mathématiques / numérique
+SQL RAND()
+SQL ROUND()
+Fonctions de dates et d’heures
+SQL DATE_FORMAT()
+SQL DATEDIFF()
+SQL DAYOFWEEK()
+SQL MONTH()
+SQL NOW()
+SQL SEC_TO_TIME()
+SQL TIMEDIFF()
+SQL TIMESTAMP()
+SQL YEAR()
+Fonctions de chiffrements
+SQL MD5()
+SQL CAST()
+SQL CONVERT() (MySQL et SQL Server)
+SQL CONVERT() (PostgreSQL et Oracle)
+SQL ISNULL()
+SQL GROUP_CONCAT()
+SQL VERSION()
+Procédure stockée (CREATE PROCEDURE)
+CREATE TRIGGER
+Système de Gestion de Base de Données
+MySQL
+PostgreSQL
+MariaDB
+Oracle Database
+Microsoft SQL Server
+SQLite
+Access
+OpenOffice.org Base
+Cassandra
+Redis
+MongoDB
+Neo4j
+Moteurs de stockage
+Logiciels SQL
+Ebook SQL (PDF)
+Ebook SQL (.epub)
+Aide mémoire MySQL
+Boutique SQL
+SQL.sh sur Facebook
+SQL.sh sur Twitter
+
+
+SQL
+Cours et tutoriels sur le langage SQL
+Rechercher
+Aller au contenu
+Accueil
+Cours
+Bases de Données
+Optimisation
+Livres
+Blog
+SQL DELETE
+La commande DELETE en SQL permet de supprimer des lignes dans une table. En utilisant cette commande associé à WHERE il est possible de sélectionner les lignes concernées qui seront supprimées.
+
+Attention
+Avant d’essayer de supprimer des lignes, il est recommandé d’effectuer une sauvegarde de la base de données, ou tout du moins de la table concernée par la suppression. Ainsi, s’il y a une mauvaise manipulation il est toujours possible de restaurer les données.
+
+Syntaxe
+La syntaxe pour supprimer des lignes est la suivante :
+
+DELETE FROM `table`
+WHERE condition
+Attention : s’il n’y a pas de condition WHERE alors toutes les lignes seront supprimées et la table sera alors vide.
+
+Exemple
+Imaginons une table “utilisateur” qui contient des informations sur les utilisateurs d’une application.
+
+Table “utilisateur” :
+
+id	nom	prenom	date_inscription
+1	Bazin	Daniel	2012-02-13
+2	Favre	Constantin	2012-04-03
+3	Clerc	Guillaume	2012-04-12
+4	Ricard	Rosemonde	2012-06-24
+5	Martin	Natalie	2012-07-02
+Supprimer une ligne
+Il est possible de supprimer une ligne en effectuant la requête SQL suivante :
+
+DELETE FROM `utilisateur`
+WHERE `id` = 1
+Une fois cette requête effectuée, la table contiendra les données suivantes :
+
+id	nom	prenom	date_inscription
+2	Favre	Constantin	2012-04-03
+3	Clerc	Guillaume	2012-04-12
+4	Ricard	Rosemonde	2012-06-24
+5	Martin	Natalie	2012-07-02
+Supprimer plusieurs lignes
+Si l’ont souhaite supprimer les utilisateurs qui se sont inscrit avant le 10/04/2012, il va falloir effectuer la requête suivante :
+
+DELETE FROM `utilisateur`
+WHERE `date_inscription` < '2012-04-10'
+La requête permettra alors de supprimer les utilisateurs “Daniel” et “Constantin”. La table contiendra alors les données suivantes :
+
+id	nom	prenom	date_inscription
+3	Clerc	Guillaume	2012-04-12
+4	Ricard	Rosemonde	2012-06-24
+5	Martin	Natalie	2012-07-02
+Il ne faut pas oublier qu’il est possible d’utiliser d’autres conditions pour sélectionner les lignes à supprimer.
+
+Supprimer toutes les données
+Pour supprimer toutes les lignes d’une table il convient d’utiliser la commande DELETE sans utiliser de clause conditionnelle.
+
+DELETE FROM `utilisateur`
+Supprimer toutes les données : DELETE ou TRUNCATE
+Pour supprimer toutes les lignes d’une table, il est aussi possible d’utiliser la commande TRUNCATE, de la façon suivante :
+
+TRUNCATE TABLE `utilisateur`
+Cette requête est similaire. La différence majeure étant que la commande TRUNCATE va ré-initialiser l’auto-incrémente s’il y en a un. Tandis que la commande DELETE ne ré-initialise pas l’auto-incrément.
+
+SQL
+Cours et tutoriels sur le langage SQL
+Rechercher
+Aller au contenu
+Accueil
+Cours
+Bases de Données
+Optimisation
+Livres
+Blog
+SQL UPDATE
+La commande UPDATE permet d’effectuer des modifications sur des lignes existantes. Très souvent cette commande est utilisée avec WHERE pour spécifier sur quelles lignes doivent porter la ou les modifications.
+
+Syntaxe
+La syntaxe basique d’une requête utilisant UPDATE est la suivante :
+
+UPDATE table
+SET nom_colonne_1 = 'nouvelle valeur'
+WHERE condition
+Cette syntaxe permet d’attribuer une nouvelle valeur à la colonne nom_colonne_1 pour les lignes qui respectent la condition stipulé avec WHERE. Il est aussi possible d’attribuer la même valeur à la colonne nom_colonne_1 pour toutes les lignes d’une table si la condition WHERE n’était pas utilisée.
+
+A noter, pour spécifier en une seule fois plusieurs modification, il faut séparer les attributions de valeur par des virgules. Ainsi la syntaxe deviendrait la suivante :
+
+UPDATE table
+SET colonne_1 = 'valeur 1', colonne_2 = 'valeur 2', colonne_3 = 'valeur 3'
+WHERE condition
+Exemple
+Imaginons une table “client” qui présente les coordonnées de clients.
+
+Table “client” :
+
+id	nom	rue	ville	code_postal	pays
+1	Chantal	12 Avenue du Petit Trianon	Puteaux	92800	France
+2	Pierre	18 Rue de l'Allier	Ponthion	51300	France
+3	Romain	3 Chemin du Chiron	Trévérien	35190	France
+Modifier une ligne
+Pour modifier l’adresse du client Pierre, il est possible d’utiliser la requête SQL suivante :
+
+UPDATE client
+SET rue = '49 Rue Ameline',
+  ville = 'Saint-Eustache-la-Forêt',
+  code_postal = '76210'
+WHERE id = 2
+Cette requête sert à définir la colonne rue à “49 Rue Ameline”, la ville à “Saint-Eustache-la-Forêt” et le code postal à “76210” uniquement pour ligne où l’identifiant est égal à 2.
+
+Résultats :
+
+id	nom	rue	ville	code_postal	pays
+1	Chantal	12 Avenue du Petit Trianon	Puteaux	92800	France
+2	Pierre	49 Rue Ameline	Saint-Eustache-la-Forêt	76210	France
+3	Romain	3 Chemin du Chiron	Trévérien	35190	France
+Modifier toutes les lignes
+Il est possible d’effectuer une modification sur toutes les lignes en omettant d’utiliser une clause conditionnelle. Il est par exemple possible de mettre la valeur “FRANCE” dans la colonne “pays” pour toutes les lignes de la table, grâce à la requête SQL ci-dessous.
+
+UPDATE client
+SET pays = 'FRANCE'
+Résultats :
+
+id	nom	rue	ville	code_postal	pays
+1	Chantal	12 Avenue du Petit Trianon	Puteaux	92800	FRANCE
+2	Pierre	49 Rue Ameline	Saint-Eustache-la-Forêt	76210	FRANCE
+3	Romain	3 Chemin du Chiron	Trévérien	35190	FRANCE

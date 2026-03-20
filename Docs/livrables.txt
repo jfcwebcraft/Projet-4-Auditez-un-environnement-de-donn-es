@@ -1,0 +1,64 @@
+Livrables et soutenance
+évaluation
+
+Livrables
+Barre
+
+ 
+
+Voici un rappel des documents que vous devez déposer sur la plateforme.
+
+Le support de présentation au format PPT incluant : 
+l’architecture de la base de données ; 
+le dictionnaire des données ;
+le schéma relationnel de la base de données ; 
+le résultat des requêtes ;
+la compréhension des logs ;
+la conclusion sur le problème qui a été identifié ;
+une série de mesures correctives visant à améliorer la résilience de la base de données ; 
+le prototype de nouvelle base de données doté des mesures correctives.
+Le rapport d’audit au format pdf.
+Déposez sur la plateforme, dans un dossier zip nommé Titre_du_projet_nom_prenom, tous les livrables du projet comme suit : Nom_Prenom_n° du livrable_nom du livrable_date de démarrage du projet.
+
+
+Cela donnera : 
+
+Nom_Prenom_1_presentation_mmaaaa 
+Nom_Prenom_1_rapport-audit_mmaaaa 
+Par exemple, le livrable peut être nommé ainsi : Janek_Meriem_1_presentation_012024 
+
+Soutenance
+Barre 
+
+Nous cherchons, dans ce projet, à vous faire travailler les compétences d’expression orale. Investissez-vous sur les plans du débit de parole, de l’intonation, du niveau de vocabulaire ou du niveau de langage. 
+
+ 
+
+Dans ce métier, la capacité à prendre la parole de façon claire, précise et professionnelle est un atout. Utilisez ce projet pour améliorer votre communication orale ! 
+
+Durant la présentation orale, l’évaluateur interprétera le rôle de d’Hugo, responsable de l’équipe BI.
+
+ 
+
+La soutenance durera 30 minutes et sera structurée de la manière suivante :
+
+Présentation des livrables (15 minutes) 
+Présentez : 
+l’architecture de la base de données ; 
+le dictionnaire des données ;
+le schéma relationnel de la base de données ; 
+le résultat des requêtes ;
+la compréhension des logs ;
+la conclusion sur le problème qui a été identifié ;
+une série de mesures correctives visant à améliorer la résilience de la base de données. 
+Présentez un prototype de nouvelle base de données dans laquelle vous aurez intégré des mesures pour en améliorer la résilience.
+Vous devrez également présenter brièvement votre rapport d’audit.
+Discussion (10 minutes) 
+Toujours dans le rôle d’Hugo, l’évaluateur vous challengera sur votre compréhension de la base de données et de son modèle, et vous posera des questions sur l’utilisation des logs et sur votre audit. Par exemple : 
+Quelles sont les tables concernées par les modifications ?
+Comment avez-vous trouvé le problème ? 
+Qui a réalisé des actions loguées ?
+Quels pourraient être les dangers et les risques d’automatiser la modification, l’insertion et la suppression de données ?
+Debrief (5 minutes)
+À la fin de la soutenance, l'évaluateur arrêtera de jouer le rôle de Hugo pour vous permettre de débriefer ensemble.
+Votre présentation doit durer 15 minutes (+/- 5 minutes). Puisque le respect des durées des présentations est important en milieu professionnel, les présentations en dessous de 10 minutes ou au-dessus de 20 minutes peuvent être refusées. 

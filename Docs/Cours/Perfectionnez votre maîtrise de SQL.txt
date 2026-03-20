@@ -1,0 +1,2973 @@
+Tirez un maximum de ce cours
+
+
+Introduction du cours
+Bienvenue dans ce cours dédié à la maîtrise avancée de SQL.
+
+Dans la première partie du cours, vous mettrez en place votre environnement SQL et vous maîtriserez les dates et les tableaux. Ensuite vous récupérerez vos informations associées à vos bases de données et pour finir, vous fiabiliserez vos données à l'aide de contraintes.
+
+La seconde partie se concentre sur la résolution de requêtes complexes grâce aux jointures ainsi que la maîtrise des vues, des procédures et des fonctions stockées. Vous prendrez également en main les Windows Functions et vous explorerez les fonctions avancées de merge de tables.
+
+Rencontrez votre professeur
+
+
+Je suis Alexandre Bergere, passionné des technologies de données et de cloud basé à Paris, spécialisé dans l'architecture des données cloud et les solutions SaaS. Actuellement, je suis Head of Data & AI Engineer chez DataGalaxy. J'ai deux passions : implémenter des modern data stacks performantes et économiques (comme DuckDB, Delta et Redpanda), et développer Kaiten, une plateforme centralisée qui simplifie la gestion des déploiements, des métriques et des fonctionnalités SaaS open source sur laquelle je travaille. Fort d'une solide expérience dans l'enseignement et le mentorat, je m'engage à former la prochaine génération de professionnels des données tout en contribuant activement à des projets innovants.
+
+Découvrez le fonctionnement du cours
+Connaissez-vous le principe d'un cours en ligne sur OpenClassrooms ?
+
+Ce cours suit une progression logique que l'on a séquencée en 2 parties. Chaque partie contient plusieurs chapitres, qu'il est préférable de suivre dans l'ordre.
+
+Dans la majorité des chapitres, vous trouverez :
+
+du texte avec des explications et des exemples concrets, il présente des outils spécifiques et liste des ressources externes à consulter ou encore des fichiers à télécharger ;
+
+des screencasts tutoriels – ce sont des vidéos de démonstration qui permettent de suivre étape par étape la réalisation d'un point du cours directement sur l'ordinateur de l'expert-formateur.
+
+Régulièrement, vous trouverez aussi :
+
+des exercices dans les sections "À vous de jouer". C'est l'occasion de mettre en pratique ; ils sont précieux pour accélérer votre apprentissage !
+
+Et à la fin de chaque partie du cours, vous trouverez :
+
+un quiz pour vous permettre de valider ce que vous avez appris.
+
+Avant de démarrer, voici quelques conseils pour exploiter au mieux le contenu de ce cours et optimiser votre apprentissage :
+
+Lisez le texte dans chaque chapitre pour comprendre pourquoi les concepts abordés sont importants.
+
+Suivez les activités dans les “À vous de jouer” pour savoir comment vous pouvez mettre en œuvre ces concepts.
+
+Profitez de chaque occasion de pratiquer en faisant une pause dans le cours, pour vous entraîner de votre côté et reproduire pas à pas ce que vous avez lu dans le cours !
+
+Découvrez le projet fil rouge du cours
+
+
+Tout au long du cours, vous allez accompagner Sofia et Rodolphe de la société DVD Rental. Vous les aiderez à analyser les bases de données qu'ils vous fourniront tout au long des activités du cours.
+
+Dans les deux quizzes du cours, vous vous servirez de votre maîtrise avancée de SQL pour étudier et analyser des bases de données de biens immobiliers.
+
+Téléchargez la fiche résumé du cours
+Fiche résumé
+
+Mettez en place votre environnement SQL
+
+
+Vous êtes un nouvel employé de la société DVD Rental, une entreprise florissante spécialisée dans la location de films (une entreprise de location de DVD était un truc hyperbranché avant 2010 !). En tant qu'analyste de données, votre mission est de tirer le meilleur parti de la base de données de l’entreprise pour effectuer des analyses avancées qui guideront les décisions stratégiques de l’équipe de direction.
+
+DVD Rental vous donne accès à l’intégralité de sa base de données, vous offrant ainsi l'opportunité d'explorer les informations sur les clients, les films, les locations et bien plus encore.
+
+Votre objectif ?
+
+Extraire des insights précieux, répondre aux problématiques de l’entreprise, et améliorer le fonctionnement de la base.
+
+Au cours de votre parcours, vous serez régulièrement en contact avec deux personnages clés :
+
+Sofia, la CEO de DVD Rental, qui compte sur vous pour répondre à des questions stratégiques : quels sont les films les plus loués ? Quel est le profil de nos clients les plus fidèles ?
+
+Rodolphe, le DBA (Database Administrator), qui vous demandera d’optimiser la base de données, de garantir sa performance et de mettre en place des améliorations pour mieux gérer les données volumineuses.
+
+À chaque étape, vous devrez utiliser vos compétences en SQL et PostgreSQL pour accomplir ces tâches et fournir des réponses concrètes aux besoins de l’entreprise. Préparez-vous à relever des défis concrets tout en maîtrisant des concepts SQL avancés !
+
+Découvrez votre environnement SQL
+Avant toute chose, vous allez commencer par installer votre environnement SQL.
+
+Un environnement SQL ça comporte quoi ?
+
+L'environnement SQL est l'ensemble des outils, interfaces et configurations qui permettent de créer, gérer, interroger et manipuler des bases de données relationnelles. Comprendre cet environnement est crucial pour bien utiliser PostgreSQL ou tout autre système de gestion de bases de données (SGBD). Il se compose généralement :
+
+d’un SGBD qui gère l'accès, la manipulation, et le stockage des données (PostgreSQL ou MySQL par exemple) ;
+
+d’une interface de commande (CLI) : comme psql pour PostgreSQL, qui permet d'exécuter des commandes SQL directement sur le terminal ;
+
+d’interfaces graphiques (GUI) comme pgAdmin, DBeaver, qui offrent une approche plus visuelle pour interagir avec les bases de données ;
+
+de bibliothèques et APIs qui permettent de connecter des applications à la base de données via du code (ex: JDBC, ODBC, psycopg2 pour Python…)
+
+Et voilà ce que cela nous donne de manière illustrée :
+
+Diagramme montrant l'architecture client-serveur de PostgreSQL.
+Diagramme montrant l'architecture client-serveur de PostgreSQL.
+Dans ce cours, nous utiliserons PostgreSQL, un SGBD open source largement utilisé en entreprise pour sa fiabilité, sa conformité aux standards SQL, et sa richesse fonctionnelle. Son choix permet d'explorer des concepts SQL avancés tout en acquérant une compétence précieuse pour des projets réels.
+
+Avant de pouvoir se lancer, il est nécessaire d'installer deux éléments : le système de gestion de base de données (PostgreSQL) et les outils pour interagir avec (dans notre cas pgAdmin ou psql).
+
+Installez Postgresql
+Avant de pouvoir utiliser PostgreSQL, il faut installer la dernière version sur votre ordinateur. Pour cela, suivez le tutoriel ci-dessous correspondant à votre système d’exploitation (Windows, MacOS ou Linux Ubuntu) ou utilisez Docker Compose.
+
+PostgreSQL pour Windows
+Téléchargez le programme d’installation de PostgreSQL en vous rendant à l’adresse suivante et lancez-le.
+
+1/ Setup - PostgreSQL : cliquez sur Next.
+
+2/ Installation Directory : choisissez le dossier d’installation de votre ordinateur, par défaut PostgreSQL s'installe dans le C:\Program Files\PostgreSQL\SQL\16. Je vous conseille de le laisser ici, cliquez sur Next.
+
+3/ Select Components : décochez l’installation de Stack Builder, nous n’en aurons pas besoin, gardez les autres composants et cliquez sur Next.
+
+Fenêtre d'installation avec une liste de composants à sélectionner
+Fenêtre d'installation avec une liste de composants à sélectionner
+4/ Data Directory : choisissez le dossier où vos bases de données SQL seront enregistrées, par défaut PostgreSQL les installe dans le C:\Program Files\PostgreSQL\SQL\16\data. Je vous conseille de les laisser ici, cliquez sur Next.
+
+5/ Password : fournissez un mot de passe qui vous sera utile pour vous connecter par la suite à votre SGBD (vous définissez ici le mot de passe du compte super-admin PostgreSQL), cliquez sur Next.
+
+Fenêtre d'installation demandant un mot de passe pour l'utilisateur superadmin de la base de données
+Fenêtre d'installation demandant un mot de passe pour l'utilisateur superadmin de la base de données "postgres".
+Ne perdez pas ce mot de passe, vous en aurez besoin pour connecter pgAdmin, psql ou toute autre bibliothèque à PostgreSQL.
+
+6/ Port : définissez le port sur lequel PostgreSQL émettra, je vous conseille de garder le port par défaut, le 5434. Cliquez sur Next.
+
+7/ Advanced Options : gardez la valeur par défaut pour la base de données locale et cliquez sur Next.
+
+Lancez l’installation PostgreSQL.
+
+Félicitations, vous venez d’installer PostgreSQL, ainsi que la CLI psql et l’interface graphique pgAdmin, qui sont inclus dans votre installation.
+
+PostgreSQL pour Mac
+Pour installer PostgreSQL sur Mac, vous avez deux options :
+
+Téléchargez le programme d’installation de PostgreSQL en vous rendant à l’adresse suivante. Lancez l’exécution et suivez les mêmes étapes que pour l’installation Windows.
+
+Utilisez le package installer Homebrew pour PostgreSQL et pgAdmin.
+
+Pour installer les différents outils via le package installer Homebrew, exécutez les installations suivantes :
+
+Mettez à jour Homebrew.
+
+brew update
+Installez PostgreSQL (l’exécutable psql sera installé avec automatiquement).
+
+brew install postgresql@16
+Installez pgAdmin.
+
+brew install --cask pgadmin4
+Félicitations, vous venez d’installer PostgreSQL, incluant la CLI psql, et l’interface graphique pgAdmin.
+
+Si vous souhaitez réaliser l’installation sous Linux, vous pouvez suivre l’installation sur la documentation officielle. Si vous êtes plus à l’aise, je vous conseille de faire l’installation directement via Docker Compose. Pour ce faire vous pouvez suivre les différentes étapes d’installation via le README.md du repository. 
+
+Paramétrez votre environnement SQL
+Maintenant que tout est installé, il est temps de vérifier la disponibilité de notre nouveau SGBD en s’y connectant.
+
+Pour ce faire nous allons utiliser les deux outils présentés précédemment, psql et pgAdmin.
+
+Connexion par psql
+Ouvrez un terminal de commande (peu importe votre système d’exploitation) et lancez la commande suivante :
+
+psql -U postgres
+La commande vous invite à saisir le mot de passe de l'utilisateur postgres (que vous avez renseigné lors de l’installation) :
+
+Password for user postgres:
+Après avoir saisi le mot de passe correctement, vous serez connecté au serveur PostgreSQL. L'invite de commande se transforme en quelque chose comme ceci :
+
+postgres=#
+Lorsque vous vous connectez au serveur PostgreSQL, vous démarrez une session. Cette session, d'une durée limitée, vous permet d'exécuter diverses requêtes, comme l'exécution de commandes, avant de vous déconnecter.
+
+Pour afficher la base de données actuelle, vous pouvez utiliser la commande suivante :
+
+postgres=# SELECT current_database();
+Vous devriez voir l’affichage suivant :
+
+Fenêtre de terminal montrant une session ouverte avec PostgreSQL en utilisant la commande psql -U postgres.
+Fenêtre de terminal montrant une session ouverte avec PostgreSQL en utilisant la commande psql -U postgres.
+Connexion par pgAdmin
+Une autre façon, peut-être plus agréable, de vous connecter à PostgreSQL est d’utiliser l’interface graphique pgAdmin. Commencez par ouvrir votre navigateur et connectez-vous au http://localhost:8080, vous devriez découvrir l’interface ci-dessous :
+
+Ecran de connexion par pgAdmin
+Ecran de connexion par pgAdmin
+Le mot de passe par défaut est votre compte de session si vous êtes sur Windows, Mac ou Linux.
+
+Une fois sur l’interface, vous pouvez vous connecter au serveur PostgreSQL :
+
+1/ Faites un clic droit sur l’onglet Servers, puis sélectionnez Register, puis Server.
+
+Interface de pgAdmin avec une barre de menus en haut (File, Object, Tools, Help) et un panneau latéral
+Interface de pgAdmin
+2/ Dans l’onglet General, mettez le nom que vous souhaitez à votre connexion (par exemple dvdrental_server).
+
+3/ Dans l’onglet Connection, remplissez les informations suivantes :
+
+Pour Windows / Mac / Linux :
+
+Host name / address: localhost
+
+Port: 5432 (si vous n’avez pas changé la valeur par défaut)
+
+Maintenance database: postgres
+
+Username: root
+
+Password: celui choisi par vos soins lors de l’installation
+
+Fenêtre
+Fenêtre "Register - Server" de pgAdmin avec l'onglet "Connection" ouvert.
+Votre SGBD est désormais connecté, vous devriez voir apparaître votre serveur dvdrental_server dans la rubrique Server, tel que précisé ci-dessous.
+
+Interface de pgAdmin affichant le tableau de bord d'un serveur nommé
+Tableau de bord sur pgAdmin
+Découvrez la base de données du cours
+Maintenant que votre environnement est prêt, vous recevez un message de Rodolphe, le DBA de DVD Rental. Il vous annonce qu’il a mis à votre disposition une copie de la base de données complète de l’entreprise.
+
+Cette base contient toutes les informations dont vous aurez besoin pour vos analyses : les films disponibles à la location, les clients, les transactions passées, ainsi que les détails de chaque emprunt.
+
+Pour mener à bien vos missions au sein de DVD Rental, vous allez utiliser cette base de données tout au long du cours. Il s'agit de la célèbre base de données DVD Rental, disponible sur le site PostgreSQL Tutorial, que l’entreprise utilise pour gérer ses opérations.
+
+Récemment, Neon a acquis PostgreSQL Tutorial, un site bien connu dans la communauté PostgreSQL. Bien que cette acquisition ait eu lieu, l'interface et l'expérience utilisateur n'ont pas changé. Seules les URL ont été mises à jour pour refléter cette nouvelle étape.
+
+Neon est une plateforme PostgreSQL serverless, conçue pour vous aider à créer des applications fiables et évolutives plus rapidement. En séparant le calcul et le stockage, Neon offre des fonctionnalités modernes pour les développeurs, telles que l'autoscaling, les branches, la restauration instantanée et bien plus encore.
+
+Si vous le souhaitez, vous pouvez utiliser leur service managé pour suivre ce cours en parallèle ou à la place de votre installation locale. Cependant, je recommande vivement une installation manuelle si vous débutez avec PostgreSQL, car cela vous permettra de mieux comprendre les configurations et de maîtriser l'environnement sur lequel vous travaillez.
+
+Rendez-vous sur le site de Neon pour créer votre compte et provisionner une nouvelle base de données PostgreSQL. Une fois votre base prête, vous pourrez importer la base DVD Rental et poursuivre vos exercices.
+
+Votre première tâche ? Installer cette base de données dans votre environnement. Cela vous permettra de commencer à explorer les données et de répondre aux questions de la CEO et du DBA, qui comptent sur vous pour améliorer la performance de l’entreprise grâce à vos analyses.
+
+Cette base modélise les opérations commerciales d'un magasin de location de DVD. Elle comprend divers objets, tels que : 15 tables, 1 trigger, 7 vues, 8 fonctions, 1 domaine et 13 séquences.
+
+Vous pouvez retrouver le diagramme entité relation (ER) ci-dessous :
+
+Diagramme de modèle de base de données relationnelle (schéma ERD) pour un système de location de films.
+Diagramme de modèle de base de données relationnelle (schéma ERD)
+Pour mieux comprendre la base de données, n’hésitez pas à lire la page d’introduction à la base du site postgresqltutorial (en anglais).
+
+Gardez le réflexe de vous reporter à ce diagramme ER avant chaque exercice et prenez le temps d’analyser les différentes tables et leurs relations avant d’aller plus loin.
+
+À vous de jouer
+
+
+Maintenant que vous avez compris le modèle, il est temps de l’installer sur votre serveur fraîchement créé.
+
+Pour commencer, veillez à télécharger la base de données au format zip à l’adresse suivante.
+
+Le fichier téléchargé est au format zip, vous devez l’extraire afin de récupérer le format .tar qui sera utilisé pour la restauration de la base.
+
+Pour l’importer, vous avez deux manières de faire (comme d’ailleurs à chaque fois), via l’interface graphique pgAdmin ou la CLI (psql).
+
+Installer DVD Rental avec psql :
+Pour charger la base de données, lancer la commande suivante :
+
+pg_restore -h localhost -U postgres -d dvdrental /path/to/downloads/dvdrental.tar
+Les paramètres que vous venez d’utiliser sont les suivants:
+
+-h : hôte de la base de données, ici en local (localhost ou 127.0.0.1).
+
+-U : nom de l’utilisateur, c’est via son identité que le chargement sera effectué, ici postgres.
+
+-d : nom de la base de données qui apparaîtra sur votre serveur PostgreSQL. Pour le reste du cours nous partirons du principe que cette base s’appelle dvdrental, mais vous pouvez la nommer comme vous le désirez.
+
+le dernier paramètre est le chemin du fichier tar à importer.
+
+La commande vous invite à saisir le mot de passe de l'utilisateur postgres, que vous avez renseigné lors de l’installation :
+
+Password for user postgres:
+Une fois le script lancé, vous devriez voir apparaître le message sur votre console, indiquant le bon déroulement du chargement.
+
+Installer DVD Rental avec pgAdmin :
+Pour charger la base via l’interface, retournez sur votre navigateur à l’adresse http://localhost:8080 et suivez ces étapes:
+
+1/ Cliquez avec le bouton droit sur votre serveur dvdrental_server et sélectionnez Create > Database, pour ouvrir une boîte de dialogue permettant de créer une nouvelle base de données.
+
+2/ Remplissez le champ Database par le nom de la base de données qui apparaîtra sur votre serveur PostgreSQL. Pour le reste du cours nous partirons du principe que cette base s’appelle dvdrental, mais vous pouvez la nommer comme vous le désirez. Laissez la valeur du champ “Owner” à postgres et cliquez sur Save.
+
+3/ Faîtes un clic droit sur la base de données fraîchement créée “dvdrental” et sélectionnez Restore.
+
+4/ Chargez votre fichier tar, préalablement téléchargé et décompressé. Sélectionnez postgres comme Role name. Appuyez sur Restore.
+
+Fenêtre
+Fenêtre "Restore" de pgAdmin pour la base de données "dvrental".
+5/ Vous devriez voir apparaître deux pop-up vertes, indiquant que votre chargement s’est bien passé.
+
+Tableau de bord dans pgAdmin pour le serveur
+Tableau de bord dans pgAdmin pour le serveur "dvrental_server".
+Il est essentiel de ne pas oublier l’étape de décompression du fichier téléchargé, seul le fichier .tar extrait permettra la restitution de la base.
+
+Votre base de données est désormais prête à être exploitée.
+
+En résumé
+Vous avez installé PostgreSQL et deux outils indispensables pour s’y connecter.
+
+Vous avez configuré psql et pgAdmin pour être capable de communiquer avec PostgreSQL.
+
+Enfin, vous avez restauré la base de données dvdrental, qui sera notre fil rouge pendant tout le cours.
+
+Maintenant que tout est en place, il est temps de jouer avec vos nouvelles données. Dans le prochain chapitre vous allez apprendre à utiliser des fonctions de dates et de tableaux afin de maîtriser tous les types d’objets de votre base.
+
+Maitrisez les dates et les tableaux
+
+
+La compagnie DVD Rental se retrouve confrontée à un problème concernant le format des dates dans sa base de données. Rodolphe vous contacte pour vous demander de normaliser ces formats et ainsi éviter les erreurs liées aux différentes façons dont les dates sont stockées et utilisées dans les requêtes. Votre mission ? Manipuler ces données avec précision pour garantir que les dates soient cohérentes et faciles à utiliser.
+
+Maîtrisez les fonctions de base associées aux colonnes de types VARCHAR
+Avant de plonger dans la normalisation des dates, il est important de maîtriser les fonctions de manipulation de chaînes de caractères, souvent utilisées pour nettoyer et formater les données dans PostgreSQL.
+
+À quoi sert le type VARCHAR en SQL ?
+
+Le type VARCHAR (Variable Character) en SQL est utilisé pour stocker des chaînes de caractères de longueur variable. Contrairement à CHAR, qui a une longueur fixe, VARCHAR permet de définir une longueur maximale, mais les données stockées n'occupent que l'espace nécessaire. Par exemple, si vous définissez un champ VARCHAR(255), cela signifie que la colonne peut contenir jusqu'à 255 caractères, mais si la chaîne insérée ne fait que 10 caractères, elle n'occupera que l'espace de ces 10 caractères. Ce type est idéal pour des champs comme les noms, prénoms, ou adresses e-mail, où la longueur peut varier, tout en limitant la taille maximale pour optimiser le stockage.
+
+Comparaison
+Comparaison "CHAR" et "VARCHAR".
+PostgreSQL propose de nombreuses fonctions prédéfinies qui vous permettent de transformer et d'analyser les données dans des colonnes de tous types. Nous allons nous concentrer sur celles de type VARCHAR. Pour commencer, voyons comment appeler et utiliser ces fonctions dans une requête SQL. Un exemple classique pourrait être l'utilisation de CONCAT pour combiner plusieurs chaînes de caractères.
+
+Pour ce faire, vous allez intégrer la fonction dans la clauseSELECT, de la même manière que vous le feriez avec une colonne.
+
+SELECT
+CONCAT(first_name, last_name) AS full_name
+FROM
+customer
+Capture d'écran d'un tableau de résultats de pgAdmin
+Capture d'écran d'un tableau de résultats de pgAdmin
+Dans ce cas précis, il serait pertinent d'ajouter un espace entre le prénom et le nom pour plus de lisibilité. Heureusement, vous pouvez utiliser la fonctionCONCAT_WS, qui permet de combiner plusieurs chaînes de caractères tout en insérant un séparateur.
+
+SELECT
+CONCAT_WS(' ', first_name, last_name) AS full_name
+FROM
+customer
+Capture d'écran d'un tableau de résultats de pgAdmin
+Capture d'écran d'un tableau de résultats de pgAdmin
+Vous pouvez également enchaîner plusieurs fonctions, par exemple en supprimant les espaces vides, puis en calculant la longueur de la chaîne de caractères :
+
+SELECT
+last_name,
+LENGTH(TRIM(last_name))
+FROM
+customer
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Voici quelques-unes des fonctions les plus utiles lorsque vous travaillez avec des colonnes de type VARCHAR :
+
+Fonction
+
+Description
+
+Exemple
+
+Résultat
+
+CONCAT
+
+Pour combiner plusieurs chaînes de caractères.
+
+CONCAT('A', 'B', 'C')
+
+'ABC'
+
+CONCAT_WS
+
+Pour combiner plusieurs chaînes de caractères avec un séparateur particulier.
+
+CONCAT_WS('-', 'A', 'B', 'C')
+
+'A-B-C'
+
+LEFT / RIGHT
+
+Pour extraire des caractères depuis la gauche ou la droite.
+
+LEFT('PostgreSQL', 4)
+
+RIGHT('PostgreSQL', 3)
+
+'Post'
+
+'SQL'
+
+LENGTH
+
+Pour calculer la longueur d'une chaîne.
+
+LENGTH('PostgreSQL')
+
+10
+
+LOWER / UPPER
+
+Pour convertir une chaîne de caractères en minuscules ou en majuscules.
+
+LOWER('PostgreSQL')
+
+UPPER('PostgreSQL')
+
+'postgresql'
+
+'POSTGRESQL'
+
+LTRIM / RTRIM
+
+Pour supprimer les espaces ou les caractères spécifiques au début ou à la fin d'une chaîne.
+
+LTRIM('  PostgreSQL')
+
+RTRIM('PostgreSQL   ')
+
+'PostgreSQL'
+
+TRIM
+
+Pour supprimer les espaces ou les caractères spécifiques au début et à la fin d'une chaîne.
+
+TRIM('   PostgreSQL   ')
+
+'PostgreSQL'
+
+POSITION
+
+Pour trouver la position d'une sous-chaîne dans une chaîne de caractères.
+
+POSITION('B' in 'A B C')
+
+3
+
+REPEAT
+
+Pour répéter une chaîne de caractères un nombre spécifié de fois.
+
+REPEAT('*', 5)
+
+'*****'
+
+REPLACE
+
+Pour remplacer toutes les occurrences d'une sous-chaîne spécifique par une autre chaîne.
+
+REPLACE('PostgreSQL','PostGre','My')
+
+'MySQL'
+
+REVERSE
+
+Pour renverser l'ordre des caractères dans une chaîne.
+
+REVERSE('PostgreSQL')
+
+'LQSergtsoP'
+
+SPLIT_PART
+
+Pour diviser une chaîne en plusieurs parties en fonction d'un délimiteur, puis renvoyer une partie spécifique de cette chaîne.
+
+SPLIT_PART(‘2024-12-26′,’-‘,2)
+
+’12’
+
+SUBSTRING
+
+Pour extraire une sous-chaîne.
+
+SUBSTRING('PostgreSQL',1, 4)
+
+'Post'
+
+Pour plus de détails et de fonctions, consultez la documentation PostgreSQL.
+
+Manipulez les formats de dates
+Au fil des semaines, Sofia, la CEO de DVD Rental a remarqué que certaines analyses sur les périodes de location, les dates de retour et les comportements d'emprunt des clients étaient difficiles à interpréter en raison de formats de dates incohérents. Que ce soit pour savoir combien de films ont été loués sur une période donnée, calculer la durée moyenne des locations, ou encore analyser les périodes de pics de demande, les dates sont au cœur de nombreuses questions essentielles pour l’entreprise.
+
+Imaginez qu'un client se présente pour une réclamation concernant des frais de retard, ou que la CEO vous demande un rapport sur les pics de location lors des vacances scolaires. Chaque fois, vous aurez besoin de manipuler et de formater les dates correctement pour obtenir les réponses précises.
+
+Passons donc maintenant à la manipulation des types de données temporelles, indispensables pour répondre aux demandes de Sofia et Rodolphe.
+
+Comprenez les différents formats
+Il existe plusieurs formats de stockage de dates dans PostgreSQL, chacun ayant ses particularités :
+
+Format
+
+Description
+
+TIMESTAMP
+
+Stocke la date et l'heure sans fuseau horaire (ex. : 2024-12-26 14:23:56).
+
+TIMESTAMPTZ
+
+Stocke la date et l'heure avec fuseau horaire (ex. : 2024-12-26 14:23:56 +00).
+
+DATE
+
+Stocke uniquement la date (ex. : 2024-12-26).
+
+TIME
+
+Stocke uniquement l'heure (ex. : 14:23:56).
+
+Maintenant que vous maîtrisez les différents formats, passons à leur utilisation en tenant compte des fuseaux horaires et des fonctions de dates courantes.
+
+Utilisez les fonctions de dates courantes
+Utilisez des fonctions commeNOW()ouCURRENT_TIMESTAMPpour obtenir la date et l'heure actuelles, ou alorsCURRENT_DATEpour obtenir la date actuelle.
+
+SELECT
+NOW(),
+CURRENT_TIMESTAMP,
+CURRENT_DATE
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Il est également possible de définir un fuseau horaire par défaut qui sera ensuite utilisé à chaque fois que vous manipulez les dates. Pour ce faire utilisez la requête suivante :
+
+SET timezone = 'America/New_York';
+Les fuseaux horaires peuvent devenir complexes, notamment dans des applications internationales.  Pour vérifier le fuseau actuellement utilisé dans votre base, utilisez la commandeSHOW TIMEZONE :
+
+SHOW TIMEZONE;
+Capture d'écran d'un tableau de résultats de pgAdmin avec une colonne
+Capture d'écran d'un tableau de résultats de pgAdmin avec une colonne
+Vous pouvez rétablir votre fuseau horaire d'origine, qui est le suivant :
+
+SET timezone = 'Etc/UTC';
+Lorsque l'on travaille avec des dates dans une base comme DVD Rental, il est souvent nécessaire de définir des valeurs par défaut pour certaines colonnes, par exemple pour enregistrer automatiquement l'heure de création d'une location ou la date de retour prévue d'un film. PostgreSQL offre la possibilité de définir ces valeurs par défaut au moment de la création de la colonne, ou plus tard en modifiant une table existante. Cela garantit que des informations critiques comme la date de création ou la dernière mise à jour d'une ligne sont enregistrées sans intervention manuelle.
+
+Prenons l'exemple suivant, dans lequel nous souhaitons ajouter une colonne created_at dans une table rentals, afin de stocker l'heure précise de chaque nouvelle location. Nous allons définir cette colonne en tant que typeTIMESTAMPTZ, ce qui permet de prendre automatiquement en compte le fuseau horaire, tout en utilisant la fonctionCURRENT_TIMESTAMPpour enregistrer l'heure actuelle :
+
+ALTER TABLE rentals
+ADD COLUMN created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP;
+Ici, la colonne created_at enregistrera automatiquement l'heure exacte de chaque nouvel enregistrement avec le fuseau horaire du serveur. Cela évite d'oublier de renseigner cette information manuellement à chaque nouvelle location. Si vous voulez définir une valeur par défaut lors de la création d'une nouvelle table, vous pouvez utiliser cette syntaxe :
+
+CREATE TABLE rentals (
+    rental_id SERIAL PRIMARY KEY,
+    customer_id INT,
+    film_id INT,
+    rental_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+Maintenant que vous comprenez les fuseaux horaires et les fonctions de dates, voyons comment extraire et transformer ces données pour des analyses plus précises.
+
+Utilisez les fonctions pour récupérer et transformer les dates
+PostgreSQL propose plusieurs fonctions pour manipuler les dates. Voici un résumé des fonctions essentielles que vous utiliserez dans ce cours :
+
+Fonction
+
+Description
+
+Fonction
+
+Résultat
+
+EXTRACT()
+
+Pour extraire des parties spécifiques d'une date.
+
+EXTRACT(YEAR FROM '2024-10-08 20:25:09'::TIMESTAMP)
+
+2024
+
+DATE_TRUNC() 
+
+Pour tronquer une date à un intervalle précis (mois, jour, heure).
+
+DATE_TRUNC('year', '2024-10-08 20:25:09'::TIMESTAMP)
+
+2024-01-01 00:00:00
+
+INTERVAL()
+
+Pour calculer des durées et les ajouter ou soustraire à des dates.
+
+'2024-10-08 20:25:09'::TIMESTAMP + INTERVAL '7 days'
+
+2024-10-15 20:25:09
+
+SELECT
+rental_date,
+EXTRACT(YEAR FROM rental_date) AS YEAR,
+EXTRACT(MONTH FROM rental_date) AS MONTH,
+EXTRACT(DAY FROM rental_date) AS DAY,
+DATE_TRUNC('year', rental_date) AS YEAR_TRUNC,
+DATE_TRUNC('month', rental_date) AS MONTH_TRUNC,
+rental_date + INTERVAL '7 days' AS PLUS_7DAYS
+FROM
+rental;
+Capture d'écran d'un tableau de résultats de pgAdmin affichant plusieurs colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin affichant plusieurs colonnes
+Utilisez les tableaux comme type dans vos colonnes
+Après avoir résolu les problèmes liés aux dates, Sofia la CEO de DVD Rental vous contacte par Slack avec une nouvelle demande :
+
+Salut, Nous avons une nouvelle idée pour améliorer l'expérience utilisateur. Nous aimerions stocker plusieurs numéros de téléphone pour chaque client et enregistrer leurs catégories de films préférées afin de personnaliser les recommandations.
+
+Tu peux regarder comment intégrer ça dans la base de données ? Merci !
+
+Pour répondre à ce besoin, vous allez devoir utiliser les tableaux dans PostgreSQL, un type de colonne qui permet de stocker plusieurs valeurs au sein d'un seul enregistrement, ce qui est idéal pour cette situation.
+
+Comprenez et utilisez les tableaux dans vos colonnes
+Prenons l’exemple de la table customer. Actuellement, un client ne peut avoir qu'un seul numéro de téléphone enregistré (aujourd’hui il est stocké dans la tableaddress), mais dans la réalité, les clients peuvent avoir plusieurs numéros (portable, fixe, professionnel). Pour éviter de créer de nouvelles colonnes pour chaque numéro, vous pouvez utiliser un tableau pour stocker plusieurs numéros dans une seule colonne.
+
+Ainsi, au lieu d’avoir une seule valeur pour le téléphone, vous créerez une colonne phone_numbers de type tableau pour chaque client :
+
+ALTER TABLE customer ADD COLUMN phone_numbers TEXT[];
+De la même manière, pour capturer les catégories de films préférées d’un client (par exemple, "Action", "Comédie", "Drame"), vous pouvez utiliser une colonne favorite_categories :
+
+ALTER TABLE customer ADD COLUMN favorite_categories TEXT[];
+Modifiez et manipulez les tableaux
+Une fois que vous avez défini vos colonnes de type tableau, la CEO vous demande de commencer à enregistrer ces informations. Pour cela, vous devrez savoir ajouter et supprimer des éléments dans ces tableaux.
+
+Par exemple, supposons qu’un client a trois numéros de téléphone : un portable, un fixe, et un numéro professionnel. Vous pouvez insérer ces numéros dans la colonne phone_numbers de cette façon :
+
+UPDATE customer
+SET phone_numbers = ARRAY['+1 212 555 1212', '+1 212 526 2365', '+1 212 526 1718']
+WHERE
+customer_id = 1;
+Si ce client change de numéro et souhaite supprimer son fixe, vous pouvez utiliser la fonctionARRAY_REMOVE()pour modifier son tableau de numéros :
+
+UPDATE customer
+SET phone_numbers = ARRAY_REMOVE(phone_numbers, '+1 212 526 1718') WHERE
+customer_id = 1;
+Vous pouvez également ajouter une nouvelle catégorie de films préférée pour un client en utilisantARRAY_APPEND():
+
+UPDATE customer
+SET favorite_categories = ARRAY_APPEND(favorite_categories, 'Horreur') WHERE
+customer_id = 1;
+UPDATE customer
+SET favorite_categories = ARRAY_APPEND(favorite_categories, 'Action') WHERE
+customer_id IN (1,7,8);
+Grâce à ces fonctions, vous pourrez facilement gérer les modifications dans les tableaux, sans avoir à réorganiser toute votre base de données.
+
+Recherchez dans un tableau
+Le DBA vous envoie ensuite une nouvelle requête : il veut savoir quels clients ont "Action" comme catégorie préférée. Pour cela, vous devez rechercher un élément spécifique dans les tableaux de la colonne favorite_categories.
+
+En utilisant la fonctionARRAY_POSITION(), vous pouvez identifier les clients qui ont "Action" dans leur liste de catégories : 
+
+SELECT
+customer_id,
+first_name,
+last_name
+FROM
+customer
+WHERE
+ARRAY_POSITION(favorite_categories, 'Action') IS NOT NULL;
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Une autre façon de faire est d’utiliser la fonctionANY():
+
+SELECT
+customer_id,
+first_name,
+last_name
+FROM
+customer
+WHERE
+'Action' = ANY(favorite_categories);
+Cela vous permet d'extraire les clients qui préfèrent les films d'action et d'utiliser ces informations pour des campagnes marketing ciblées.
+
+Étendez vos tableaux
+Enfin, pour une analyse plus détaillée, la CEO vous demande un rapport sur les numéros de téléphone de tous les clients, mais chaque numéro doit être affiché sur une ligne distincte.
+
+Comment faire cela alors que les numéros sont stockés sous forme de tableau ?
+
+La fonctionUNNEST()vous permet de découper un tableau en plusieurs lignes distinctes, ce qui est parfait pour cette situation. Par exemple, pour obtenir une liste de tous les numéros de téléphone de chaque client :
+
+SELECT
+customer_id,
+UNNEST(phone_numbers) AS phone_number
+FROM
+customer;
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Cela transformera chaque élément du tableau phone_numbers en une nouvelle ligne, permettant d’afficher tous les numéros de téléphone de chaque client dans un format plus simple à analyser.
+
+Et si on vérifiait que tout était clair avec un cas pratique ?
+
+À vous de jouer
+
+
+Contexte
+Sofia souhaite analyser les habitudes de location des clients et, dans cette démarche, elle aimerait porter une attention particulière aux clients dont le mode de contact préféré est le SMS. Chaque client peut avoir plusieurs modes de contact (téléphone, email, etc.), et il est crucial de comprendre ces préférences pour optimiser les interactions. Ainsi, vous devrez manipuler les dates de location tout en utilisant un tableau pour enregistrer les différents modes de contact des clients.
+
+Consignes
+Dates :
+
+Ajoutez une nouvelle colonne dans la table rental pour indiquer si une location a été effectuée durant les heures d'ouverture de DVD Rental (de 9h à 18h)
+
+Utilisez la fonctionEXTRACTouDATE_TRUNCpour vérifier l'heure de la location et insérer une valeur booléenne (TRUE/FALSE).
+
+Tableaux :
+
+Ajoutez une colonne de type tableau dans la table customer pour enregistrer les différents modes de contact utilisés par chaque client (par exemple, {Email, SMS, Téléphone}).
+
+Insérez plusieurs modes de contact pour certains clients.
+
+Effectuez une requête pour rechercher les clients qui ont "SMS" comme mode de contact préféré.
+
+Vérifiez votre travail à l’aide de cet exemple de corrigé
+Si vous êtes coincé, la solution est disponible ci-dessous.
+
+
+Dans cette vidéo :
+
+Vous avez ajouté une colonne dans la table rental pour indiquer si une location a été effectuée durant les heures d'ouverture, en utilisant les fonctionsEXTRACTouDATE_TRUNC
+
+Vous avez inséré une colonne de type tableau dans la table customer pour enregistrer plusieurs modes de contact pour chaque client.
+
+Vous avez exécuté une requête pour identifier les clients ayant "SMS" comme mode de contact préféré.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans le script à ce lien.
+
+En résumé
+Vous avez exploré les différents formats de dates pris en charge par PostgreSQL, ainsi que les fonctions associées, telles queEXTRACT,DATE_TRUNC etINTERVAL.
+
+Vous avez compris comment filtrer et manipuler les dates pour des analyses précises, notamment en utilisant les fuseaux horaires.
+
+Vous avez découvert comment utiliser des tableaux comme types de colonnes pour stocker des informations multiples liées à un même enregistrement.
+
+En vous basant sur des exemples concrets, vous avez appris à ajouter, modifier et rechercher des éléments dans des tableaux, ce qui vous permet de mieux gérer des données variées, comme les modes de contact des clients.
+
+Après avoir maîtrisé les dates et les tableaux, il est temps de plonger dans les métadonnées et les statistiques de votre base de données, afin de permettre à DVD Rental de suivre efficacement ses tables et d'optimiser ses performances.
+
+Récupérez vos informations associées à votre base de données
+
+
+Après avoir renforcé l'intégrité et la validation des données dans la base DVD Rental, Rodolphe est très satisfait de votre travail. Il souhaite maintenant mettre en place un système automatisé pour suivre les tables, les colonnes, et les statistiques courantes de la base de données. Votre mission consiste à collecter les informations et requêtes nécessaires afin que Rodolphe puisse mettre en place un processus de suivi efficace, permettant une analyse approfondie des opérations et l'optimisation des performances de la base de données.
+
+Récupérez les informations associées à l’environnement PostgreSQL
+Votre DBA a besoin d'informations détaillées sur l'environnement PostgreSQL pour garantir que tout fonctionne comme prévu. Vous allez donc récupérer les informations de configuration du serveur.
+
+Récupérez les informations associées à PostgreSQL via psql
+Pour obtenir un aperçu complet de la configuration actuelle de PostgreSQL, vous utiliserez psql, l'outil en ligne de commande. Cela vous permettra de vérifier les paramètres essentiels du serveur.
+
+-- Afficher les paramètres de configuration de PostgreSQL
+SHOW ALL;
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Cette commande vous fournira un rapport détaillé sur la configuration du serveur, y compris les paramètres de performance, de sécurité, et de connexion.
+
+Récupérez les informations associées à PostgreSQL via la table pg_settings
+Pour une vue plus structurée des paramètres de configuration, vous pouvez interroger la table pg_settings directement via pgAdmin :
+
+-- Récupérer les paramètres de configuration du serveur
+SELECT
+name,
+setting,
+unit,
+category,
+short_desc,
+extra_desc,
+context,
+vartype,
+source,
+min_val,
+max_val,
+enumvals,
+boot_val,
+reset_val,
+sourcefile,
+sourceline,
+pending_restart
+FROM pg_settings;
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Mais à quoi ça sert de récupérer ce genre d'informations ?
+
+Ces informations sont essentielles pour optimiser et sécuriser le fonctionnement de la base de données. Par exemple, elles permettent d’ajuster les paramètres de performance, comme la mémoire allouée ou le nombre de connexions simultanées, et de vérifier la configuration des sauvegardes, de la sécurité, ou de la gestion des logs. En connaissant ces réglages, vous pouvez diagnostiquer des problèmes potentiels ou améliorer l’efficacité du serveur.
+
+En interrogeant PostgreSQL directement, vous pouvez automatiser la récupération de ces données, les inclure dans des scripts, et ainsi surveiller l'état du serveur de manière régulière ou programmée.
+
+Utilisez psql pour avoir des informations associées aux métadonnées de la base de données
+Votre DBA, enthousiaste de vos progrès, vous demande maintenant de fournir des informations détaillées sur la structure des tables et des colonnes de la base de données. Plutôt que de vous lancer dans une tâche fastidieuse de référencement manuel, il vous révèle un secret précieux : PostgreSQL (comme de nombreux systèmes SGBD) dispose de tables de métadonnées qui vous permettent de récupérer ces informations de manière automatisée.
+
+Les métadonnées sont des données qui fournissent des informations sur d'autres données.
+
+Vous allez donc pouvoir interroger directement les métadonnées :
+
+avec PSQL, dans un premier temps ;
+
+avec l’INFORMATION_SCHEMA dans un second temps.
+
+Ces deux approches vous fourniront toutes les informations nécessaires, sans avoir à les rechercher manuellement.
+
+Comprenez les métadonnées
+Dans le contexte d'une base de données, les métadonnées décrivent la structure et les objets de la base, permettant de comprendre comment les données sont organisées et interconnectées. Voici quelques éléments clés des métadonnées dans PostgreSQL :
+
+Tables et colonnes : Les métadonnées incluent des informations sur toutes les tables présentes dans la base de données, ainsi que sur les colonnes de chaque table. Cela comprend les noms des tables, les types de données des colonnes, et les contraintes appliquées (comme les clés primaires ou étrangères).
+
+Index : Les métadonnées fournissent des détails sur les index définis sur les tables. Les index sont utilisés pour améliorer les performances des requêtes en permettant des recherches plus rapides.
+
+Fonctions et procédures : Les métadonnées incluent également des informations sur les fonctions et procédures stockées. Ces objets de base de données contiennent du code SQL qui peut être réutilisé pour effectuer des opérations complexes.
+
+Relations : Les métadonnées montrent comment les différentes tables sont reliées entre elles à travers des clés étrangères, permettant ainsi de comprendre les relations entre les données.
+
+En utilisant les outils de psql pour interroger ces métadonnées, vous pouvez obtenir une vue complète de la structure de la base de données sans avoir à examiner chaque élément manuellement. Cela simplifie considérablement le processus de gestion et d'analyse des données.
+
+Utilisez psql pour récupérer les informations associées aux tables et colonnes
+Avant toute chose, connectez-vous à votre base de données dvdrental pour la suite des requêtes, vous devriez voir alors un changement apparaître sur votre terminal ; indiquant que vous êtes désormais connecté à la base de données dvdrental :
+
+\c dvdrental
+Capture d'écran d'un terminal montrant une session ouverte avec PostgreSQL via la commande psql -U postgres.
+Capture d'écran d'un terminal montrant une session ouverte avec PostgreSQL via la commande psql -U postgres.
+Pour obtenir des détails sur les tables et les colonnes, vous pouvez utiliser la commande\d:
+
+-- Afficher les informations sur toutes les tables
+\d
+-- Afficher les détails d'une table spécifique
+\d table_name
+Capture d'écran d'un terminal affichant une liste de relations dans la base de données
+Capture d'écran d'un terminal affichant une liste de relations dans la base de données
+Utilisez psql pour récupérer les informations associées aux autres éléments (index, fonctions, triggers, procédures…)
+Pour examiner d'autres éléments importants comme les index, les fonctions, et les triggers, utilisez les commandes suivantes :
+
+-- Afficher les index et informations détaillées d'une table
+\d+ table_name
+-- Lister toutes les fonctions & procédures stockées
+\df
+-- Lister les triggers associés à une table spécifique
+\dS table_name
+Capture d'écran d'un terminal montrant la structure de la table
+Capture d'écran d'un terminal montrant la structure de la table
+Cela vous donne une vue complète des différents objets de la base de données, facilitant ainsi la gestion et l'optimisation.
+
+Vous pouvez retrouver toutes les commandes psql dans la documentation PostgreSQL.
+
+Utilisez Information_schema pour avoir des informations associées aux métadonnées de la base de données
+Pour une approche plus standardisée et détaillée, Rodolphe vous demande d'utiliser cette fois-ci le schéma INFORMATION_SCHEMA (IS) pour accéder aux métadonnées.
+
+Utilisez l’IS pour récupérer les informations associées aux tables et colonnes
+Le schéma INFORMATION_SCHEMA fournit une manière uniforme d'accéder aux métadonnées.
+
+Pour pouvoir lister les tables associées à l’INFORMATION_SCHEMA il vous suffit de dérouler les tables associées au Catalogs “ANSI (information_schema)”.
+
+Capture d'écran de l'interface pgAdmin montrant le panneau
+Capture d'écran de l'interface pgAdmin montrant le panneau
+Vous pouvez directement requêter ces tables dans votre éditeur de texte :
+
+-- Récupérer des informations sur toutes les tables
+SELECT
+*
+FROM
+information_schema.tables
+WHERE
+table_catalog = 'dvdrental'
+AND table_schema = 'public';
+-- Récupérer des informations associées aux colonnes de la table `rental`
+SELECT
+*
+FROM
+information_schema.columns
+WHERE
+table_catalog = 'dvdrental'
+AND table_schema = 'public'
+AND table_name = 'rental'
+Capture d'écran d'un tableau de résultats de pgAdmin affichant des informations sur les tables et vues de la base de données
+Capture d'écran d'un tableau de résultats de pgAdmin affichant des informations sur les tables et vues de la base de données
+Le screenshot ci-dessus est le retour des informations associées aux tables de votre base de données.
+
+Utilisez l’IS pour récupérer les informations associées aux autres éléments
+On peut récupérer des informations sur de nombreux objets via l'INFORMATION_SCHEMA (fonctions, triggers…), il suffit de trouver la bonne table associée. Ci-dessous quelques exemples de récupérations d’informations intéressantes :
+
+- Récupérer les informations associées aux contraintes check
+SELECT
+*
+FROM
+information_schema.check_constraints
+WHERE
+constraint_catalog = 'dvdrental'
+AND constraint_schema = 'public'
+-- Récupérer les informations associées aux vues
+SELECT
+*
+FROM
+information_schema.views
+WHERE
+table_catalog = 'dvdrental'
+AND table_schema = 'public'
+-- Récupérer les informations associées aux triggers
+SELECT
+*
+FROM
+information_schema.triggers
+WHERE
+trigger_catalog = 'dvdrental'
+AND trigger_schema = 'public'
+Vous pouvez retrouver la liste de toutes les tables disponibles et leurs détails dans la documentation PostgreSQL.
+
+Maintenant que vous maîtrisez la récupération des métadonnées, passons à la configuration des statistiques pour surveiller et optimiser les performances de la base de données.
+
+Configurez la collecte de statistiques
+Après avoir exploré les métadonnées et récupéré les informations nécessaires sur la structure de la base de données, votre DBA souhaite maintenant mettre en place un système de collecte de statistiques. Ce système est crucial pour analyser les performances et les actions effectuées sur la base de données. En configurant correctement cette collecte, vous pourrez surveiller l'état de la base de données et identifier les éventuels goulets d'étranglement ou problèmes de performance.
+
+Configurez et comprenez les statistiques possibles
+Les statistiques de base de données fournissent des informations essentielles sur le fonctionnement et les performances de la base. PostgreSQL collecte divers types de statistiques, notamment :
+
+Statistiques de tables : Incluent des informations sur la taille des tables, le nombre de lignes, et la distribution des données.
+
+Statistiques d'index : Donnent des détails sur l'efficacité des index, comme le nombre de fois qu'ils sont utilisés et leur taille.
+
+Statistiques des requêtes : Mesurent la performance des requêtes, y compris le temps d'exécution et le nombre de requêtes traitées.
+
+Statistiques d'activité : Fournissent des données sur l'activité générale de la base de données, comme le nombre de connexions et d'opérations effectuées.
+
+Pour vérifier la configuration de la collecte de ces statistiques, vous pouvez utiliser les commandes suivantes et vérifier que le retour est bien àon: 
+
+-- Afficher les paramètres de collecte de statistiques
+SHOW track_activities;
+SHOW track_counts;
+Capture d'écran de deux tableaux de résultats distincts dans pgAdmin.
+Capture d'écran de deux tableaux de résultats distincts dans pgAdmin.
+Ces paramètres vous permettent de configurer le niveau de détail des statistiques collectées et d'ajuster les paramètres de performance en fonction de vos besoins spécifiques.
+
+Manipulez les informations associées aux performances et activités de la base de données
+Une fois que vous avez validé que la collecte de statistiques était bien activée, vous pouvez utiliser diverses vues système pour accéder et analyser ces informations. Voici quelques-unes des vues les plus utiles :
+
+Vues
+
+Description
+
+pg_stat_user_tables 
+
+Affiche les statistiques des tables utilisateur, y compris les lectures et écritures effectuées.
+
+pg_stat_user_indexes
+
+Donne des détails sur l'utilisation des index, tels que le nombre de fois qu'un index est utilisé dans des requêtes.
+
+pg_stat_activity
+
+Montre les activités en cours, y compris les requêtes en exécution et les connexions actives.
+
+pg_stat_statements
+
+Fournit des statistiques sur les requêtes SQL exécutées, comme le temps d'exécution total et le nombre d'exécutions.
+
+Et comment je fais pour utiliser ces différentes vues ?
+
+Rien de plus simple ! Il suffit de les utiliser comme source dans les requêtes SQL. Je vous laisse effectuer les requêtes suivantes pour comprendre les données retournées :
+
+-- Afficher les statistiques de la base de données
+SELECT * FROM pg_stat_database;
+-- Afficher les statistiques des tables utilisateur
+SELECT * FROM pg_stat_user_tables;
+-- Afficher les statistiques des index
+SELECT * FROM pg_stat_user_indexes;
+-- Afficher les activités en cours
+SELECT * FROM pg_stat_activity;
+Capture d'écran d'un tableau de résultats de pgAdmin montrant des informations sur les processus actifs de la base de données.
+Capture d'écran d'un tableau de résultats de pgAdmin montrant des informations sur les processus actifs de la base de données.
+Ces vues fournissent des informations sur les performances des requêtes, l'utilisation des ressources, et les activités en cours.
+
+Vous pouvez retrouver tous les métriques à analyser dans la documentation PostgreSQL.
+
+À vous de jouer
+
+
+Contexte
+Après avoir renforcé l'intégrité des données, Rodolphe est prêt à passer à l'étape suivante : automatiser le suivi des tables, des colonnes et des statistiques courantes de la base de données. Pour l'aider à démarrer, il vous a demandé de collecter des informations précises à partir des métadonnées et de produire des statistiques qui lui permettront de prioriser ses travaux d'analyse et d'optimisation. À travers ces exercices, vous allez fournir à Rodolphe les bases nécessaires pour un monitoring efficace.
+
+Consignes
+Utilisez les vuesinformation_schema.tables&information_schema.columnspour récupérer la liste des tables et le nombre de colonnes pour chaque table de la base de données DVD Rental.
+
+Utilisez la vuepg_stat_user_tablespour obtenir des statistiques sur l'utilisation des tables, comme le nombre de scans et d'insertions. Identifiez les tables les plus fréquemment interrogées.
+
+Combinez ces informations dans une seule table en faisant une jointure sur le nom des tables.
+
+Vous pouvez récupérer les requêtes SQL de la correction dans le script à ce lien.
+
+En résumé
+Vous avez appris à récupérer les informations de configuration du serveur PostgreSQL via psql et la table pg_settings.
+
+Vous avez exploré comment utiliser psql pour interroger les métadonnées des tables, colonnes, index, et autres objets.
+
+Vous avez découvert l'utilisation de la vue information_schema pour accéder aux informations structurées des métadonnées des tables, colonnes, index, et autres objets.
+
+Vous avez configuré des statistiques pour suivre l'utilisation et les performances des tables et optimiser la base de données.     
+
+Maintenant que vous aidez à la mise en place d'un système pour surveiller et analyser les performances de la base de données, il est temps d'aller plus loin en assurant la fiabilité de vos données grâce à l'application de contraintes efficaces.
+
+Fiabilisez vos données à l'aide de contraintes
+
+
+Rodolphe vous lance un nouveau défi. Après l'intégration de nouvelles tables dans la base, il a remarqué des problèmes d'unicité qui peuvent provoquer des doublons et des incohérences dans les données. Ces erreurs pourraient affecter les analyses et les opérations de l’entreprise. Votre mission est de vous assurer que chaque donnée critique dans la base est unique et que les relations entre les tables sont correctement définies.
+
+Prenez en main le concept de clé primaire et de clé étrangère
+C’est quoi déjà une clé primaire ?
+
+Commençons par un rappel dans ce cas. La clé primaire est une contrainte fondamentale qui garantit que chaque enregistrement d’une table est unique. Par exemple, dans la table customer de la base DVD Rental, la colonne customer_id est la clé primaire : chaque client a un identifiant unique qui permet de le distinguer de tous les autres.
+
+Les propriétés de la clé primaire :
+
+Elle est unique.
+
+Elle ne peut pas contenir de valeurNULL.
+
+Chaque table ne peut avoir qu’une seule clé primaire, mais celle-ci peut être constituée de plusieurs colonnes (clé primaire composite).
+
+Et la clé étrangère du coup ?
+
+La clé étrangère, quant à elle, établit une relation entre deux tables. Par exemple, la table rental (qui enregistre les locations) possède une colonne customer_id qui fait référence à la clé primaire customer_id dans la table customer.
+
+Cela permet de relier chaque location à un client unique, garantissant ainsi la cohérence des données.
+
+Illustration montrant la relation entre deux tables
+Illustration montrant la relation entre deux tables
+Les clés étrangères permettent de :
+
+maintenir l'intégrité référentielle entre deux tables ;
+
+garantir que les données référencées existent dans la table parente ;
+
+synchroniser les opérations de mise à jour ou de suppression entre les tables liées.
+
+Maintenant que vous vous rappelez ces différents concepts, il est temps de mettre en place des contraintes supplémentaires.
+
+Appliquez des contraintes sur vos clés étrangères
+Vous recevez un mail de Rodolphe avec une nouvelle mission à la clé :
+
+Objet : Mise en place d’une contrainte d’unicité pour éviter les doublons dans les locations
+
+Bonjour,
+
+J'espère que tout se passe bien de ton côté !
+
+Je reviens vers toi avec une nouvelle demande : nous venons de créer une table appelée customer_rentals pour gérer les locations de films. Cependant, il est impératif de s'assurer qu'un même client ne puisse pas louer plusieurs fois le même film à un moment donné.
+
+Pour éviter tout doublon, pourrais-tu mettre en place une contrainte d'unicité sur cette table ? Cette contrainte devra s'appliquer sur les colonnes customer_id et film_id, afin de garantir qu'un client ne puisse louer chaque film qu'une seule fois.
+
+Merci d'avance pour ton travail !
+
+Rodolphe
+DBA - DVD Rental
+
+Appliquez des contraintes d’unicité lors de la création d'une table
+C’est quoi une contrainte d’unicité ?
+
+Une contrainte d'unicité (ou UNIQUE constraint) est une règle que l'on applique sur une ou plusieurs colonnes d'une table pour s'assurer que les valeurs de ces colonnes sont toujours uniques. Cela signifie qu'aucune donnée en double ne pourra être insérée dans la table pour ces colonnes.
+
+Par exemple, si vous imposez une contrainte d'unicité sur la colonne email d'une table users, cela garantit que deux utilisateurs ne pourront jamais avoir la même adresse e-mail.
+
+Reprenons la demande de Rodolphe, pour la tablecustomer_rentalschaque client ne peut louer qu'un seul exemplaire de chaque film à un moment donné.
+
+Nous allons donc créer une table où chaque location est liée à un client et à un film, et nous allons ajouter une contrainte d’unicité sur la combinaison customer_id et film_id pour éviter que le même client ne loue le même film plusieurs fois en même temps. Une fois la location terminée, nous pourrons retirer la location de cette table. Pour cela nous allons utiliser le mot-cléUNIQUE:
+
+CREATE TABLE customer_rentals (
+rental_id SERIAL PRIMARY KEY,
+customer_id INT REFERENCES customer(customer_id),
+film_id INT REFERENCES film(film_id),
+rental_date DATE NOT NULL,
+UNIQUE (customer_id, film_id)
+);
+Dans cet exemple :
+
+customer_id est une clé étrangère qui fait référence à la table customer.
+
+film_id est une clé étrangère qui fait référence à la table film.
+
+la contrainteUNIQUE(customer_id, film_id) garantit qu'un même client ne peut pas louer plusieurs fois le même film au même moment. 
+
+Actuellement, les expressionsUNIQUEne peuvent pas contenir de sous-requêtes ni faire référence à des variables autres que les colonnes de la ligne actuelle. Pour effectuer ce type de vérification, il faut utiliser une fonction Trigger (qui sera vue plus tard dans le cours).
+
+Appliquez des contraintes d’unicité lors de la mise à jour d’une table
+
+Comment je fais, si la table a déjà été créée, pour ajouter ma contrainte (ce qui est d’ailleurs le cas pour la demande de Rodolphe… ) ?
+
+Si une table a déjà été créée, mais qu’elle ne comporte pas encore de contrainte d’unicité, vous pouvez ajouter cette contrainte a posteriori sans problème !
+
+Gardons notre exemple sur la tablecustomer_rentalsmais cette fois-ci, la table a été créée sans garantir que chaque client ne peut louer qu’un exemplaire d’un film à la fois. Vous pouvez corriger cela en ajoutant une contrainte d’unicité à l’aide de la commandeALTER TABLE.
+
+ALTER TABLE rental ADD UNIQUE (customer_id, film_id);
+Essayez désormais d’insérer 2 lignes consécutives avec les mêmes customer_id et film_id, vous devriez avoir l’erreur suivante :
+
+Capture d'écran de la section
+Capture d'écran de la section "Messages" de pgAdmin affichant une erreur SQL.
+Si des doublons existent déjà dans la table, PostgreSQL retournera une erreur lors de la tentative d’ajout de la contrainte. Vous devrez d'abord résoudre ces doublons avant de pouvoir ajouter la contrainte.
+
+Comprenez les options de contrainte
+Allons un peu plus loin dans les contraintes.
+
+Imaginez que l'équipe de DVD Rental décide de supprimer un film qui ne fait plus partie de leur catalogue. Que devrait-il se passer si des clients ont encore des locations actives pour ce film ? Ou si des commandes historiques contiennent des références à ce film supprimé ? Grâce aux contraintesON DELETEetON UPDATE, vous avez la possibilité de définir précisément ce genre de comportement, garantissant ainsi que la suppression ou la mise à jour des données dans une table parente n'entraîne pas de problèmes d'intégrité dans les tables enfants. 
+
+Lorsqu'une clé étrangère est définie, il est possible de spécifier ce qui doit se passer lorsqu’un enregistrement référencé est mis à jour ou supprimé dans la table parente.
+
+Voici quelques options :
+
+Option
+
+Description
+
+ON DELETE NO ACTION
+
+(valeur par défaut) 
+
+Si vous essayez de supprimer un enregistrement parent qui a des références dans la table enfant, PostgreSQL refusera l'opération et retournera une erreur d'intégrité référentielle, à moins que vous ayez d'abord mis à jour ou supprimé manuellement les enregistrements dans la table enfant.
+
+ON DELETE CASCADE
+
+Si un enregistrement de la table parente est supprimé, tous les enregistrements qui lui sont liés dans la table enfant seront également supprimés.
+
+ON DELETE SET NULL
+
+Si un enregistrement parent est supprimé, les valeurs de la clé étrangère dans la table enfant seront définies à NULL.
+
+ON UPDATE CASCADE
+
+Si un enregistrement parent est mis à jour, les valeurs correspondantes dans la table enfant seront automatiquement mises à jour.
+
+Ces options sont importantes pour maintenir l’intégrité des relations lors de la manipulation des données.
+
+Appliquez des contraintes lors de la création ou de la mise à jour d’une table
+Prenons un exemple avec la table rental, où chaque location est liée à un client et à un film. Vous souhaitez que la suppression d'un client entraîne la suppression de toutes ses locations, tandis que la suppression d'un film remplace sa référence parNULLdans les locations associées.
+
+Grâce aux contraintesON DELETE etON UPDATE, vous pouvez mieux contrôler comment les modifications dans la table parente impactent les tables enfants, en garantissant que les données de la base DVD Rental restent intégrées et sans erreurs.
+
+Nous allons pouvoir voir comment mettre cela en place ensemble, en vidéo :
+
+
+Dans cette vidéo, vous avez vu :
+
+Comment créer une table à partir d’une autre, tout en copiant ses données (pour éviter de casser les contraintes déjà en place sur dvdrental).
+
+L’impact d’incohérences lors de suppressions de clés étrangères.
+
+Comment appliquer des contraintes (ON DELETE,ON UPDATE) lors de la création d’une table.
+
+Comment appliquer des contraintes (ON DELETE,ON UPDATE) lors de la mise à jour d’une table.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien.
+
+En appliquant ces contraintes d’unicité sur vos clés étrangères, vous renforcez la qualité des relations entre les tables et garantissez que la base de données de DVD Rental reste cohérente et fiable.
+
+Utilisez les contraintes pour valider vos données
+Après vos récents succès sur la mise en place des contraintes, Rodolphe, le DBA de DVD Rental, vous a convié à une réunion pour discuter des prochaines étapes. Enthousiasmé par les résultats à date, il vous confie qu'il souhaite aller encore plus loin dans la sécurisation des données. Lors de votre échange, il souligne l'importance de valider les données avant même qu'elles n'entrent dans la base, afin d’éviter toute insertion de valeurs incorrectes ou incohérentes qui pourraient nuire aux analyses. Rodolphe vous demande donc d'ajouter des contraintes spécifiques selon les types de colonnes, pour garantir que chaque nouvelle donnée soit conforme aux exigences et aux règles strictes de l’entreprise.
+
+Comprenez les options de contrainte selon le type de colonne
+Chaque type de donnée dans PostgreSQL permet d’appliquer des règles de validation, appelées contraintes, pour s'assurer que les informations saisies respectent certains critères avant d’être ajoutées à la base de données. Regardons quelques exemples pratiques pour mieux comprendre :
+
+VARCHAR (chaîne de caractères) : Si vous stockez une adresse e-mail ou un nom de client, vous pouvez limiter la longueur de la chaîne et imposer une contrainte d'unicité. Cela permet, par exemple, de garantir que deux clients ne puissent pas utiliser la même adresse e-mail, évitant ainsi des doublons.
+Exemple : Assurez-vous que chaque e-mail est unique et ne dépasse pas 255 caractères.
+
+email VARCHAR(255) UNIQUE
+INTEGER(numérique) : Lorsque vous enregistrez des valeurs numériques comme le nombre de films loués ou le montant dépensé par un client, vous pouvez ajouter des contraintes pour garantir que ces valeurs sont positives ou dans un certain intervalle. Cela évite d’avoir des valeurs erronées ou impossibles comme un montant négatif.
+
+Exemple : S'assurer que le stock d’un film soit toujours supérieur ou égal à zéro.
+
+stock INT CHECK (stock >= 0)
+DATE: Lorsqu’on travaille avec des dates, il est important de vérifier leur validité. Par exemple, pour une location de film, il faut s’assurer que la date de retour soit toujours postérieure à la date de location. Sans cette contrainte, il serait possible d’avoir une date de retour antérieure, ce qui n’aurait pas de sens.
+
+Exemple : S'assurer qu'une carte de fidélité ne soit jamais expirée avant d’être délivrée.
+
+expiration_date DATE CHECK (expiration_date > CURRENT_DATE)
+Appliquez des contraintes lors de la création d’une table
+Voyons un exemple plus concret. Supposons que nous devions créer à nouveau la table qui enregistre les films loués par les clients,customer_rentals. Dans cette table, nous allons ajouter des contraintes pour nous assurer que les données sont toujours cohérentes.
+
+La table ayant déjà été créé auparavant, supprimez-la avant de la recréer via la commandeDROP TABLE customer_rentals
+
+CREATE TABLE customer_rentals (
+rental_id SERIAL PRIMARY KEY,
+customer_id INT REFERENCES customer(customer_id),
+film_id INT REFERENCES film(film_id),
+-- la date ne peut pas avoir comme valeur NULL
+rental_date DATE NOT NULL,
+-- la date return_date doit être postérieur à la date d’emprunt (rental_date)
+return_date DATE CHECK (return_date > rental_date)
+);
+Ajoutez des contraintes sur une table déjà créée
+Une fois encore, si la table est déjà créée, est-ce que je vais pouvoir utiliser la commandeALTER? 
+
+Exactement ! Prenons l'exemple de la tablepaymentoù nous voulons nous assurer que le prix d'une location soit toujours supérieur à -1. Cela permet d’éviter des erreurs de saisie qui pourraient indiquer qu’un film a été loué à un prix négatif.
+
+ALTER TABLE payment ADD CONSTRAINT price_check CHECK (amount > -1);
+À vous de jouer
+
+
+Contexte
+Après une analyse approfondie des données clients, Rodolphe a constaté quelques incohérences dans la base de données. Il vous demande de renforcer la qualité des informations en ajoutant des contraintes sur la table customer pour valider les données avant leur insertion. Cela permettra de garantir que les informations client sont toujours valides et uniques.
+
+Consignes
+Rodolphe souhaite s'assurer que les numéros de téléphone des clients contiennent entre 0 et 12 chiffres. Ajoutez une contrainteCHECKsur la colonne phone pour garantir cette règle. 
+
+Ajoutez une contrainte d'unicité : Pour éviter les doublons, ajoutez une contrainte d'unicité sur la colonne email, afin que chaque client ait une adresse email unique dans la base de données.
+
+Vous pouvez récupérer les requêtes SQL de la correction dans le script à ce lien.
+
+En résumé
+Vous avez appris à renforcer l'intégrité des données en ajoutant des contraintes sur les tables pour garantir la cohérence et la qualité des informations.
+
+Vous avez vu que les contraintes commeCHECKetUNIQUEpermettent de valider les données avant leur insertion et de prévenir les erreurs ou doublons.
+
+Vous avez également vu comment utiliser des contraintes sur les clés étrangères avec les optionsON DELETEetON UPDATEpour maintenir la cohérence entre les tables liées.
+
+Maintenant que vous êtes au courant des bases de la fiabilité des données, passons à la partie 2, où vous allez apprendre à résoudre des requêtes complexes, optimiser vos résultats avec des vues, et explorer des concepts avancés comme les procédures stockées et les fonctions fenêtres. Mais avant cela, testez vos connaissances dans le quiz clôturant cette partie.
+
+Résolvez des requêtes  SQL complexes
+
+Résolvez des requêtes complexes grâce aux jointures
+
+
+La compagnie DVD Rental souhaite maintenant réaliser des analyses plus détaillées sur les transactions de leurs clients et employés. Pour répondre à cette demande, vous allez devoir utiliser des requêtes SQL avancées, notamment des sous-requêtes imbriquées et des Common Table Expressions (CTEs), afin de simplifier l'extraction et la manipulation des données tout en optimisant les performances.
+
+Avant de plonger dans ces concepts avancés, il est important de bien maîtriser les bases des jointures SQL, qui sont essentielles pour relier plusieurs tables et récupérer des informations pertinentes.
+
+Si vous avez besoin de vous rafraîchir la mémoire sur les différents types de jointures (internes, externes, naturelles), n’hésitez pas à suivre ce cours sur OpenClassrooms : Maîtrisez les jointures externes et naturelles. 
+
+Pour vous aider, voici une image qui résume visuellement les différents types de jointures SQL :
+
+Illustration expliquant différents types de jointures SQL avec des diagrammes en Venn.
+Illustration expliquant différents types de jointures SQL avec des diagrammes en Venn.
+Simplifiez l’extraction des données avec des requêtes imbriquées
+Sofia vous adresse un message sur Slack :
+
+Salut,
+
+Nous avons besoin de réaliser des analyses plus complexes. J'aimerais savoir combien de clients ont loué un film plus de 5 fois en mai et juin 2005. C’est une donnée importante pour évaluer la fidélité de nos clients.
+Peux-tu nous aider en créant une requête pour extraire cette information ?
+
+Merci d'avance
+
+Pour répondre à cette demande je vais sûrement devoir faire deux requêtes et faire une jointure entre elles pour trouver le résultat ?
+
+Pas nécessairement ! Plutôt que d'effectuer deux requêtes séparées puis de les joindre, vous pouvez utiliser une requête imbriquée. Celle-ci vous permet de calculer le nombre de locations par client directement à l'intérieur de la requête principale, sans avoir besoin de créer une deuxième requête et de la joindre.
+
+Une requête imbriquée (ou sous-requête) est une requête SQL incluse à l'intérieur d'une autre requête SQL. Elles permettent de filtrer ou manipuler des ensembles de données sans ajouter de jointures complexes.
+
+Imaginons que vous deviez lister les clients qui ont loué un film plus d'une fois au cours des 6 derniers mois.
+
+SELECT customer_id, first_name, last_name
+FROM
+customer
+WHERE
+customer_id IN (
+SELECT customer_id
+FROM rental
+WHERE
+rental_date >= '2005-05-01'
+AND rental_date <= '2005-06-30'
+GROUP BY customer_id
+HAVING COUNT(rental_id) > 5
+);
+Explication :
+
+La sous-requête à l'intérieur de la clause WHERE retourne les customer_id qui ont effectué plus de cinq locations en mai et juin 2005.
+
+La requête principale affiche les détails des clients correspondants en utilisant la sous-requête pour filtrer.
+
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Avant de plonger dans l’extraction des données à l’aide des sous-requêtes, il est important de bien comprendre deux concepts fondamentaux des jointures complexes : les Semi-join et les Anti-join. Ces types de jointures permettent de filtrer des ensembles de données en fonction de la présence ou de l’absence de correspondances dans d'autres tables.
+
+Semi-join : Retourne les lignes de la table principale qui ont une correspondance dans la sous-requête. Dans l'exemple ci-dessus, la sous-requête agit comme un semi-join. 
+
+Anti-join : Retourne les lignes de la table principale qui n'ont pas de correspondance dans la sous-requête. Exemple : Trouver les clients qui n'ont pas loué plus de 5 films en mai et juin 2005.
+
+La requête d’Anti-join donnerait donc tout simplement :
+
+SELECT customer_id, first_name, last_name
+FROM
+customer
+WHERE
+customer_id NOT IN (
+SELECT customer_id
+FROM rental
+WHERE
+rental_date >= '2005-05-01'
+AND rental_date <= '2005-06-30'
+GROUP BY customer_id
+HAVING COUNT(rental_id) > 5
+);
+Maintenant que vous avez vu les concepts de Semi-join et Anti-join, voyons comment utiliser les requêtes imbriquées dans différents contextes, tels que les clausesSELECT,FROMetWHERE pour rendre vos requêtes encore plus puissantes et flexibles.
+
+Utilisez une requête imbriquée dans une clause SELECT, FROM ou WHERE
+Il est possible d’accomplir certaines tâches avec des jointures classiques, mais pour mieux comprendre les possibilités offertes par les sous-requêtes imbriquées, nous allons voir comment ces sous-requêtes peuvent être utilisées dans trois parties différentes d'une requête :SELECT,FROMetWHERE.
+
+Cela permet d'enrichir les résultats en exécutant des calculs ou des filtres dans des sous-requêtes sans nécessiter de multiples jointures. Nous allons voir comment manipuler les données de différentes manières dans chacune de ces clauses. Chaque approche a ses avantages et peut rendre vos requêtes plus modulaires et faciles à maintenir.
+
+Dans cette vidéo, nous allons explorer comment utiliser des sous-requêtes imbriquées dans différentes parties d'une requête SQL :SELECT,FROMetWHERE.
+
+
+Dans cette vidéo, vous avez vu :
+
+L'utilisation d'une sous-requête dans la clauseSELECTpour calculer des informations spécifiques sur chaque ligne, comme le total de locations par film. 
+
+L'utilisation d'une sous-requête dans la clauseFROMpour préparer et manipuler des ensembles de données avant de les joindre ou d'afficher les résultats. 
+
+L'utilisation d'une sous-requête dans la clauseWHEREpour filtrer les résultats en fonction de critères dérivés d'une autre requête, comme la vérification des films ayant plus de 30 locations.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien.
+
+Intégrez les opérateurs de comparaison
+Rodolphe vous adresse un email :
+
+Object : Analyse des films loués par les employés
+
+Salut,
+
+Je travaille sur certaines statistiques concernant les clients et les films qu'ils ont loués. J'aimerais que tu m'aides à répondre à deux questions :
+
+Existe-t-il un film que tous les clients ont loué ?
+
+Y a-t-il des films qui n'ont été loués par aucun client ?
+
+Peux-tu me préparer des requêtes SQL pour analyser ces points ?
+
+Merci pour ton aide !
+
+Cordialement,
+Rodolphe
+
+Les opérateurs de comparaison tels queIN,ALL,ANYetEXISTS sont parfaits pour répondre à ce genre de question. Ils permettent de vérifier si une valeur satisfait à une condition dans un ensemble de résultats retournés par une sous-requête.
+
+L'opérateur IN 
+L'opérateurIN, que vous avez déjà utilisé précédemment, permet de vérifier si une valeur spécifique existe dans un ensemble de résultats. C'est l'un des opérateurs les plus couramment utilisés pour comparer une valeur à une liste ou un ensemble retourné par une sous-requête.
+
+Prenons un exemple simple. Vous souhaitez afficher les films qui ont été loués par des clients résidant à "Tallahassee" aux Etats-Unis :
+
+SELECT
+f.title
+FROM
+film f
+WHERE
+f.film_id IN (
+SELECT
+i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN customer c ON r.customer_id = c.customer_id
+JOIN address a ON c.address_id = a.address_id
+JOIN city ci ON a.city_id = ci.city_id
+JOIN country cn ON cn.country_id = ci.country_id
+WHERE
+ci.city = 'Tallahassee'
+AND country = 'United States'
+);
+Explication :
+
+La sous-requête retourne les film_id des films loués par des clients résidant à "Tallahassee".
+
+La requête principale utiliseINpour lister les titres de ces films.
+
+Plus d’exemples associées à l’opérateurINsont disponibles à ce lien.
+
+L'opérateur ALL
+L'opérateurALLvérifie si une condition est vraie pour toutes les valeurs d’un ensemble de résultats retournés par une sous-requête. Il est parfait pour répondre à la première question de Rodolphe : savoir s'il existe un film que tous les clients ont loué. 
+
+SELECT f.title
+FROM film f
+WHERE f.film_id = ALL (
+SELECT i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN customer c ON r.customer_id = c.customer_id
+);
+Explication :
+
+La sous-requête retourne tous les film_id des films loués par les clients.
+
+ALLvérifie si chaque film dans la table film a été loué par tous les clients.
+
+Aucun résultat n’étant retourné, cela signifie qu’aucun film n’a été loué par tous les clients de dvdrental.
+
+Plus d’exemples associées à l’opérateurALLsont disponibles à ce lien.
+
+L'opérateur ANY
+L'opérateurANY(ouSOME) permet de vérifier si une condition est vraie pour au moins une des valeurs dans un ensemble. Il est utile pour vérifier, par exemple, si un film a été loué par au moins un client dans une période donnée.
+
+Vous souhaitez afficher les films qui ont été loués au moins une fois par des clients du 6 au 15 juin 2005.
+
+SELECT
+f.title
+FROM
+film f
+WHERE
+f.film_id = ANY (
+SELECT
+i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+WHERE
+r.rental_date BETWEEN '2005-06-06' AND '2005-06-15'
+)
+Explication :
+
+La sous-requête retourne les film_id des films loués entre le 6 juin 2005 et le 15 juin 2005.
+
+ANYvérifie si le film_id de la table film est présent dans la sous-requête, ce qui permet d'afficher les films qui ont été loués au moins une fois.
+
+Plus d’exemples associées à l’opérateurANYsont disponibles à ce lien.
+
+L'opérateur EXISTS
+L'opérateurEXISTSpermet de vérifier l'existence de lignes retournées par une sous-requête. Il est idéal pour répondre à la deuxième question de Rodolphe : trouver les films qui n'ont été loués par aucun client.
+
+SELECT
+f.film_id
+FROM
+film f
+WHERE
+NOT NOT EXISTS (
+SELECT 1
+FROM
+rental r
+INNER JOIN inventory i on i.inventory_id = r.inventory_id
+WHERE
+i.film_id = f.film_id
+)
+Explication :
+
+La sous-requête vérifie l'existence des film_id dans la tablerental.
+
+NOT EXISTSretourne les films qui n'ont jamais été loués car il ne trouve aucune correspondance dans la sous-requête.
+
+Plus d’exemples associées à l’opérateur EXISTS sont disponibles à ce lien.
+
+Ces opérateurs permettent de gérer des comparaisons complexes avec des ensembles de données retournés par des sous-requêtes.
+
+Voici un récapitulatif :
+
+Opérateur
+
+Description
+
+IN 
+
+Vérifie si une valeur existe dans un ensemble de résultats.
+
+ALL
+
+Vérifie si une condition est vraie pour toutes les valeurs d’un ensemble.
+
+ANY
+
+Vérifie si une condition est vraie pour au moins une des valeurs d’un ensemble.
+
+EXISTS
+
+Vérifie si une sous-requête retourne au moins une ligne. Avec NOT EXISTS, on vérifie l'absence de résultats, comme dans le cas des films non loués.
+
+Après avoir exploré les opérateurs de comparaison pour manipuler des sous-requêtes, il est temps de découvrir une approche plus élégante et flexible pour structurer vos requêtes complexes : les Common Table Expressions (CTEs). Elles permettent d'éviter la duplication de sous-requêtes et simplifient la réutilisation des résultats intermédiaires.
+
+Évitez de dupliquer les sous requêtes en utilisant des CTEs
+Les Common Table Expressions (CTEs) permettent de structurer une requête de manière plus claire, en vous évitant de dupliquer des sous-requêtes. Une CTE est une sorte de table temporaire créée à l'intérieur d'une requête, définie à l'aide de la clauseWITH. Contrairement aux sous-requêtes imbriquées, les CTEs peuvent être utilisées plusieurs fois dans la requête principale, ce qui les rend particulièrement pratiques pour les requêtes complexes et répétitives. 
+
+Une CTE est définie à l'aide de la clauseWITH, suivie du nom de la CTE, de ses colonnes (optionnelles), et de la sous-requête qui génère les données. Une fois la CTE définie, elle peut être utilisée dans la requête principale comme n'importe quelle autre table.
+
+WITH cte_name (column1, column2, ...) AS (
+-- CTE query
+SELECT ...
+)
+-- Main query using the CTE
+SELECT
+...
+FROM
+cte_name;
+cte_name : Le nom que vous donnez à la CTE. Ce nom sera utilisé dans la requête principale.
+
+column1, column2 : Les noms des colonnes (optionnels). Si vous ne spécifiez pas de colonnes, elles prendront les noms définis dans la sous-requête.
+
+CTE query : La sous-requête qui génère les données. Cela peut être n'importe quelle requête SQL, souvent avec des jointures et des agrégations.
+
+Main query : La requête principale qui utilise la CTE pour récupérer ou manipuler les données.
+
+Calculez les locations totales par client
+Imaginons que vous souhaitiez calculer le nombre total de locations par client, puis utiliser ce total dans une autre requête. Voici comment vous pouvez utiliser une CTE pour éviter de dupliquer la sous-requête qui calcule les locations :
+
+WITH total_rentals_per_customer AS (
+SELECT
+customer_id, COUNT(rental_id) AS total_rentals
+FROM
+rental
+GROUP BY
+customer_id
+)
+-- Main query using the CTE
+SELECT
+c.customer_id, c.first_name, c.last_name, tr.total_rentals
+FROM
+customer c
+JOIN total_rentals_per_customer tr ON c.customer_id = tr.customer_id
+WHERE
+tr.total_rentals > 5;
+Explication :
+
+WITH total_rentals_per_customer AS (...): Cette partie définit la CTE. Elle crée une table temporaire contenant le customer_id et le nombre total de locations (total_rentals) par client.
+
+SELECT c.customer_id, c.first_name, ... : La requête principale utilise la CTE en joignant la table customer avec la CTE total_rentals_per_customer pour afficher les informations des clients ayant effectué plus de 5 locations.
+
+Les CTE sont très pratiques pour rendre vos requêtes plus lisibles et éviter de dupliquer des sous-requêtes complexes. Cependant, il est important de noter qu'une CTE ne peut être utilisée qu'une seule fois au sein d'une même requête. Si vous avez besoin de réutiliser plusieurs fois le résultat d'une CTE, il faudra passer par des tables temporaires.
+
+À vous de jouer
+
+
+Contexte
+Sofia et Rodolphe aimeraient obtenir un rapport sur les clients ayant effectué un grand nombre de locations. Ils souhaitent notamment identifier les clients qui ont effectué plus de 10 locations, mais aussi afficher uniquement les clients qui ont payé plus de 100 € au total pour leurs locations. Pour éviter de dupliquer les calculs, ils aimeraient que vous utilisiez une CTE pour stocker les informations de paiements et de locations.
+
+Consignes
+Créez une CTE qui calcule le nombre total de locations par client.
+
+Utilisez cette CTE pour filtrer les clients ayant effectué plus de 10 locations.
+
+Créez une autre CTE pour calculer le montant total des paiements par client.
+
+Utilisez les deux CTEs pour afficher les clients qui ont plus de 10 locations et ont payé plus de 100 € au total.
+
+Vous pouvez récupérer les requêtes SQL de l'exemple de corrigé dans le script à ce lien.
+
+En résumé
+Vous avez appris à utiliser les sous-requêtes imbriquées dans les clausesSELECT,FROMetWHEREpour simplifier les requêtes complexes.
+
+Vous avez exploré les opérateurs de comparaisonIN,ALL,ANYetEXISTSpour manipuler des ensembles de résultats et filtrer vos données efficacement.
+
+Vous avez découvert les Common Table Expressions (CTEs) pour éviter de dupliquer les sous-requêtes et rendre vos requêtes plus lisibles et réutilisables.
+
+Vous savez comment optimiser l'utilisation des CTEs pour stocker des tables auxiliaires dans vos requêtes SQL. 
+
+Maintenant que vous maîtrisez l'art de manipuler des requêtes complexes et d'optimiser vos analyses, nous allons aborder une autre technique essentielle pour améliorer l'accessibilité des résultats de vos requêtes : l'utilisation des vues. Dans le prochain chapitre, vous apprendrez à encapsuler des requêtes SQL dans des entités réutilisables pour simplifier et sécuriser l'accès aux données.
+
+Rendez accessible le retour d'une requête grâce aux vues
+
+
+Après vos récents succès sur la mise en place des contraintes d'intégrité, Rodolphe, toujours aussi satisfait, vous partage une nouvelle mission. Avec Sofia, la CEO de DVD Rental, ils ont remarqué que certaines requêtes étaient régulièrement exécutées, et que ces opérations devenaient lourdes et répétitives pour leurs équipes. Pour alléger cette charge et rendre les données plus facilement accessibles à tout le monde, ils souhaitent que vous exploitiez une fonctionnalité de PostgreSQL : les vues.
+
+Encapsulez une requête SQL dans une entité simple et réutilisable
+Sofia a expliqué à Rodolphe que certaines équipes passent beaucoup de temps à écrire les mêmes requêtes pour obtenir des résultats similaires. Pour rendre le tout plus fluide, vous allez apprendre à encapsuler ces requêtes dans une vue, permettant de réutiliser le résultat d'une requête comme s'il s'agissait d'une simple table.
+
+Les vues sont des requêtes stockées dans la base de données sous forme de "tables virtuelles" qui vous permettent d’abstraire la complexité d'une requête et de rendre son résultat accessible simplement via une instructionSELECT.
+
+Comprenez les avantages et les cas d’utilisation d’une vue
+Les vues jouent un rôle clé dans l'optimisation des requêtes SQL et la gestion des données.
+
+Voici quelques raisons pour lesquelles elles sont si utiles :
+
+Simplicité : Les vues encapsulent des requêtes complexes sous forme de "tables virtuelles", rendant leur résultat accessible via une simple instructionSELECT. Cela permet de masquer des jointures et calculs complexes derrière une interface simple.
+
+Réutilisabilité : Une fois créées, les vues peuvent être appelées à plusieurs reprises sans avoir à réécrire la requête d'origine, ce qui réduit le risque d'erreurs et facilite la maintenance des requêtes fréquemment utilisées.
+
+Sécurité : Les vues peuvent restreindre l'accès aux données sensibles en affichant seulement les colonnes ou lignes nécessaires à certains utilisateurs. Sofia, par exemple, voit cela comme un excellent moyen de contrôler quelles informations sont visibles pour chaque utilisateur.
+
+Optimisation des performances : En transformant une vue en une vue matérialisée, vous pouvez stocker le résultat d’une requête complexe et éviter de recalculer les données à chaque nouvelle exécution, ce qui est particulièrement utile pour des données consultées fréquemment.
+
+Créez votre première vue
+Imaginez que vous devez afficher régulièrement la liste des films actuellement en location avec les informations des clients associés. Sans l'utilisation d'une vue, cela impliquerait d'écrire une requête complexe à chaque fois, comme celle-ci :
+
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name
+r.rental_date,
+f.title
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+JOIN film f ON r.film_id = f.film_id
+WHERE
+r.return_date IS NULL;
+Cette requête permet de récupérer les informations des clients (ID, prénom, nom), la date de location, et le titre du film. Mais la réécrire à chaque fois peut rapidement devenir fastidieux et source d'erreurs, surtout si la requête doit être légèrement modifiée ou optimisée.
+
+Pour simplifier ce processus, vous pouvez encapsuler cette requête dans une vue. Cela permet de la rendre réutilisable sans avoir à réécrire la requête complète.
+
+Voici comment créer une vue avec l'instructionCREATE VIEW:
+
+CREATE VIEW current_rentals AS
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+r.rental_date,
+f.title
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN film f ON i.film_id = f.film_id
+WHERE
+r.return_date IS NULL;
+Je peux donc directement l’utiliser comme une table désormais ?
+
+Tout à fait, une fois la vue créée, son appel est aussi simple que d'interroger une table ordinaire avec unSELECT. Cela rend son usage très pratique et vous permet d'éviter de réécrire des requêtes complexes.
+
+SELECT * FROM current_rentals;
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Maintenant que nous avons vu comment créer une première vue simple, il est temps d'aller plus loin et d'explorer comment les vues peuvent être utilisées pour abstraire les données sous-jacentes.
+
+Développez de nouvelles vues pour abstraire les données sous-jacentes
+Au-delà de la réutilisation, les vues peuvent servir à restreindre l’accès à certaines données sensibles ou à n’afficher que les informations pertinentes selon le rôle des utilisateurs. Sofia, en tant que CEO, ne veut pas que tout le monde ait accès à l’intégralité des informations clients, notamment des données comme les adresses ou numéros de téléphone.
+
+Créez une vue pour masquer les données sensibles
+Vous pouvez créer des vues pour cacher les informations sensibles des clients, telles que les adresses ou numéros de téléphone, dans le but de respecter la confidentialité des données tout en permettant une utilisation plus sécurisée.
+
+Les vues vous permettent de présenter uniquement les informations nécessaires tout en garantissant un accès sécurisé aux données. Voici comment procéder :
+
+CREATE VIEW safe_customer_info AS
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+cty.city,
+SUBSTRING(c.email FROM 1 FOR 3) || '***' AS obscured_email,
+SUBSTRING(a.phone FROM 1 FOR 3) || '***' AS obscured_phone
+FROM
+customer c
+JOIN address a ON c.address_id = a.address_id
+JOIN city cty ON cty.city_id = a.city_id;
+Dans cette vue, nous avons utilisé deux méthodes pour protéger les informations sensibles :
+
+Sélection de colonnes : Dans cet exemple, nous affichons uniquement les colonnes customer_id, first_name, last_name et city, permettant d'accéder à des informations de base sans exposer des détails sensibles.
+
+Obfuscation des données : Les colonnes d'email et de téléphone sont partiellement masquées. L'email est présenté sous la forme de trois premiers caractères suivis de trois astérisques (***), tout comme le numéro de téléphone.
+
+Une fois la vue créée, exécutez-la pour avoir un aperçu de l’affichage !
+
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Après avoir vu comment masquer les données sensibles pour protéger la confidentialité des informations, passons maintenant à une utilisation plus avancée des vues : filtrer les droits utilisateurs afin de ne montrer que les données auxquelles ils ont accès en fonction de leur rôle
+
+Créez une vue pour filtrer les droits utilisateurs
+Pour renforcer la sécurité des données, il est essentiel de s'assurer que chaque utilisateur n'accède qu'aux informations qui les concernent. Nous allons donc créer une vue qui permettra de filtrer les données en fonction de l'utilisateur.
+
+Avant de créer notre vue, il est essentiel de comprendre la fonctioncurrent_user:
+
+Cette fonction est intégrée à PostgreSQL et retourne le nom de l'utilisateur actuellement connecté à la base de données. Cela est particulièrement utile pour implémenter des contrôles d'accès basés sur l'identité de l'utilisateur. 
+
+En utilisantcurrent_user, vous pouvez restreindre l'accès aux données, permettant ainsi à chaque utilisateur de voir uniquement les informations qui le concernent, grâce aux vues.
+
+Cependant, pour pouvoir utiliser cette fonction efficacement, il est nécessaire de créer des rôles spécifiques (autres que le rôle par défaut postgres) pour chaque utilisateur dans votre système. 
+
+Ces rôles permettent de gérer les permissions et d'identifier les utilisateurs qui se connectent à la base de données. 
+
+Bien que nous ne couvrirons pas la création de ces rôles dans ce cours, il est important de garder à l'esprit que la mise en place d'une gestion adéquate des rôles est cruciale pour une sécurité renforcée.
+
+Plus d’informations associées à la fonction current_user sont disponibles à ce lien.
+
+Imaginons maintenant que vous souhaitiez créer une vue qui affiche uniquement les clients associés à l'utilisateur actuellement connecté (l’utilisateur étant stocké dans la table staff). Cela permet de personnaliser l'expérience utilisateur tout en gardant la sécurité en tête.
+
+CREATE VIEW user_customers AS
+SELECT
+c.customer_id,
+c.first_name AS customer_first_name,
+c.last_name AS customer_last_name
+FROM
+customer c
+WHERE
+c.customer_id IN (
+SELECT r.customer_id
+FROM rental r
+JOIN staff s ON r.staff_id = s.staff_id
+WHERE s.username = current_user
+)
+ORDER BY
+c.customer_id;
+Dans cette vue, nous effectuons les actions suivantes :
+
+Sélection des informations des clients : Nous choisissons de montrer le customer_id, le prénom et le nom des clients.
+
+Filtrage basé sur l'utilisateur connecté : La clause WHERE utilise une sous-requête pour sélectionner uniquement les clients qui ont des locations associées à l'utilisateur connecté (current_user). Cela garantit que chaque utilisateur ne voit que les informations pertinentes pour lui.
+
+SELECT * FROM user_customers -- en tant que staff 'Mike'
+SELECT * FROM user_customers -- en tant que staff 'Mike'
+SELECT * FROM user_customers --en tant que staff 'Jon'
+SELECT * FROM user_customers --en tant que staff 'Jon'
+Dans notre base, Jon et Mike ont exactement les mêmes clients, mais la vue s'adapte bien selon le profil de l'utilisateur connecté.
+
+Si vous n'obtenez aucun retour en exécutant ces requêtes, c'est tout à fait normal. En effet, les utilisateurs de la table staff n'existent pas dans votre base de données. Pour voir un résultat, il serait nécessaire de créer ces utilisateurs et de vous connecter avec leurs identifiants.
+
+Après avoir vu comment créer des vues pour filtrer les données et garantir une expérience utilisateur personnalisée, il est important de considérer l'efficacité de ces vues. En effet, chaque fois qu’une vue est interrogée, PostgreSQL doit recalculer la requête sous-jacente, ce qui peut s’avérer coûteux en ressources, surtout lorsque la vue repose sur des jointures complexes ou est fréquemment utilisée. Pour pallier ce problème et améliorer les performances, les vues matérialisées se présentent comme une solution intéressante.
+
+Évitez de recalculer ses vues à chaque fois en les matérialisant
+Une vue matérialisée stocke physiquement les résultats de la requête dans la base de données, au lieu de la recalculer à chaque fois. Cela permet de gagner en performance lorsque les données sous-jacentes ne changent pas fréquemment.
+
+Voyons ensemble comment créer une vue matérialisée dans la vidéo ci-dessous :
+
+
+Dans cette vidéo, vous avez vu :
+
+Comment créer une vue matérialisée.
+
+Comment rafraîchir la vue pour mettre à jour les données.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien. 
+
+Rodolphe vous recommande de planifier le rafraîchissement selon la fréquence des changements dans vos données, par exemple, à la fin de chaque journée ou après des mises à jour massives.
+
+À vous de jouer
+
+
+Contexte
+Sofia et Rodolphe, après plusieurs discussions avec les équipes de DVD Rental, ont remarqué que certaines requêtes SQL sont régulièrement exécutées pour obtenir des résultats similaires. Afin de rendre l'accès à ces informations plus simple et plus performant, ils vous demandent de créer des vues et des vues matérialisées pour les requêtes récurrentes. Ces vues doivent être accessibles par les équipes marketing et service client, tout en filtrant les informations selon leurs besoins respectifs.
+
+Consignes
+Vous devez mettre en place deux vues pour répondre aux besoins suivants :
+
+Vue pour l’équipe marketing : Créez une vue nommée marketing_customers qui affiche les colonnes suivantes pour chaque client : first_name, last_name, email, city, country.
+
+Vue pour l’équipe service client : Créez une vue nommée customer_rentals qui affiche pour chaque client son first_name, last_name, et les titres des films qu’ils ont loués il y a moins de 6 mois (sans les films en cours).
+
+Transformez ensuite la vue customer_rentals en une vue matérialisée nommée customer_rentals_mat. Exécutez la commande SQL pour rafraîchir la vue matérialisée après avoir ajouté de nouvelles locations dans la table rental.
+
+Vous pouvez récupérer les requêtes SQL de la correction dans le script à ce lien.
+
+En résumé
+Vous avez vu comment créer des vues pour simplifier l'accès aux données en encapsulant des requêtes SQL, rendant ainsi les informations plus accessibles. 
+
+Vous connaissez l'importance de filtrer les données sensibles et de personnaliser l'affichage en utilisant des fonctions telles queSUBSTRING pour obscurcir les informations comme les adresses email et les numéros de téléphone et la fonctioncurrent_userpour connaître l’utilisateur connecté.
+
+Vous avez créé des vues matérialisées pour optimiser les performances en stockant les résultats de requêtes fréquentes, réduisant ainsi le besoin de recalculer ces données à chaque fois.
+
+Après avoir exploré les vues et leur rôle crucial dans la simplification de l'accès aux données, il est temps de passer à un niveau supérieur en découvrant comment mettre en place des procédures et fonctions stockées.
+
+Résolvez des requêtes complexes grâce aux jointures
+
+
+La compagnie DVD Rental souhaite maintenant réaliser des analyses plus détaillées sur les transactions de leurs clients et employés. Pour répondre à cette demande, vous allez devoir utiliser des requêtes SQL avancées, notamment des sous-requêtes imbriquées et des Common Table Expressions (CTEs), afin de simplifier l'extraction et la manipulation des données tout en optimisant les performances.
+
+Avant de plonger dans ces concepts avancés, il est important de bien maîtriser les bases des jointures SQL, qui sont essentielles pour relier plusieurs tables et récupérer des informations pertinentes.
+
+Si vous avez besoin de vous rafraîchir la mémoire sur les différents types de jointures (internes, externes, naturelles), n’hésitez pas à suivre ce cours sur OpenClassrooms : Maîtrisez les jointures externes et naturelles. 
+
+Pour vous aider, voici une image qui résume visuellement les différents types de jointures SQL :
+
+Illustration expliquant différents types de jointures SQL avec des diagrammes en Venn.
+Illustration expliquant différents types de jointures SQL avec des diagrammes en Venn.
+Simplifiez l’extraction des données avec des requêtes imbriquées
+Sofia vous adresse un message sur Slack :
+
+Salut,
+
+Nous avons besoin de réaliser des analyses plus complexes. J'aimerais savoir combien de clients ont loué un film plus de 5 fois en mai et juin 2005. C’est une donnée importante pour évaluer la fidélité de nos clients.
+Peux-tu nous aider en créant une requête pour extraire cette information ?
+
+Merci d'avance
+
+Pour répondre à cette demande je vais sûrement devoir faire deux requêtes et faire une jointure entre elles pour trouver le résultat ?
+
+Pas nécessairement ! Plutôt que d'effectuer deux requêtes séparées puis de les joindre, vous pouvez utiliser une requête imbriquée. Celle-ci vous permet de calculer le nombre de locations par client directement à l'intérieur de la requête principale, sans avoir besoin de créer une deuxième requête et de la joindre.
+
+Une requête imbriquée (ou sous-requête) est une requête SQL incluse à l'intérieur d'une autre requête SQL. Elles permettent de filtrer ou manipuler des ensembles de données sans ajouter de jointures complexes.
+
+Imaginons que vous deviez lister les clients qui ont loué un film plus d'une fois au cours des 6 derniers mois.
+
+SELECT customer_id, first_name, last_name
+FROM
+customer
+WHERE
+customer_id IN (
+SELECT customer_id
+FROM rental
+WHERE
+rental_date >= '2005-05-01'
+AND rental_date <= '2005-06-30'
+GROUP BY customer_id
+HAVING COUNT(rental_id) > 5
+);
+Explication :
+
+La sous-requête à l'intérieur de la clause WHERE retourne les customer_id qui ont effectué plus de cinq locations en mai et juin 2005.
+
+La requête principale affiche les détails des clients correspondants en utilisant la sous-requête pour filtrer.
+
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin affichant trois colonnes
+Avant de plonger dans l’extraction des données à l’aide des sous-requêtes, il est important de bien comprendre deux concepts fondamentaux des jointures complexes : les Semi-join et les Anti-join. Ces types de jointures permettent de filtrer des ensembles de données en fonction de la présence ou de l’absence de correspondances dans d'autres tables.
+
+Semi-join : Retourne les lignes de la table principale qui ont une correspondance dans la sous-requête. Dans l'exemple ci-dessus, la sous-requête agit comme un semi-join. 
+
+Anti-join : Retourne les lignes de la table principale qui n'ont pas de correspondance dans la sous-requête. Exemple : Trouver les clients qui n'ont pas loué plus de 5 films en mai et juin 2005.
+
+La requête d’Anti-join donnerait donc tout simplement :
+
+SELECT customer_id, first_name, last_name
+FROM
+customer
+WHERE
+customer_id NOT IN (
+SELECT customer_id
+FROM rental
+WHERE
+rental_date >= '2005-05-01'
+AND rental_date <= '2005-06-30'
+GROUP BY customer_id
+HAVING COUNT(rental_id) > 5
+);
+Maintenant que vous avez vu les concepts de Semi-join et Anti-join, voyons comment utiliser les requêtes imbriquées dans différents contextes, tels que les clausesSELECT,FROMetWHERE pour rendre vos requêtes encore plus puissantes et flexibles.
+
+Utilisez une requête imbriquée dans une clause SELECT, FROM ou WHERE
+Il est possible d’accomplir certaines tâches avec des jointures classiques, mais pour mieux comprendre les possibilités offertes par les sous-requêtes imbriquées, nous allons voir comment ces sous-requêtes peuvent être utilisées dans trois parties différentes d'une requête :SELECT,FROMetWHERE.
+
+Cela permet d'enrichir les résultats en exécutant des calculs ou des filtres dans des sous-requêtes sans nécessiter de multiples jointures. Nous allons voir comment manipuler les données de différentes manières dans chacune de ces clauses. Chaque approche a ses avantages et peut rendre vos requêtes plus modulaires et faciles à maintenir.
+
+Dans cette vidéo, nous allons explorer comment utiliser des sous-requêtes imbriquées dans différentes parties d'une requête SQL :SELECT,FROMetWHERE.
+
+
+Dans cette vidéo, vous avez vu :
+
+L'utilisation d'une sous-requête dans la clauseSELECTpour calculer des informations spécifiques sur chaque ligne, comme le total de locations par film. 
+
+L'utilisation d'une sous-requête dans la clauseFROMpour préparer et manipuler des ensembles de données avant de les joindre ou d'afficher les résultats. 
+
+L'utilisation d'une sous-requête dans la clauseWHEREpour filtrer les résultats en fonction de critères dérivés d'une autre requête, comme la vérification des films ayant plus de 30 locations.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien.
+
+Intégrez les opérateurs de comparaison
+Rodolphe vous adresse un email :
+
+Object : Analyse des films loués par les employés
+
+Salut,
+
+Je travaille sur certaines statistiques concernant les clients et les films qu'ils ont loués. J'aimerais que tu m'aides à répondre à deux questions :
+
+Existe-t-il un film que tous les clients ont loué ?
+
+Y a-t-il des films qui n'ont été loués par aucun client ?
+
+Peux-tu me préparer des requêtes SQL pour analyser ces points ?
+
+Merci pour ton aide !
+
+Cordialement,
+Rodolphe
+
+Les opérateurs de comparaison tels queIN,ALL,ANYetEXISTS sont parfaits pour répondre à ce genre de question. Ils permettent de vérifier si une valeur satisfait à une condition dans un ensemble de résultats retournés par une sous-requête.
+
+L'opérateur IN 
+L'opérateurIN, que vous avez déjà utilisé précédemment, permet de vérifier si une valeur spécifique existe dans un ensemble de résultats. C'est l'un des opérateurs les plus couramment utilisés pour comparer une valeur à une liste ou un ensemble retourné par une sous-requête.
+
+Prenons un exemple simple. Vous souhaitez afficher les films qui ont été loués par des clients résidant à "Tallahassee" aux Etats-Unis :
+
+SELECT
+f.title
+FROM
+film f
+WHERE
+f.film_id IN (
+SELECT
+i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN customer c ON r.customer_id = c.customer_id
+JOIN address a ON c.address_id = a.address_id
+JOIN city ci ON a.city_id = ci.city_id
+JOIN country cn ON cn.country_id = ci.country_id
+WHERE
+ci.city = 'Tallahassee'
+AND country = 'United States'
+);
+Explication :
+
+La sous-requête retourne les film_id des films loués par des clients résidant à "Tallahassee".
+
+La requête principale utiliseINpour lister les titres de ces films.
+
+Plus d’exemples associées à l’opérateurINsont disponibles à ce lien.
+
+L'opérateur ALL
+L'opérateurALLvérifie si une condition est vraie pour toutes les valeurs d’un ensemble de résultats retournés par une sous-requête. Il est parfait pour répondre à la première question de Rodolphe : savoir s'il existe un film que tous les clients ont loué. 
+
+SELECT f.title
+FROM film f
+WHERE f.film_id = ALL (
+SELECT i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN customer c ON r.customer_id = c.customer_id
+);
+Explication :
+
+La sous-requête retourne tous les film_id des films loués par les clients.
+
+ALLvérifie si chaque film dans la table film a été loué par tous les clients.
+
+Aucun résultat n’étant retourné, cela signifie qu’aucun film n’a été loué par tous les clients de dvdrental.
+
+Plus d’exemples associées à l’opérateurALLsont disponibles à ce lien.
+
+L'opérateur ANY
+L'opérateurANY(ouSOME) permet de vérifier si une condition est vraie pour au moins une des valeurs dans un ensemble. Il est utile pour vérifier, par exemple, si un film a été loué par au moins un client dans une période donnée.
+
+Vous souhaitez afficher les films qui ont été loués au moins une fois par des clients du 6 au 15 juin 2005.
+
+SELECT
+f.title
+FROM
+film f
+WHERE
+f.film_id = ANY (
+SELECT
+i.film_id
+FROM
+rental r
+JOIN inventory i on i.inventory_id = r.inventory_id
+WHERE
+r.rental_date BETWEEN '2005-06-06' AND '2005-06-15'
+)
+Explication :
+
+La sous-requête retourne les film_id des films loués entre le 6 juin 2005 et le 15 juin 2005.
+
+ANYvérifie si le film_id de la table film est présent dans la sous-requête, ce qui permet d'afficher les films qui ont été loués au moins une fois.
+
+Plus d’exemples associées à l’opérateurANYsont disponibles à ce lien.
+
+L'opérateur EXISTS
+L'opérateurEXISTSpermet de vérifier l'existence de lignes retournées par une sous-requête. Il est idéal pour répondre à la deuxième question de Rodolphe : trouver les films qui n'ont été loués par aucun client.
+
+SELECT
+f.film_id
+FROM
+film f
+WHERE
+NOT NOT EXISTS (
+SELECT 1
+FROM
+rental r
+INNER JOIN inventory i on i.inventory_id = r.inventory_id
+WHERE
+i.film_id = f.film_id
+)
+Explication :
+
+La sous-requête vérifie l'existence des film_id dans la tablerental.
+
+NOT EXISTSretourne les films qui n'ont jamais été loués car il ne trouve aucune correspondance dans la sous-requête.
+
+Plus d’exemples associées à l’opérateur EXISTS sont disponibles à ce lien.
+
+Ces opérateurs permettent de gérer des comparaisons complexes avec des ensembles de données retournés par des sous-requêtes.
+
+Voici un récapitulatif :
+
+Opérateur
+
+Description
+
+IN 
+
+Vérifie si une valeur existe dans un ensemble de résultats.
+
+ALL
+
+Vérifie si une condition est vraie pour toutes les valeurs d’un ensemble.
+
+ANY
+
+Vérifie si une condition est vraie pour au moins une des valeurs d’un ensemble.
+
+EXISTS
+
+Vérifie si une sous-requête retourne au moins une ligne. Avec NOT EXISTS, on vérifie l'absence de résultats, comme dans le cas des films non loués.
+
+Après avoir exploré les opérateurs de comparaison pour manipuler des sous-requêtes, il est temps de découvrir une approche plus élégante et flexible pour structurer vos requêtes complexes : les Common Table Expressions (CTEs). Elles permettent d'éviter la duplication de sous-requêtes et simplifient la réutilisation des résultats intermédiaires.
+
+Évitez de dupliquer les sous requêtes en utilisant des CTEs
+Les Common Table Expressions (CTEs) permettent de structurer une requête de manière plus claire, en vous évitant de dupliquer des sous-requêtes. Une CTE est une sorte de table temporaire créée à l'intérieur d'une requête, définie à l'aide de la clauseWITH. Contrairement aux sous-requêtes imbriquées, les CTEs peuvent être utilisées plusieurs fois dans la requête principale, ce qui les rend particulièrement pratiques pour les requêtes complexes et répétitives. 
+
+Une CTE est définie à l'aide de la clauseWITH, suivie du nom de la CTE, de ses colonnes (optionnelles), et de la sous-requête qui génère les données. Une fois la CTE définie, elle peut être utilisée dans la requête principale comme n'importe quelle autre table.
+
+WITH cte_name (column1, column2, ...) AS (
+-- CTE query
+SELECT ...
+)
+-- Main query using the CTE
+SELECT
+...
+FROM
+cte_name;
+cte_name : Le nom que vous donnez à la CTE. Ce nom sera utilisé dans la requête principale.
+
+column1, column2 : Les noms des colonnes (optionnels). Si vous ne spécifiez pas de colonnes, elles prendront les noms définis dans la sous-requête.
+
+CTE query : La sous-requête qui génère les données. Cela peut être n'importe quelle requête SQL, souvent avec des jointures et des agrégations.
+
+Main query : La requête principale qui utilise la CTE pour récupérer ou manipuler les données.
+
+Calculez les locations totales par client
+Imaginons que vous souhaitiez calculer le nombre total de locations par client, puis utiliser ce total dans une autre requête. Voici comment vous pouvez utiliser une CTE pour éviter de dupliquer la sous-requête qui calcule les locations :
+
+WITH total_rentals_per_customer AS (
+SELECT
+customer_id, COUNT(rental_id) AS total_rentals
+FROM
+rental
+GROUP BY
+customer_id
+)
+-- Main query using the CTE
+SELECT
+c.customer_id, c.first_name, c.last_name, tr.total_rentals
+FROM
+customer c
+JOIN total_rentals_per_customer tr ON c.customer_id = tr.customer_id
+WHERE
+tr.total_rentals > 5;
+Explication :
+
+WITH total_rentals_per_customer AS (...): Cette partie définit la CTE. Elle crée une table temporaire contenant le customer_id et le nombre total de locations (total_rentals) par client.
+
+SELECT c.customer_id, c.first_name, ... : La requête principale utilise la CTE en joignant la table customer avec la CTE total_rentals_per_customer pour afficher les informations des clients ayant effectué plus de 5 locations.
+
+Les CTE sont très pratiques pour rendre vos requêtes plus lisibles et éviter de dupliquer des sous-requêtes complexes. Cependant, il est important de noter qu'une CTE ne peut être utilisée qu'une seule fois au sein d'une même requête. Si vous avez besoin de réutiliser plusieurs fois le résultat d'une CTE, il faudra passer par des tables temporaires.
+
+À vous de jouer
+
+
+Contexte
+Sofia et Rodolphe aimeraient obtenir un rapport sur les clients ayant effectué un grand nombre de locations. Ils souhaitent notamment identifier les clients qui ont effectué plus de 10 locations, mais aussi afficher uniquement les clients qui ont payé plus de 100 € au total pour leurs locations. Pour éviter de dupliquer les calculs, ils aimeraient que vous utilisiez une CTE pour stocker les informations de paiements et de locations.
+
+Consignes
+Créez une CTE qui calcule le nombre total de locations par client.
+
+Utilisez cette CTE pour filtrer les clients ayant effectué plus de 10 locations.
+
+Créez une autre CTE pour calculer le montant total des paiements par client.
+
+Utilisez les deux CTEs pour afficher les clients qui ont plus de 10 locations et ont payé plus de 100 € au total.
+
+Vous pouvez récupérer les requêtes SQL de l'exemple de corrigé dans le script à ce lien.
+
+En résumé
+Vous avez appris à utiliser les sous-requêtes imbriquées dans les clausesSELECT,FROMetWHEREpour simplifier les requêtes complexes.
+
+Vous avez exploré les opérateurs de comparaisonIN,ALL,ANYetEXISTSpour manipuler des ensembles de résultats et filtrer vos données efficacement.
+
+Vous avez découvert les Common Table Expressions (CTEs) pour éviter de dupliquer les sous-requêtes et rendre vos requêtes plus lisibles et réutilisables.
+
+Vous savez comment optimiser l'utilisation des CTEs pour stocker des tables auxiliaires dans vos requêtes SQL. 
+
+Maintenant que vous maîtrisez l'art de manipuler des requêtes complexes et d'optimiser vos analyses, nous allons aborder une autre technique essentielle pour améliorer l'accessibilité des résultats de vos requêtes : l'utilisation des vues. Dans le prochain chapitre, vous apprendrez à encapsuler des requêtes SQL dans des entités réutilisables pour simplifier et sécuriser l'accès aux données.
+
+Rendez accessible le retour d'une requête grâce aux vues
+
+
+Après vos récents succès sur la mise en place des contraintes d'intégrité, Rodolphe, toujours aussi satisfait, vous partage une nouvelle mission. Avec Sofia, la CEO de DVD Rental, ils ont remarqué que certaines requêtes étaient régulièrement exécutées, et que ces opérations devenaient lourdes et répétitives pour leurs équipes. Pour alléger cette charge et rendre les données plus facilement accessibles à tout le monde, ils souhaitent que vous exploitiez une fonctionnalité de PostgreSQL : les vues.
+
+Encapsulez une requête SQL dans une entité simple et réutilisable
+Sofia a expliqué à Rodolphe que certaines équipes passent beaucoup de temps à écrire les mêmes requêtes pour obtenir des résultats similaires. Pour rendre le tout plus fluide, vous allez apprendre à encapsuler ces requêtes dans une vue, permettant de réutiliser le résultat d'une requête comme s'il s'agissait d'une simple table.
+
+Les vues sont des requêtes stockées dans la base de données sous forme de "tables virtuelles" qui vous permettent d’abstraire la complexité d'une requête et de rendre son résultat accessible simplement via une instructionSELECT.
+
+Comprenez les avantages et les cas d’utilisation d’une vue
+Les vues jouent un rôle clé dans l'optimisation des requêtes SQL et la gestion des données.
+
+Voici quelques raisons pour lesquelles elles sont si utiles :
+
+Simplicité : Les vues encapsulent des requêtes complexes sous forme de "tables virtuelles", rendant leur résultat accessible via une simple instructionSELECT. Cela permet de masquer des jointures et calculs complexes derrière une interface simple.
+
+Réutilisabilité : Une fois créées, les vues peuvent être appelées à plusieurs reprises sans avoir à réécrire la requête d'origine, ce qui réduit le risque d'erreurs et facilite la maintenance des requêtes fréquemment utilisées.
+
+Sécurité : Les vues peuvent restreindre l'accès aux données sensibles en affichant seulement les colonnes ou lignes nécessaires à certains utilisateurs. Sofia, par exemple, voit cela comme un excellent moyen de contrôler quelles informations sont visibles pour chaque utilisateur.
+
+Optimisation des performances : En transformant une vue en une vue matérialisée, vous pouvez stocker le résultat d’une requête complexe et éviter de recalculer les données à chaque nouvelle exécution, ce qui est particulièrement utile pour des données consultées fréquemment.
+
+Créez votre première vue
+Imaginez que vous devez afficher régulièrement la liste des films actuellement en location avec les informations des clients associés. Sans l'utilisation d'une vue, cela impliquerait d'écrire une requête complexe à chaque fois, comme celle-ci :
+
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name
+r.rental_date,
+f.title
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+JOIN film f ON r.film_id = f.film_id
+WHERE
+r.return_date IS NULL;
+Cette requête permet de récupérer les informations des clients (ID, prénom, nom), la date de location, et le titre du film. Mais la réécrire à chaque fois peut rapidement devenir fastidieux et source d'erreurs, surtout si la requête doit être légèrement modifiée ou optimisée.
+
+Pour simplifier ce processus, vous pouvez encapsuler cette requête dans une vue. Cela permet de la rendre réutilisable sans avoir à réécrire la requête complète.
+
+Voici comment créer une vue avec l'instructionCREATE VIEW:
+
+CREATE VIEW current_rentals AS
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+r.rental_date,
+f.title
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+JOIN inventory i on i.inventory_id = r.inventory_id
+JOIN film f ON i.film_id = f.film_id
+WHERE
+r.return_date IS NULL;
+Je peux donc directement l’utiliser comme une table désormais ?
+
+Tout à fait, une fois la vue créée, son appel est aussi simple que d'interroger une table ordinaire avec unSELECT. Cela rend son usage très pratique et vous permet d'éviter de réécrire des requêtes complexes.
+
+SELECT * FROM current_rentals;
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Maintenant que nous avons vu comment créer une première vue simple, il est temps d'aller plus loin et d'explorer comment les vues peuvent être utilisées pour abstraire les données sous-jacentes.
+
+Développez de nouvelles vues pour abstraire les données sous-jacentes
+Au-delà de la réutilisation, les vues peuvent servir à restreindre l’accès à certaines données sensibles ou à n’afficher que les informations pertinentes selon le rôle des utilisateurs. Sofia, en tant que CEO, ne veut pas que tout le monde ait accès à l’intégralité des informations clients, notamment des données comme les adresses ou numéros de téléphone.
+
+Créez une vue pour masquer les données sensibles
+Vous pouvez créer des vues pour cacher les informations sensibles des clients, telles que les adresses ou numéros de téléphone, dans le but de respecter la confidentialité des données tout en permettant une utilisation plus sécurisée.
+
+Les vues vous permettent de présenter uniquement les informations nécessaires tout en garantissant un accès sécurisé aux données. Voici comment procéder :
+
+CREATE VIEW safe_customer_info AS
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+cty.city,
+SUBSTRING(c.email FROM 1 FOR 3) || '***' AS obscured_email,
+SUBSTRING(a.phone FROM 1 FOR 3) || '***' AS obscured_phone
+FROM
+customer c
+JOIN address a ON c.address_id = a.address_id
+JOIN city cty ON cty.city_id = a.city_id;
+Dans cette vue, nous avons utilisé deux méthodes pour protéger les informations sensibles :
+
+Sélection de colonnes : Dans cet exemple, nous affichons uniquement les colonnes customer_id, first_name, last_name et city, permettant d'accéder à des informations de base sans exposer des détails sensibles.
+
+Obfuscation des données : Les colonnes d'email et de téléphone sont partiellement masquées. L'email est présenté sous la forme de trois premiers caractères suivis de trois astérisques (***), tout comme le numéro de téléphone.
+
+Une fois la vue créée, exécutez-la pour avoir un aperçu de l’affichage !
+
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Après avoir vu comment masquer les données sensibles pour protéger la confidentialité des informations, passons maintenant à une utilisation plus avancée des vues : filtrer les droits utilisateurs afin de ne montrer que les données auxquelles ils ont accès en fonction de leur rôle
+
+Créez une vue pour filtrer les droits utilisateurs
+Pour renforcer la sécurité des données, il est essentiel de s'assurer que chaque utilisateur n'accède qu'aux informations qui les concernent. Nous allons donc créer une vue qui permettra de filtrer les données en fonction de l'utilisateur.
+
+Avant de créer notre vue, il est essentiel de comprendre la fonctioncurrent_user:
+
+Cette fonction est intégrée à PostgreSQL et retourne le nom de l'utilisateur actuellement connecté à la base de données. Cela est particulièrement utile pour implémenter des contrôles d'accès basés sur l'identité de l'utilisateur. 
+
+En utilisantcurrent_user, vous pouvez restreindre l'accès aux données, permettant ainsi à chaque utilisateur de voir uniquement les informations qui le concernent, grâce aux vues.
+
+Cependant, pour pouvoir utiliser cette fonction efficacement, il est nécessaire de créer des rôles spécifiques (autres que le rôle par défaut postgres) pour chaque utilisateur dans votre système. 
+
+Ces rôles permettent de gérer les permissions et d'identifier les utilisateurs qui se connectent à la base de données. 
+
+Bien que nous ne couvrirons pas la création de ces rôles dans ce cours, il est important de garder à l'esprit que la mise en place d'une gestion adéquate des rôles est cruciale pour une sécurité renforcée.
+
+Plus d’informations associées à la fonction current_user sont disponibles à ce lien.
+
+Imaginons maintenant que vous souhaitiez créer une vue qui affiche uniquement les clients associés à l'utilisateur actuellement connecté (l’utilisateur étant stocké dans la table staff). Cela permet de personnaliser l'expérience utilisateur tout en gardant la sécurité en tête.
+
+CREATE VIEW user_customers AS
+SELECT
+c.customer_id,
+c.first_name AS customer_first_name,
+c.last_name AS customer_last_name
+FROM
+customer c
+WHERE
+c.customer_id IN (
+SELECT r.customer_id
+FROM rental r
+JOIN staff s ON r.staff_id = s.staff_id
+WHERE s.username = current_user
+)
+ORDER BY
+c.customer_id;
+Dans cette vue, nous effectuons les actions suivantes :
+
+Sélection des informations des clients : Nous choisissons de montrer le customer_id, le prénom et le nom des clients.
+
+Filtrage basé sur l'utilisateur connecté : La clause WHERE utilise une sous-requête pour sélectionner uniquement les clients qui ont des locations associées à l'utilisateur connecté (current_user). Cela garantit que chaque utilisateur ne voit que les informations pertinentes pour lui.
+
+SELECT * FROM user_customers -- en tant que staff 'Mike'
+SELECT * FROM user_customers -- en tant que staff 'Mike'
+SELECT * FROM user_customers --en tant que staff 'Jon'
+SELECT * FROM user_customers --en tant que staff 'Jon'
+Dans notre base, Jon et Mike ont exactement les mêmes clients, mais la vue s'adapte bien selon le profil de l'utilisateur connecté.
+
+Si vous n'obtenez aucun retour en exécutant ces requêtes, c'est tout à fait normal. En effet, les utilisateurs de la table staff n'existent pas dans votre base de données. Pour voir un résultat, il serait nécessaire de créer ces utilisateurs et de vous connecter avec leurs identifiants.
+
+Après avoir vu comment créer des vues pour filtrer les données et garantir une expérience utilisateur personnalisée, il est important de considérer l'efficacité de ces vues. En effet, chaque fois qu’une vue est interrogée, PostgreSQL doit recalculer la requête sous-jacente, ce qui peut s’avérer coûteux en ressources, surtout lorsque la vue repose sur des jointures complexes ou est fréquemment utilisée. Pour pallier ce problème et améliorer les performances, les vues matérialisées se présentent comme une solution intéressante.
+
+Évitez de recalculer ses vues à chaque fois en les matérialisant
+Une vue matérialisée stocke physiquement les résultats de la requête dans la base de données, au lieu de la recalculer à chaque fois. Cela permet de gagner en performance lorsque les données sous-jacentes ne changent pas fréquemment.
+
+Voyons ensemble comment créer une vue matérialisée dans la vidéo ci-dessous :
+
+
+Dans cette vidéo, vous avez vu :
+
+Comment créer une vue matérialisée.
+
+Comment rafraîchir la vue pour mettre à jour les données.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien. 
+
+Rodolphe vous recommande de planifier le rafraîchissement selon la fréquence des changements dans vos données, par exemple, à la fin de chaque journée ou après des mises à jour massives.
+
+À vous de jouer
+
+
+Contexte
+Sofia et Rodolphe, après plusieurs discussions avec les équipes de DVD Rental, ont remarqué que certaines requêtes SQL sont régulièrement exécutées pour obtenir des résultats similaires. Afin de rendre l'accès à ces informations plus simple et plus performant, ils vous demandent de créer des vues et des vues matérialisées pour les requêtes récurrentes. Ces vues doivent être accessibles par les équipes marketing et service client, tout en filtrant les informations selon leurs besoins respectifs.
+
+Consignes
+Vous devez mettre en place deux vues pour répondre aux besoins suivants :
+
+Vue pour l’équipe marketing : Créez une vue nommée marketing_customers qui affiche les colonnes suivantes pour chaque client : first_name, last_name, email, city, country.
+
+Vue pour l’équipe service client : Créez une vue nommée customer_rentals qui affiche pour chaque client son first_name, last_name, et les titres des films qu’ils ont loués il y a moins de 6 mois (sans les films en cours).
+
+Transformez ensuite la vue customer_rentals en une vue matérialisée nommée customer_rentals_mat. Exécutez la commande SQL pour rafraîchir la vue matérialisée après avoir ajouté de nouvelles locations dans la table rental.
+
+Vous pouvez récupérer les requêtes SQL de la correction dans le script à ce lien.
+
+En résumé
+Vous avez vu comment créer des vues pour simplifier l'accès aux données en encapsulant des requêtes SQL, rendant ainsi les informations plus accessibles. 
+
+Vous connaissez l'importance de filtrer les données sensibles et de personnaliser l'affichage en utilisant des fonctions telles queSUBSTRING pour obscurcir les informations comme les adresses email et les numéros de téléphone et la fonctioncurrent_userpour connaître l’utilisateur connecté.
+
+Vous avez créé des vues matérialisées pour optimiser les performances en stockant les résultats de requêtes fréquentes, réduisant ainsi le besoin de recalculer ces données à chaque fois.
+
+Après avoir exploré les vues et leur rôle crucial dans la simplification de l'accès aux données, il est temps de passer à un niveau supérieur en découvrant comment mettre en place des procédures et fonctions stockées.
+
+Mettez en place des procédures et fonctions stockées
+
+
+Après avoir facilité l'accès aux données grâce aux vues, Sofia et Rodolphe se tournent désormais vers l'automatisation de certaines tâches répétitives. Sofia souhaite que l'équipe se concentre sur des analyses stratégiques plutôt que de perdre du temps à exécuter des requêtes manuellement tous les jours.
+
+Vous trouvez un message de Rodolphe dans Slack :
+
+Salut,
+
+J’ai une nouvelle mission pour toi ! On va devoir mettre en place des procédures stockées et des fonctions personnalisées (UDF) pour automatiser et centraliser certaines des opérations clés dans la base DVD Rental. Cela nous aidera à réutiliser plus facilement des logiques complexes et à assurer la cohérence des calculs dans toute la base.
+
+En plus, tu vas voir comment déclencher ces procédures automatiquement, ce qui devrait réduire les erreurs humaines. On compte sur toi pour optimiser tout ça ! 
+Merci !
+
+Définissez une fonction personnalisée
+Les UDF (User Defined Functions) vous permettent d'encapsuler des calculs ou des opérations souvent répétées dans la base de données et les réutiliser dans vos requêtes SQL. Cela simplifie la maintenance et permet une centralisation de la logique métier.
+
+Voici quelques cas d’usages d’une UDF :
+
+Réutilisation : Une UDF peut être appelée dans plusieurs requêtes, évitant de répéter le même code. 
+
+Facilité de maintenance : Si une modification est nécessaire, elle est effectuée au niveau de la fonction et sera automatiquement appliquée à toutes les requêtes qui l'utilisent. 
+
+Centralisation : Plutôt que de disperser la logique dans plusieurs requêtes SQL, vous pouvez la regrouper au sein d'une UDF, assurant ainsi une plus grande cohérence dans l'application des règles métier.
+
+Voyons à présent la sémantique d’une UDF et ses paramètres associés.
+
+Des paramètres ? C’est-à-dire ?
+
+Une UDF est définie avec un ou plusieurs paramètres, permettant de passer des valeurs en entrée pour traiter des calculs ou manipulations spécifiques. En PostgreSQL, une UDF peut retourner un seul résultat ou une table entière, selon sa définition.
+
+La syntaxe d’une UDF est la suivante :
+
+CREATE [or REPLACE] FUNCTION function_name(param_list)
+RETURNS return_type
+LANGUAGE plpgsql
+as
+$$
+DECLARE
+-- déclaration des variables
+BEGIN
+-- logique de code
+END;
+$$;
+Explication :
+
+CREATE [or REPLACE] FUNCTION function_name(param_list) : Cette commande crée une nouvelle fonction avec le nomfunction_name. L'option or replace permet de remplacer une fonction existante avec le même nom. 
+
+param_list : La liste des paramètres que la fonction prend en entrée. Chaque paramètre est défini avec un nom et un type de données. 
+
+RETURNS return_type: Définit le type de données que la fonction retourne. Cela peut être un type simple (comme integer, text) ou composite (comme table). 
+
+LANGUAGE plpgsql: Indique que la fonction est écrite en PL/pgSQL, le langage procédural de PostgreSQL. 
+
+DECLARE: Section optionnelle où l’on peut déclarer des variables locales à utiliser dans la fonction. 
+
+BEGIN ... END: Contient la logique de la fonction, où vous pouvez écrire des instructions SQL et PL/pgSQL (boucles, conditions, etc.). C'est ici que le traitement est effectué. 
+
+$$: Délimiteur pour définir le bloc de code PL/pgSQL.
+
+Plus d’informations associées aux UDF sont disponibles à ce lien. 
+
+Maintenant qu’on a vu la syntaxe, appliquons-le à un exemple concret ! Apparemment Rodolphe a une petite idée derrière la tête.
+
+Mettez à disposition des UDFs
+Rodolphe vous écrit à nouveau sur Slack :
+
+Salut, J'aurais besoin de deux petites fonctions pour simplifier nos opérations récurrentes :
+
+calculate_late_fee: Une fonction qui calculerait les frais de retard pour les films. Le client a 3 jours pour rendre le film, et s'il dépasse ce délai, on applique une pénalité de 1,5 € par jour de retard. La fonction prendra en paramètres la date de location et la date de retour. 
+
+anonymize_email: Une autre fonction pour anonymiser les adresses email. Il faudrait qu’elle ne montre que les trois premières lettres, puis des *** pour le reste, afin de protéger la confidentialité de nos clients.
+
+Ces fonctions nous simplifieraient vraiment la vie ! Merci !
+
+En réponse à la demande de Rodolphe, nous allons d’abord créer la fonction pour calculer les frais de retard.
+
+CREATE FUNCTION calculate_late_fee(rental_date TIMESTAMP, return_date TIMESTAMP)
+RETURNS NUMERIC AS $$
+DECLARE
+late_fee NUMERIC;
+days_late INTEGER;
+BEGIN
+IF return_date > rental_date + INTERVAL '3 days' THEN
+days_late := EXTRACT(DAY FROM (return_date - rental_date - INTERVAL '3 days'));
+late_fee := days_late * 1.5; -- 1,5 € par jour de retard
+ELSE
+late_fee := 0;
+END IF;
+RETURN late_fee;
+END;
+$$ LANGUAGE plpgsql;
+Explication :
+
+La fonction prend en paramètres la date de location (rental_date) et la date de retour réelle (return_date). 
+
+Si le film est rendu plus de 3 jours après la date de location, elle calcule le nombre de jours de retard et applique une pénalité de 1,5 € par jour.
+
+Sinon, aucuns frais de retard ne sont appliqués.
+
+Définissons maintenant celle associée à l’anonymisation des emails :
+
+CREATE FUNCTION anonymize_email(email VARCHAR)
+RETURNS VARCHAR AS $$
+BEGIN
+RETURN SUBSTRING(email FROM 1 FOR 3) || '***';
+END;
+$$ LANGUAGE plpgsql;
+Explication :
+
+La fonction prend en paramètre une adresse email. 
+
+Elle retourne une version anonymisée, ne montrant que les trois premiers caractères suivis de ***.
+
+Super ! Et je peux accéder aux fonctions directement dans ma clauseSELECT?
+
+Exactement ! Maintenant que nos fonctionscalculate_late_feeetanonymize_emailsont prêtes, nous allons les intégrer directement dans nos requêtes SQL. Cela nous permettra de calculer les frais de retard automatiquement et d'anonymiser les emails des clients, tout en simplifiant nos requêtes et en centralisant la logique métier. 
+
+Examinons d'abord le résultat de la fonctioncalculate_late_feeen utilisant les transactions de notre table rental :
+
+SELECT
+r.rental_id,
+c.first_name,
+c.last_name,
+calculate_late_fee(r.rental_date, r.return_date) AS late_fee
+FROM
+rental r
+JOIN
+customer c ON r.customer_id = c.customer_id
+WHERE
+r.return_date IS NOT NULL
+ORDER BY
+rental_id;
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Examinons ensuite le résultat de la fonctionanonymize_emailen retournant des informations associées à nos clients : 
+
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+anonymize_email(c.email) AS email_anonymized
+FROM
+customer c
+ORDER BY
+customer_id;
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Après avoir vu comment créer et utiliser des fonctions personnalisées pour automatiser certains calculs, passons maintenant à un autre outil : les procédures stockées. Celles-ci permettent d'exécuter des opérations plus complexes et d'automatiser des tâches répétitives tout en encapsulant la logique métier.
+
+Définissez une procédure stockée et déclenchez son appel
+Rodolphe vous répond sur Slack :
+
+Merci pour les UDFs, les utilisateurs sont très contents ! Elles leur font gagner du temps et évitent qu'ils se trompent sur les frais de retard.
+
+J'aurais maintenant une nouvelle demande pour automatiser encore plus nos processus. On a remarqué que certaines tâches répétitives, comme l'archivage des anciennes locations, prennent du temps et pourraient être automatisées. Peux-tu mettre en place une procédure stockée qui archive automatiquement les locations retournées depuis plus d'un an ? Cela nous permettrait de garder la base de données plus légère et mieux organisée.
+
+Merci d'avance pour ton aide !
+
+Après ce message, il devient évident que certaines tâches répétitives peuvent être automatisées pour améliorer l'efficacité et la gestion des données. C'est ici que les procédures stockées (ou stored procedures) entrent en jeu.
+
+Comprenez les procédures stockées
+Les procédures stockées sont des blocs de code SQL qui peuvent encapsuler plusieurs opérations, comme des mises à jour, insertions, suppressions ou vérifications complexes. Contrairement aux fonctions (UDFs), qui retournent généralement une valeur, les procédures stockées peuvent ne pas retourner de valeur, mais plutôt exécuter des actions complexes sur les données.
+
+Pourquoi utiliser des procédures stockées ?
+
+Automatisation : Elles permettent d'automatiser des tâches répétitives sans intervention manuelle. 
+
+Centralisation de la logique métier : Les règles et traitements complexes sont centralisés au sein de la procédure, facilitant la maintenance. 
+
+Sécurité et performance : En encapsulant des processus dans une procédure stockée, vous limitez les risques d'erreurs humaines et optimisez les performances car les procédures stockées sont précompilées.
+
+Création d'une procédure stockée
+La création d'une procédure stockée suit une syntaxe similaire à celle d'une fonction, mais sans le besoin de retourner une valeur. Voici la syntaxe de base pour créer une procédure stockée :
+
+CREATE PROCEDURE procedure_name(param_list)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+-- logique de la procédure
+END;
+$$;
+Explication :
+
+CREATE PROCEDURE procedure_name(param_list): Crée une nouvelle procédure nommée  procedure_nameavec une liste de paramètres (optionnelle). 
+
+LANGUAGE plpgsql : Indique que la procédure est écrite en PL/pgSQL, le langage procédural de PostgreSQL. 
+
+BEGIN ... END: C’est ici que la logique de la procédure est définie. Vous pouvez y inclure plusieurs instructions SQL.
+
+Maintenant que nous avons vu la syntaxe, nous allons pouvoir créer la procédure stockée demandée par Rodolphe.
+
+Sauvegardez et déclenchez des procédures stockées
+Après avoir défini vos premières procédures stockées, il est essentiel de savoir comment les sauvegarder et les déclencher efficacement. Cela vous permettra d'automatiser vos tâches et de garantir la cohérence des opérations dans la base de données DVD Rental, tout en minimisant l'intervention manuelle.
+
+Création d'une procédure pour archiver les anciennes locations
+Pour répondre à la demande de Rodolphe, nous allons créer une procédure stockée qui archive automatiquement les locations retournées depuis plus d’un an dans une table dédiée (rental_archive), puis supprime ces enregistrements de la table des locations actives (rental) :
+
+CREATE PROCEDURE archive_old_rentals()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+-- Archiver les locations dans une table d'archive
+INSERT INTO rental_archive (rental_id, customer_id, rental_date, return_date)
+SELECT rental_id, customer_id, rental_date, return_date
+FROM rental
+WHERE return_date < NOW() - INTERVAL '1 year';
+-- Mettre à jour la table payment pour assigner une valeur au lieu de NULL
+UPDATE payment
+SET rental_id = -1 -- ou une autre valeur spéciale
+WHERE
+rental_id IN (
+SELECT rental_id
+FROM rental
+WHERE return_date < NOW() - INTERVAL '1 year'
+);
+-- Supprimer les locations archivées de la table rental
+DELETE FROM rental
+WHERE return_date < NOW() - INTERVAL '1 year';
+END;
+$$;
+Explication :
+
+INSERT INTO rental_archive: Cette partie de la procédure stocke dans une table d'archive toutes les locations terminées depuis plus d'un an. 
+
+DELETE FROM rental: Après avoir archivé les données, on supprime les enregistrements correspondants de la table des locations actives (rental).
+
+Grâce à cette procédure, l'archivage des locations anciennes devient un processus automatisé, évitant ainsi une gestion manuelle chronophage.
+
+Avant de pouvoir appeler la procédure archive_old_rentals, vous devez d'abord créer la table rental_archive dans votre base de données. Voici le schéma de la table à créer :
+
+CREATE TABLE rental_archive (
+rental_id INTEGER PRIMARY KEY,
+customer_id INTEGER NOT NULL,
+rental_date TIMESTAMP NOT NULL,
+return_date TIMESTAMP,
+insertion_date TIMESTAMP DEFAULT now()
+);
+Exécution de la procédure stockée
+Pour exécuter une procédure stockée, il suffit d'utiliser la commandeCALL:
+
+CALL archive_old_rentals();
+Si vous exécutez cette procédure, toutes les transactions correspondant aux locations de plus d'un an seront transférées dans la table rental_archive. Cela signifie que ces enregistrements ne seront plus présents dans la table rental d'origine, ce qui pourrait affecter vos futures requêtes.
+
+Pour éviter cela, vous pouvez soit, supprimer les lignes correspondant à la suppression des données dans la tablerental, soit de ne pas exécuter cette procédure sur la base de données dvdrental fournie. Si vous le faites par erreur, vous devrez soit restaurer la base de données à son état initial, soit la supprimer et la recharger depuis le fichier d'origine. 
+
+Lorsque vous exécutez cette commande, PostgreSQL exécute toutes les opérations définies dans la procédure, archivant et supprimant les données de manière automatique.
+
+Capture d'écran de la section Messages de pgAdmin indiquant l'exécution d'une commande SQL CALL
+Capture d'écran de la section "Messages" de pgAdmin indiquant l'exécution d'une commande SQL CALL
+Après avoir appris à sauvegarder et exécuter manuellement des procédures stockées, voyons maintenant comment déclencher automatiquement ces procédures à l’aide de triggers, afin d’automatiser davantage vos processus et optimiser la gestion des données.
+
+Déclenchez de manière automatique une procédure stockée
+Un trigger dans PostgreSQL est une fonction qui est automatiquement déclenchée lorsqu'un événement spécifique survient sur une table. Ces événements peuvent inclure :INSERT,UPDATE,DELETEouTRUNCATE.
+
+En utilisant des triggers, vous pouvez automatiser certaines actions lorsque ces événements se produisent, sans intervention manuelle.
+
+PostgreSQL offre deux principaux types de triggers :
+
+Row-level triggers : Le trigger est déclenché pour chaque ligne affectée par l'événement. 
+
+Statement-level triggers : Le trigger est déclenché une seule fois, quel que soit le nombre de lignes affectées. 
+
+La principale différence entre ces deux types réside dans la fréquence et le moment où ils sont déclenchés : si vous exécutez une instruction UPDATE qui modifie 20 lignes, un row-level trigger sera invoqué 20 fois (une fois pour chaque ligne modifiée), tandis qu'un statement-level trigger sera invoqué une seule fois, au moment où l'instruction UPDATE est exécutée. 
+
+Mise en place d’un trigger pour archiver les locations anciennes
+Pour automatiser encore davantage l'archivage des locations terminées, vous pouvez associer un row-level trigger à la table rental. Ce trigger appellera automatiquement la procédure archive_old_rentals chaque fois qu'une modification est faite sur la date de retour d'une location. Si la location a plus d'un an, elle sera archivée automatiquement.
+
+Voici comment vous pouvez créer ce trigger :
+
+CREATE TRIGGER archive_trigger_rental
+AFTER UPDATE ON rental
+FOR EACH ROW
+WHEN (NEW.return_date IS NOT NULL AND NEW.return_date < NOW() - INTERVAL '1 year')
+EXECUTE PROCEDURE archive_old_rentals();
+Explication :
+
+AFTER UPDATE ON rental: Le trigger sera déclenché après chaque mise à jour sur la table rental. 
+
+FOR EACH ROW: C’est un row-level trigger, donc il sera déclenché pour chaque ligne modifiée. 
+
+WHEN (NEW.return_date IS NOT NULL AND NEW.return_date < NOW() - INTERVAL '1 year') : La condition vérifie que la nouvelle date de retour (NEW.return_date) n’est pas nulle et que la location date de plus d’un an. 
+
+EXECUTE PROCEDURE archive_old_rentals(): Si la condition est remplie, la procédure archive_old_rentals est exécutée, archivant automatiquement les locations concernées.
+
+Les triggers sont un excellent moyen d'automatiser des processus critiques, tels que l'archivage ou la validation de données, sans nécessiter d'intervention manuelle.
+
+À vous de jouer
+
+
+Contexte
+Rodolphe, le DBA de DVD Rental, a remarqué que certains clients saisissent des adresses email dans un format incorrect, ce qui crée des erreurs dans la gestion des contacts. Il souhaite que vous mettiez en place une procédure stockée pour vérifier que l'adresse email respecte le format standard avant d'insérer un nouveau client dans la table customer.
+
+Votre mission consiste à créer une procédure stockée pour vérifier que l'adresse email est bien au format valide (par exemple, aa@.fr ou aa@.com) avant l'insertion des données, ainsi qu'un trigger pour automatiser cette validation lors de l'ajout d'un client.
+
+Consignes
+1/ Créez une procédure stockée nommée validate_email_format qui prend en paramètre l'adresse email d'un client.
+
+La procédure doit vérifier si l'adresse email respecte le format standard (exemple : aa@.fr ou aa@.com) - Cette procédure pourra utiliser l'opérateur PostgreSQL ~* pour vérifier que l'email correspond à une expression régulière (regex) qui définit le format attendu. Si ce n'est pas le cas, elle doit renvoyer une erreur et empêcher l'insertion.
+
+2/ Créez un trigger qui appellera automatiquement la procédurevalidate_email_formatavant chaque insertion dans la table customer. 
+
+3/ Testez cette procédure et le trigger en essayant d'insérer un nouveau client avec une adresse email mal formatée.
+
+Résultat attendu :
+
+Si l'email est bien au format valide, l'insertion du client doit se faire sans problème.
+
+Si l'email n'est pas au bon format, une erreur doit être levée avec un message indiquant que l'adresse email est invalide.
+
+Le trigger doit appeler automatiquement la procédure lors de toute tentative d'insertion de client.
+
+Vous pouvez récupérer les requêtes SQL de l'exemple de corrigé dans le script à ce lien.
+
+En résumé
+Vous avez appris à créer des fonctions personnalisées (UDF) pour automatiser des calculs répétitifs, comme les frais de retard ou l’anonymisation d'emails. 
+
+Vous avez découvert comment appeler ces fonctions dans des requêtes SQL pour centraliser et simplifier la logique métier. 
+
+Vous avez défini des procédures stockées pour automatiser des tâches complexes, comme l'archivage des anciennes locations. 
+
+Vous avez vu comment déclencher automatiquement des procédures à l’aide de triggers pour rendre les opérations plus fluides et sécurisées.
+
+Après avoir automatisé certaines tâches avec les procédures et fonctions stockées, il est temps d'explorer un nouvel outil puissant : les fenêtres (windows functions).
+
+Prenez en main les windows functions
+
+
+Votre DBA chez DVD Rental, Rodolphe, souhaite optimiser vos requêtes et éviter d’utiliser des CTEs pour des opérations simples. Il vous a donc demandé de réviser certaines requêtes pour les rendre plus efficaces en utilisant les Windows Functions, qui permettent de manipuler et d'agréger des données tout en évitant les sous-requêtes complexes ou les jointures inutiles.
+
+Comprenez les Windows Functions
+Pour répondre à cette demande, il est important de bien maîtriser les Windows Functions. Ces fonctions offrent une solution élégante pour manipuler des données tout en évitant de recourir à des requêtes imbriquées complexes.
+
+Découvrez la sémantique des Windows Functions
+Une Windows Function permet de calculer des résultats à partir d’un groupe de lignes, appelé "fenêtre", tout en conservant chaque ligne dans les résultats. Contrairement aux requêtes traditionnelles avecGROUP BY, où les résultats sont condensés en groupes, les Windows Functions vous permettent d'ajouter des calculs sans perdre de vue les détails des données originales.
+
+Prenons l’exemple suivant : vous souhaitez connaître le total des ventes réalisées par chaque employé, tout en gardant une trace de chaque transaction individuelle. En temps normal, si vous utilisiez unGROUP BY, vous perdriez le détail de chaque paiement, car les données seraient agrégées par employé. Avec une Windows Function, vous pouvez calculer le total des ventes tout en affichant chaque transaction.
+
+Résultat avec unGROUP BY:
+
+SELECT
+c.first_name,
+c.last_name,
+COUNT(r.rental_id)
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+GROUP BY
+c.first_name, c.last_name
+ORDER BY
+c.first_name, c.last_name;
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Résultat avec des Windows Functions :
+
+SELECT
+c.first_name,
+c.last_name,
+r.rental_date,
+COUNT(r.rental_id) OVER (PARTITION BY c.first_name, c.last_name) AS total_rentals_per_customer
+FROM
+customer c
+JOIN rental r ON c.customer_id = r.customer_id
+ORDER BY
+c.first_name, c.last_name;
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec quatre colonnes
+Pourquoi utiliser une Windows Function ?
+Conserver les détails des transactions : Contrairement à une requêteGROUP BY, vous ne perdez pas les informations détaillées.
+
+Faciliter les calculs sur un groupe de lignes : Vous pouvez calculer des totaux, des moyennes, ou des rangs pour chaque partition (groupe de lignes) sans réécrire des sous-requêtes complexes.
+
+Plus flexible : Les Windows Functions vous permettent de partitionner et trier les données pour appliquer des calculs spécifiques, comme classer des ventes ou calculer des moyennes par groupe.
+
+Vous avez vu l'intérêt d'utiliser les Windows Functions pour optimiser et simplifier vos requêtes. Passons maintenant à la mise en place avec la syntaxe adaptée.
+
+Syntaxe des Windows Functions
+Vous trouvez un message de Rodolphe dans Slack :
+
+Salut,
+
+Sofia souhaite qu’on ait plus de détails sur les ventes réalisées par chaque employé, tout en voyant chaque transaction individuelle. Actuellement, avec les requêtesGROUP BY, on perd les informations sur les paiements individuels. Peux-tu essayer de simplifier ça en utilisant des Windows Functions pour obtenir à la fois le montant total des ventes de chaque employé et le détail de chaque transaction ?
+
+Merci beaucoup !
+
+La syntaxe générale d'une Windows Function est la suivante :
+
+window_function(arg1, arg2, ...)
+OVER (
+[PARTITION BY partition_expression]
+[ORDER BY sort_expression [ASC | DESC] [NULLS {FIRST | LAST}]]
+)
+window_function(arg1, arg2, ...) : La fonction à appliquer, commeSUM(),ROW_NUMBER(),RANK(), etc.
+
+OVER(): Définit la "fenêtre" sur laquelle la fonction sera appliquée.
+
+PARTITION BY: Divise les données en sous-ensembles sur lesquels la fonction est appliquée séparément (par exemple, partitionner les données par client).
+
+ORDER BY: Spécifie l'ordre des lignes dans la fenêtre.
+
+ROWS | RANGE: Définit le cadre de la fenêtre, c’est-à-dire quelles lignes autour de la ligne courante seront incluses dans le calcul.
+
+Pour répondre à la question de Rodolphe, nous allons calculer combien chaque employé a généré de ventes pour chaque transaction, tout en affichant le montant exact de chaque paiement effectué.
+
+Si nous utilisions unGROUP BY, nous perdrions le détail de chaque paiement, car l’agrégation condenserait les lignes :
+
+SELECT
+s.staff_id,
+s.first_name,
+SUM(p.amount) AS total_sales
+FROM
+staff s
+JOIN payment p ON s.staff_id = p.staff_id
+GROUP BY
+s.staff_id, s.first_name;
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Dans ce cas, on ne voit plus le détail de chaque paiement.
+
+En utilisant les Windows Functions, nous conservons ces informations détaillées tout en ajoutant des données calculées, comme le total des ventes par employé, sur la partition :
+
+SELECT
+s.staff_id,
+s.first_name,
+p.payment_date,
+p.amount,
+SUM(p.amount) OVER (PARTITION BY s.staff_id) AS total_sales_per_employee
+FROM
+staff s
+JOIN payment p ON s.staff_id = p.staff_id;
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Maintenant que vous comprenez la base des Windows Functions, il est temps d'approfondir les possibilités en partitionnant et en triant vos données.
+
+Optimisez l’analyse en partitionnant et en triant vos données
+Nous allons maintenant voir comment affiner vos calculs grâce à la clausePARTITION BY. Cette option divise vos données en petits groupes, et applique des calculs spécifiques à chaque groupe séparément. En combinant cela avec un tri grâce àORDER BY, vous pouvez effectuer des analyses beaucoup plus ciblées.
+
+Les partitions dans les Windows Functions
+La clausePARTITION BYcrée des groupes dans vos données et applique des calculs à chaque groupe individuellement. Chez DVD Rental, cela peut servir à analyser les paiements des clients en prenant en compte l'employé qui a enregistré chaque transaction. De cette façon, vous obtenez un aperçu des performances des employés tout en comprenant mieux le comportement des clients.
+
+Illustration montrant un tableau avec des données sur différents types de logements et leurs prix, ainsi que le calcul de la moyenne des prix par type de logement.
+Illustration montrant un tableau avec des données sur différents types de logements et leurs prix, ainsi que le calcul de la moyenne des prix par type de logement.
+Par exemple, Rodolphe vous demande d'inclure dans le rapport des paiements plusieurs informations détaillées. Il souhaite connaître le montant total payé par chaque client à chaque employé, mais aussi le montant total que chaque client a réglé, tout employé confondu. En plus de cela, il aimerait obtenir le montant global de tous les paiements effectués chez DVD Rental. Pour répondre à cette demande, vous pouvez utiliser la clausePARTITION BYpour regrouper les paiements par client et employé, mais aussi calculer des totaux globaux sans partition.
+
+SELECT
+customer_id,
+staff_id,
+amount,
+SUM(amount) OVER (PARTITION BY customer_id, staff_id) AS total_amount_per_customer_per_staff,
+SUM(amount) OVER (PARTITION BY customer_id) AS total_amount_per_customer,
+SUM(amount) OVER () AS total_amount_overall
+FROM payment;
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec six colonnes
+Dans cette requête :
+
+SUM(amount) OVER (PARTITION BY customer_id, staff_id): Calcule le montant total payé par chaque client à chaque employé, permettant de voir combien un client a réglé à un employé spécifique.
+
+SUM(amount) OVER (PARTITION BY customer_id): Calcule le montant total payé par chaque client, tous employés confondus. Cela permet d'obtenir une vue globale des paiements d'un client sans distinguer les employés.
+
+SUM(amount) OVER (): Calcule le montant total de tous les paiements effectués dans la base de données, indépendamment des clients ou des employés. Cela donne une vue globale du total des paiements pour l'ensemble de DVD Rental.
+
+Chaque ligne affichera le même total pour une combinaison donnée de client et d'employé, client ou total.
+
+Le tri dans les Windows Functions
+En ajoutant la clauseORDER BYà une Windows Function, vous pouvez trier les résultats dans chaque partition avant d’appliquer le calcul. Cela est très utile pour obtenir des sommes cumulatives ou pour travailler avec des données chronologiques, par exemple.
+
+Prenons un exemple plus spécifique. Vous souhaitez non seulement calculer le total des paiements pour chaque client par employé, mais aussi voir comment ce total évolue avec chaque nouvelle transaction. Vous pouvez le faire en ajoutant unORDER BYbasé sur les dates des transactions :
+
+SELECT
+customer_id,
+staff_id,
+amount,
+SUM(amount) OVER (PARTITION BY customer_id, staff_id ORDER BY payment_date) AS cumulative_amount,
+payment_date
+FROM payment;
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec cinq colonnes
+Dans cette requête :
+
+PARTITION BY customer_id: Regroupe les paiements par client et employé.
+
+ORDER BY payment_date: Trie les paiements dans chaque groupe par date afin que la somme soit calculée de manière cumulative, transaction après transaction.
+
+Si vous souhaitez avoir plus d’exemples et d’explications sur les Windows Functions, n’hésitez pas à jeter un œil à cette documentation.
+
+Après avoir appris à partitionner et trier vos données, il est temps de passer à l'étape suivante : définir précisément quelles lignes inclure dans vos calculs avec les cadres de fenêtre.
+
+Appliquez des Windows Functions selon vos besoins
+Rodolphe vous adresse un email avec une demande spécifique :
+
+Objet : Analyse des paiements et comparaison des transactions
+
+Salut,
+
+Nous avons besoin de calculer des statistiques détaillées sur les paiements effectués par les clients. J'aimerais que tu mettes en place les calculs pour la somme totale des paiements et la moyenne par client. De plus, il serait utile d'attribuer un classement aux transactions en fonction du montant payé.
+
+Enfin, pour mieux comprendre les comportements des clients, pourrais-tu ajouter une comparaison entre chaque transaction et la précédente afin de voir les écarts entre elles ? Cela nous permettra de mieux analyser les changements dans leurs habitudes de paiement.
+
+Merci pour ton aide !
+
+Vous avez désormais accès à une gamme de Windows Functions qui vous permettent de réaliser des analyses détaillées et complexes tout en conservant chaque ligne des résultats. Pour répondre à la demande de Rodolphe sur les paiements des clients, nous allons explorer trois catégories de fonctions : agrégation, classement, et offset. Voici un récapitulatif sous forme de tableau pour mieux comprendre chaque fonction.
+
+Les fonctions d'agrégation (Aggregate Functions)
+Les fonctions d'agrégation sont utilisées pour effectuer des calculs sur un groupe de lignes, mais elles conservent la granularité de chaque ligne dans les résultats. Les Windows Functions d'agrégation vous permettent de calculer une somme ou une moyenne tout en affichant chaque ligne d'origine.
+
+Cela permet de réaliser des analyses plus granulaires, par exemple, en calculant la somme des paiements de chaque client tout en conservant les détails de chaque transaction.
+
+Les fonctions de classement (Ranking Functions)
+Les fonctions de classement attribuent un rang ou un numéro à chaque ligne d’une partition. Elles sont particulièrement utiles lorsque vous avez besoin de créer un classement ou d'attribuer des rangs basés sur des valeurs de colonnes spécifiques (comme le montant d'une transaction).
+
+Ces fonctions se distinguent des fonctions d'agrégation par le fait qu'elles ne réalisent pas de calculs sur des valeurs, mais plutôt qu'elles attribuent un ordre relatif à chaque ligne selon des critères définis. Elles permettent également de gérer les égalités de valeurs de manière flexible (par exemple,RANK()laisse des "trous" dans le classement, alors queDENSE_RANK() ne le fait pas).
+
+Les fonctions d'offset (Offset Functions)
+Les fonctions d'offset permettent de comparer les lignes actuelles avec les lignes précédentes ou suivantes dans une fenêtre. Elles sont idéales pour analyser les changements d'une ligne à l'autre, comme comparer la transaction actuelle avec la transaction précédente d'un client.
+
+Ces fonctions vous permettent de naviguer à travers les lignes relatives dans la même partition, ce qui est utile pour repérer des tendances, des comportements ou des anomalies.
+
+Chacune de ces catégories permet d’effectuer des analyses spécifiques sur des partitions de données. Avant de plonger dans les détails des requêtes SQL, voici un récapitulatif sous forme de tableau pour mieux comprendre les fonctions disponibles et leur utilité.
+
+Catégorie
+
+Fonction
+
+Description
+
+Agrégation
+
+SUM()
+
+Calcule la somme des valeurs dans une partition.
+
+AVG()
+
+Calcule la moyenne des valeurs dans une partition.
+
+COUNT()
+
+Compte le nombre de lignes dans une partition.
+
+MAX()
+
+Retourne la valeur maximale dans une partition.
+
+MIN()
+
+Retourne la valeur minimale dans une partition.
+
+Classement
+
+ROW_NUMBER() 
+
+Attribue un numéro unique à chaque ligne dans un ensemble ordonné.
+
+RANK()
+
+Attribue un rang aux lignes, en laissant des trous dans le classement.
+
+DENSE_RANK()
+
+Attribue un rang sans laisser de trous dans le classement.
+
+Offset
+
+LEAD()
+
+Récupère la valeur de la ligne suivante dans un ensemble ordonné.
+
+LAG()
+
+Récupère la valeur de la ligne précédente dans un ensemble ordonné.
+
+FIRST_VALUE()
+
+Récupère la première valeur d’un ensemble ordonné.
+
+LAST_VALUE()
+
+Récupère la dernière valeur d’un ensemble ordonné.
+
+Nous avons désormais tout ce qu'il nous faut pour répondre à la demande de Rodolphe. Passons aux exemples pratiques qui illustrent comment appliquer ces Windows Functions aux données de DVD Rental et obtenir les informations demandées.
+
+SELECT
+customer_id,
+amount,
+payment_date,
+-- Calcul de la somme et de la moyenne des paiements par client
+SUM(amount) OVER (PARTITION BY customer_id) AS total_amount,
+AVG(amount) OVER (PARTITION BY customer_id) AS average_amount,
+-- Classement des transactions par montant
+ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY amount DESC) AS payment_rank,
+-- Comparaison avec la transaction précédente
+LAG(amount, 1) OVER (PARTITION BY customer_id ORDER BY payment_date) AS previous_amount
+FROM payment
+ORDER BY customer_id, payment_date;
+Capture d'écran d'un tableau de résultats de pgAdmin avec huit colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec huit colonnes
+À vous de jouer
+
+
+Contexte
+Sofia souhaite analyser les habitudes de location des clients entre le 1er mars 2005 et le 1er septembre 2005. Elle vous demande d'identifier les clients les plus actifs durant cette période et de comprendre comment leurs comportements de location évoluent au fil des mois. Votre mission est de créer une vue qui liste les locations par client, d’attribuer un classement en fonction du nombre total de films loués, et de comparer les locations d'un mois à l'autre pour chaque client.
+
+Consignes
+Créez une vue qui liste les locations effectuées par client entre le 1er mars 2005 et le 1er septembre 2005, en incluant la date et le nombre de films loués par mois.
+
+Utilisez une Windows Function pour attribuer un classement aux clients en fonction du nombre total de films loués.
+
+Utilisez une fonctionLAGpour comparer le nombre de films loués d'un mois sur l'autre pour chaque client.
+
+Vérifiez votre travail à l’aide de cet exemple de corrigé
+Si vous êtes coincé, la solution est disponible ci-dessous :
+
+
+Dans cette vidéo, vous avez vu :
+
+Comment créer une vue pour lister les locations mensuelles des clients sur une période donnée.
+
+Utiliser la fonctionRANK()pour attribuer un classement basé sur le nombre de films loués.
+
+Comparer les locations d’un mois à l’autre pour chaque client grâce à la fonctionLAG().
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo à ce lien.
+
+En résumé
+Vous avez découvert comment les Windows Functions permettent d'effectuer des calculs complexes tout en conservant chaque ligne de la table.
+
+Vous avez utilisé des partitions et des fenêtres de données pour segmenter les résultats et réaliser des calculs ciblés.
+
+Vous avez appris à ordonner les résultats dans une fenêtre et à utiliser les Windows Frames pour définir la portée des calculs.
+
+Vous avez exploré les trois grandes catégories de Windows Functions : agrégation, classement, et offset, pour des analyses détaillées.
+
+Après avoir exploré l'utilisation des Windows Functions pour analyser vos données de manière plus précise et efficace, il est temps de passer à un autre concept fondamental : les ensembles. Dans ce prochain chapitre, vous apprendrez à combiner, comparer et manipuler les résultats de plusieurs tables pour enrichir vos analyses.
+
+Pratiquez les fonctions avancées de merge de table
+
+
+Sofia, la CEO de DVD Rental, vous contacte avec une nouvelle mission. L’entreprise a récemment récupéré des archives contenant des données historiques sur les films et les clients. Elle souhaite utiliser ces informations pour mener des analyses globales et comparer les anciens catalogues avec les bases de données actuelles. Votre rôle est de fusionner ces ensembles de données tout en vous assurant que les informations sont correctement combinées et traitées de manière optimale.
+
+Découvrez les ensembles
+Avant de vous lancer dans le vif du sujet, rappelons ce qu'est un "ensemble" en SQL. Un ensemble représente un groupe de résultats provenant de différentes requêtes que vous pouvez combiner pour obtenir une seule vue globale. Grâce à cela, vous pouvez comparer, fusionner ou filtrer les données de manière efficace.
+
+Pour vous rafraîchir la mémoire sur l'utilisation de l'opérateur UNION pour assembler des tables, vous pouvez vous référer au cours Requêtez une base de données avec SQL, et plus particulièrement au chapitre Assemblez des tables avec UNION.
+
+Pour vous préparer à répondre aux demandes de Sofia et Rodolphe, vous devrez importer le fichier CSV d’archive et l’intégrer dans votre base de données PostgreSQL. Vous découvrirez comment faire cela dans la vidéo suivante :
+
+
+Dans cette vidéo, vous avez vu :
+
+Comment créer une tablefilm_archivepour stocker les données d'archive des films.
+
+Comment utiliser la commandeCOPYpour charger les données à partir du fichier CSV.
+
+Comment vérifier l'intégrité des données après l'importation avec des requêtes SQL simples.
+
+Vous pouvez également récupérer les requêtes SQL utilisées dans la vidéo dans le script à ce lien.
+
+Après avoir clarifié les concepts fondamentaux des ensembles, passons à la combinaison des résultats de plusieurs requêtes en un ensemble unique de lignes.
+
+Combinez les résultats de deux ou plusieurs requêtes et retournez un ensemble unique de lignes
+Quelques jours plus tard, Rodolphe, le DBA de DVD Rental, vous envoie un message Slack :
+
+Salut,
+
+Sofia a récupéré des données d'archives et elle aimerait qu'on les intègre dans nos analyses. Peux-tu combiner nos tables actuelles de films avec celles des archives ? Dans certains cas, il faudra supprimer les duplicatas, mais garde les également dans une version alternative pour des besoins futurs.
+
+Envoie-moi directement les deux requêtes SQL.
+
+Merci !
+
+Dans ce contexte, deux opérations sont cruciales :
+
+UNION: Cet opérateur fusionne les résultats de deux ou plusieurs requêtes en supprimant les duplicatas.
+
+UNION ALL: Contrairement àUNION, cet opérateur combine les résultats de requêtes sans éliminer les duplicatas.
+
+Pour rappel : pour une union, les 2 tables doivent avoir le même schéma, c'est-à-dire les mêmes colonnes (et les mêmes types de colonnes). 
+
+Vous souhaitez combiner les films de la tablefilmde DVD Rental et ceux de la nouvelle tablefilm_archive. Voici comment vous pourriez utiliserUNIONetUNION ALL:
+
+-- Combiner les tables film et film_archive avec UNION
+SELECT title, release_year, language_id FROM film
+UNION
+SELECT title, release_year, language_id FROM film_archive;
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+-- Combiner les tables film et film_archive avec UNION ALL (garder les duplicatas)
+SELECT title, release_year, language_id FROM film
+UNION ALL
+SELECT title, release_year, language_id FROM film_archive;
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec trois colonnes
+Le premier résultat révèle unUNIONqui élimine les doublons, donnant 1025, tandis que le deuxième résultat, qui inclut les doublons, affiche 1030. Ainsi, on constate qu'il y a 5 films en commun, correspondant aux doublons. Nous allons maintenant voir comment obtenir ces valeurs communes et les isoler.
+
+Obtenez les valeurs communes entre plusieurs ensembles de résultats
+Si vous souhaitez trouver les éléments communs entre plusieurs ensembles de résultats, vous pouvez utiliser l’opérateurINTERSECT. Cet opérateur renvoie uniquement les lignes présentes dans les deux requêtes.
+
+Les colonnes que vous comparez doivent être exactement identiques, y compris les types de données et le contenu des colonnes. Si une seule colonne diffère, le résultat ne sera pas renvoyé comme correspondant.
+
+Dans notre cas, la colonne description n’est pas exactement identique entre la table film et la tablefilm_archive. Cela signifie que si vous incluez cette colonne dans la requêteINTERSECT, vous ne trouverez aucun film commun, même si les titres sont les mêmes.
+
+Si vous souhaitez uniquement comparer les titres des films et leurs années présents dans les deux tables sans inclure la colonne description, voici comment utiliserINTERSECTpour identifier les titres communs : 
+
+SELECT title, release_year FROM film
+INTERSECT
+SELECT title, release_year FROM film_archive;
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Capture d'écran d'un tableau de résultats de pgAdmin avec deux colonnes
+Cela retournera uniquement les films dont les titres sont exactement identiques entre les deux tables.
+
+Maintenant que vous avez identifié les films communs, il peut être utile de comprendre quelles données existent dansfilm_archivemais qui sont absentes de la tablefilm actuelle. Pour ce faire, nous allons utiliser l’opérateurEXCEPT.
+
+Effectuez une différence entre deux ensembles de résultats
+SiINTERSECTest l’opérateur communEXCEPTdoit sûrement être l’opérateur de différenciation ?
+
+Exactement, l’opérateurEXCEPTest utile lorsque vous voulez voir les lignes qui existent dans un premier ensemble de résultats mais pas dans le second. Il est souvent utilisé pour des vérifications ou des analyses de divergence entre deux tables similaires.
+
+Rodolphe souhaite maintenant savoir quels films sont encore dans la base principale de DVD Rental (film) mais qui ne se trouvent pas dans l’archive (film_archive). Pour cela, il vous demande de réaliser une requête qui identifie ces films.
+
+Voici comment utiliserEXCEPTpour retourner les films qui existent dans la tablefilmmais qui n’ont pas encore été archivés dansfilm_archive:
+
+SELECT title FROM film
+EXCEPT
+SELECT title FROM film_archive ORDER BY title;
+Capture d'écran d'un tableau de résultats de pgAdmin avec une seule colonne
+Capture d'écran d'un tableau de résultats de pgAdmin avec une seule colonne
+Cela retournera tous les titres qui sont présents dansfilmmais pas dansfilm_archive, ce qui aidera Rodolphe à identifier les films encore actifs dans la base de DVD Rental.
+
+Pour compléter cette analyse, vous pouvez également exécuter la requête inverse pour identifier les films qui se trouvent uniquement dans l’archive et non dans la base actuelle. Cela peut être utile pour savoir quels films ont été archivés mais ne sont plus disponibles dans la base active.
+
+SELECT title FROM film_archive
+EXCEPT
+SELECT title FROM film ORDER BY title;
+Capture d'écran d'un tableau de résultats de pgAdmin avec une colonne
+Capture d'écran d'un tableau de résultats de pgAdmin avec une colonne
+Cela aidera Rodolphe à comprendre quels films ont été archivés mais qui ne figurent plus dans l’inventaire principal.
+
+À vous de jouer
+
+
+Contexte
+La compagnie DVD Rental vient d'acquérir une nouvelle entreprise, et avec cette acquisition, un nouveau fichier d'archive a été reçu,film_new_acquisition. Vous devez charger ces données dans une nouvelle table PostgreSQL. Une fois les trois tables en place (film,film_archive, etfilm_new_acquisition), vous devrez faire des comparaisons entre les films de ces différentes tables pour répondre aux demandes de Sofia et Rodolphe.
+
+Consignes
+Importez les données du fichier CSV dans une nouvelle tablefilm_new_acquisition.
+
+Trouvez les films en commun entre les trois tablesfilm,film_archive, etfilm_new_acquisition.
+
+Combinez toutes les données des trois tables en une seule, sans duplication (utilisation deUNION)
+
+Recherchez les films présents dans deux ensembles mais pas dans le troisième (ex. films présents dansfilmetfilm_archive, mais pas dansfilm_new_acquisition).
+
+Vous pouvez récupérer les requêtes SQL de cet exemple de corrigé dans le script à ce lien.
+
+En résumé
+Vous avez appris à utiliser lesUNION etUNION ALLpour combiner plusieurs ensembles de résultats en supprimant ou en conservant les doublons.
+
+Vous avez découvert comment utiliserEXCEPTpour trouver les lignes présentes dans un ensemble mais absentes dans un autre.
+
+Vous avez exploré l'opérateurINTERSECTpour identifier les lignes communes entre deux ensembles de résultats.     
+
+Félicitations pour avoir suivi ce cours jusqu'à la fin ! Vous avez parcouru une multitude de concepts avancés de SQL sur PostgreSQL, de l'optimisation des requêtes avec les jointures complexes jusqu'à l'usage des procédures stockées et des Windows Functions. Grâce à ces compétences, vous êtes désormais capable de concevoir des bases de données plus robustes, de répondre à des problématiques d'analyse poussée et d'optimiser les performances de vos systèmes. Continuez à pratiquer et à approfondir vos connaissances, et vous serez prêt à relever tous les défis que vous rencontrerez dans vos futures missions. Bravo et bon courage pour la suite !

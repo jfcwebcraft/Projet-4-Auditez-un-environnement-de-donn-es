@@ -1,0 +1,169 @@
+Mission partie 1 - Auditez l'architecture et les données de l'entreprise
+
+
+Comment allez-vous procéder ?
+Barre
+
+ 
+
+Cette mission en 3 parties suit un scénario de projet professionnel. 
+
+
+Vous pouvez suivre les étapes pour vous aider à réaliser vos livrables.
+
+Avant de démarrer, nous vous conseillons de :
+
+lire toute la mission et ses documents liés ;
+prendre des notes sur ce que vous avez compris ;
+consulter les étapes pour vous guider ; 
+préparer une liste de questions pour votre première session de mentorat.
+Prêt à mener la mission ? 
+Barre
+
+ 
+
+SuperSmartMarket est une chaîne de supermarchés en plein développement en France. Cette entreprise redéfinit le concept du supermarché en intégrant des technologies de pointe pour rendre les courses rapides et agréables aux consommateurs. 
+
+ 
+
+L’entreprise souhaite se démarquer en mettant l’accent sur l’hyper personnalisation de l’expérience en magasin avec des coupons promotionnels personnalisés, des recommandations basées sur les historiques d’achat, des recettes personnalisées en fonction des achats etc.
+
+ 
+
+SuperSmartMarket a besoin d'agrandir son équipe Data en recrutant un Data Engineer pour l’aider à comprendre et analyser les différents flux de données de l’entreprise. Jusqu’à présent les Data Analysts se chargeaient de cette activité mais les besoins récents en data ont conduit l’entreprise à  vous recruter. 
+
+ 
+
+Vous êtes intégré à l’équipe Data Support. Cette équipe doit garantir la sécurité et la qualité des données pour l’ensemble de l’entreprise. Elle utilise une planification de processus avec des solutions Microsoft, un entrepôt de données type OLAP et le support de l’application Microsoft PowerBI.
+
+ 
+
+Vous recevez un mail d’Hugo, c’est le responsable de tout le pôle Business Intelligence.
+
+ 
+
+De : Hugo
+
+À : Moi
+
+Objet : Audit de la base de données OLAP
+
+Salut !
+
+
+Je te souhaite la bienvenue dans notre équipe Data, nous sommes tous enthousiastes à l’idée de travailler avec toi.
+
+
+Comme tu le sais, nous souhaitons nous démarquer par notre connaissance des clients. Mais pour le moment, nous parvenons à peine à avoir un chiffre d’affaires juste !
+
+
+C’est sur ce point que je sollicite ton aide. Nous avons des incohérences dans les données que nous utilisons. Je pense que cela ne te prendra que quelques jours pour comprendre et corriger les incohérences alors que nous, nous risquerions d’y passer des semaines !
+
+
+Je t’explique le problème… nos données de chiffres d’affaires ne sont pas stables dans le temps. C'est-à-dire que l’historique de chiffre d’affaires a tendance à évoluer à la hausse ou à la baisse. C’est étrange et nous ne comprenons pas ce qui se passe. 
+
+
+Je te donne un exemple : le chiffre d’affaires du lundi 14 août était de 275 186,59 €. Le lendemain, c’était le 15 août et tous nos magasins étaient fermés. Pourtant, quand nous sommes retournés sur PowerBI le 16 Août, le chiffre d’affaires du 14 août était de 284 243,88 €.
+
+
+Pour te permettre de commencer ton investigation, tu peux consulter notre architecture qui est en pièce jointe. Nous n’avons malheureusement jamais documenté notre base de données.
+
+
+Pourrais-tu préparer : 
+
+un dictionnaire des données ;
+un schéma relationnel sur la base du fichier à plat de la base de données OLAP ? 
+
+Dans un deuxième temps, pour approfondir ton investigation, peux-tu me confirmer les chiffres que je vois dans PowerBI dans ton prototype de base de données, à savoir : 
+
+le chiffre d’affaires total pour le 14 août (275 186,59€ ou 284 243,88€) ; 
+le chiffre d’affaires par client pour le top 10 des clients ;
+la part de chiffre d’affaires encaissé par employé.
+
+Je te conseille de faire cela en mode POC (Proof Of Concept) : tu fais un prototype de base de données en local (SQLite, PostGré ou encore MySQL) et tu fais des requêtes SQL dans ta base de données pour vérifier et identifier les bons chiffres. 
+
+
+Pour finir, peux-tu préparer un support de présentation présentant : 
+
+ta compréhension de l’architecture de l’entreprise ;
+le schéma relationnel que tu as créé pour ta base de données ;
+le dictionnaire des données ;
+les résultats des requêtes ;
+ta compréhension de notre problème.
+
+Tu peux utiliser et adapter la trame en pièce jointe. Tu verras que j'ai ajouté des slides pour des recommandations futures mais on en est pas là! Concentre-toi d'abord sur ces éléments.
+
+
+Merci beaucoup et bon courage !
+
+
+Hugo
+
+Responsable de l’équipe BI
+
+PJ1 : Schéma de l’architecture de l’entreprise
+
+PJ2 : Extraction à plat de la base de données OLAP
+
+PJ3 : Template de support de présentation
+
+Cette mission est entièrement guidée.
+
+
+Vous pouvez suivre les étapes ci-dessous.
+
+ 
+
+Étapes
+Révisez les notions : 
+
+d’entrepôt de données ;
+de modèle en étoile.
+Vous devez avoir une vue globale de la base de données, de ses qualités et de ses défauts et les mettre en parallèle avec vos connaissances personnelles, les conseils de votre mentor et les ressources trouvées sur internet.
+
+
+Vous allez devoir comprendre l’architecture de la base de données et les données. Vous pourrez ensuite préparer un POC de cette base de données (en local) afin de valider le chiffre d’affaires. 
+
+ 
+
+Prérequis 
+
+Avoir compris les principes d’un entrepôt de données OLAP et d’un modèle en étoile.
+Avoir compris les flux de données dans une base de données SQL.
+Résultats attendus  
+
+Le dictionnaire des données
+Le schéma relationnel
+Instructions
+
+Comprenez l’architecture et les flux des données de l’entreprise 
+Examinez le fichier de données à plat afin de comprendre les données.
+Préparez un dictionnaire des données à partir du fichier à plat.
+Créez un schéma relationnel de la base de données.
+Recommandations  
+
+Vous pouvez utiliser SQL Power Architect pour faire votre schéma de base de données.
+ 
+
+Prérequis 
+
+Avoir fait un dictionnaire des données.
+Avoir fait un schéma relationnel de la base de données.
+Résultats attendus
+
+Le fichier .PPT complété
+La base de données chargée
+Instructions
+
+Créez la base de données.
+Chargez vos données.
+Faites les requêtes SQL.
+Recommandations  
+
+Vous pouvez utiliser n’importe quelle base de données (MySQL, Postgre, SQLite, etc.) 
+Il faut bien contrôler que l’ensemble des données soit présent dans votre base de données sans quoi, votre chiffre d’affaires ne sera pas conforme. 
+Pour vérifier que vous n’avez rien oublié dans la réalisation de votre exercice, téléchargez et complétez la fiche d’autoévaluation.
+
+ 
+
+Parlez-en avec votre mentor durant votre dernière session de mentorat.

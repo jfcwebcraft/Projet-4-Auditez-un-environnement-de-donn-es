@@ -1,0 +1,43 @@
+Mission partie 3 - Faites des recommandations pour l'entreprise
+Quelques semaines plus tard
+Barre
+
+ 
+
+Hugo est ravi car vous avez de nouveau réussi à trouver l’erreur dans la base de données.
+
+ 
+
+Maintenant que vous avez compris les problèmes dans la base de données de l’entreprise, Hugo vous demande de préparer des recommandations pour améliorer le fonctionnement des bases de données.
+
+ 
+
+De : Hugo
+
+À : Moi
+
+Objet : Présentation à l’équipe Data
+
+Re,
+
+
+Comme discuté tout à l’heure à la machine à café, j'aimerais capitaliser sur le travail que tu as déjà réalisé !
+
+
+Afin de comprendre et de pouvoir documenter l’ensemble de ton travail : 
+
+premièrement, peux-tu rédiger un rapport d’audit sur tout ce que tu as vu ? Tu trouveras en pièce jointe un ancien rapport à adapter à ta situation (je ne t’ai laissé que le sommaire).
+deuxièmement, peux-tu également renseigner ton cheminement pour résoudre le problème et les résultats dans ton support de présentation et venir nous présenter ton travail lors d’une réunion d’équipe ? Cela va sensibiliser tout le monde sur la nécessité d’améliorer la qualité et la compréhension de nos données. 
+troisièmement, est-ce que tu peux intégrer à ton prototype les différentes mesures correctives que tu auras rédigées dans ton rapport d’audit afin qu’on comprenne les impacts sur notre base de données OLAP ? J’ai entendu parler de différentes choses comme les triggers, les contraintes, les clés étrangères, les propriétés ACID, les procédures stockées, l’analyse des logs systématiques, etc. 
+enfin, peux-tu intégrer ton prototype dans le support de présentation ? 
+
+Je te laisse réfléchir et me faire des propositions afin que nos données gagnent en résilience. 
+
+
+Encore merci pour tout ton travail ! Cela ne fait que quelques semaines mais tu nous aides déjà énormément. 
+
+
+Hugo
+Responsable de l’équipe BI
+
+PJ : Exemple de rapport d’audit

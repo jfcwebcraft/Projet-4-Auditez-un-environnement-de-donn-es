@@ -1,0 +1,38 @@
+# Fichiers et dossiers systèmes
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environnements Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archives et fichiers de travail temporaires
+_Archives_Projet/
+*.tmp
+*.log
+all_files.txt
+debug_logs.py
+analyze_output*.txt
+data_for_pptx.json
+pptx_content.json
+
+# Données locales (Le prototype peut être inclus ou ignoré selon préférence)
+# mysql_data/
+# supersmartmarket.db (Optionnel : décommenter pour ignorer la base générée)
+
